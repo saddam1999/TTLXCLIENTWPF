@@ -1,0 +1,118 @@
+<UserControl
+	x:Class="TTLX.WindowsTool.Views.Questions.QuestionItem" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:local="clr-namespace:TTLX.WindowsTool.Views.Questions">
+	<Grid
+		Background="#FFFFFFFF">
+		<Grid.RowDefinitions>
+			<RowDefinition
+				Height="Auto" />
+			<RowDefinition
+				Height="3" />
+			<RowDefinition
+				Height="*" />
+		</Grid.RowDefinitions>
+		<Grid
+			Name="XBdHeader"
+			Height="40"
+			Background="#00FFFFFF"
+			Row="0">
+			<Button
+				Name="XBtnSeq"
+				Width="Auto"
+				HorizontalAlignment="Left"
+				ContentStringFormat="题目{0}"
+				Content="{Binding Idx}"
+				Click="XBtnSeq_OnClick" />
+			<Button
+				Name="XBtnDel"
+				Style="{DynamicResource BtnDeleteStyle}"
+				Width="60"
+				HorizontalAlignment="Right"
+				Content="删除"
+				Click="Del_OnClick" />
+		</Grid>
+		<Rectangle
+			Name="XRectLine"
+			Grid.Row="1"
+			Fill="#FFD3D3D3" />
+		<Rectangle
+			Grid.Row="1"
+			Fill="{DynamicResource LightRedColor}"
+			Visibility="{Binding IsSaved, Converter={StaticResource ReverseBoolToVisibilityConverter}}" />
+		<Border
+			Name="XBdRoot"
+			Background="#FFFFFFFF"
+			Grid.Row="2"
+			BorderThickness="1,0,1,1"
+			BorderBrush="#FFD3D3D3">
+			<FrameworkElement.Resources>
+				<ResourceDictionary>
+					<Storyboard
+						TargetProperty="Background.Color"
+						AutoReverse="True"
+						x:Key="NewQues">
+						<ColorAnimation
+							To="LightBlue"
+							Duration="00:00:01" />
+					</Storyboard>
+				</ResourceDictionary>
+			</FrameworkElement.Resources>
+			<ContentControl
+				Name="XCon" />
+		</Border>
+		<Popup
+			Name="XPopSeqEdit"
+			Grid.RowSpan="3"
+			Width="180"
+			AllowsTransparency="True"
+			PopupAnimation="Fade"
+			StaysOpen="False"
+			Placement="Right"
+			HorizontalOffset="10"
+			PlacementTarget="{Binding ElementName=XBtnSeq}">
+			<Border
+				BorderThickness="1"
+				BorderBrush="#FFD3D3D3"
+				Margin="10">
+				<UIElement.Effect>
+					<DropShadowEffect
+						BlurRadius="4"
+						Opacity="0.4"
+						ShadowDepth="4"
+						Color="Black" />
+				</UIElement.Effect>
+				<Grid
+					Background="#FFFFFFFF">
+					<Grid.RowDefinitions>
+						<RowDefinition
+							Height="30" />
+						<RowDefinition
+							Height="40" />
+						<RowDefinition
+							Height="40" />
+					</Grid.RowDefinitions>
+					<Border
+						Background="{DynamicResource GradientBlue1}">
+						<TextBlock
+							Text="调整顺序"
+							VerticalAlignment="Center"
+							Margin="4,0"
+							Foreground="#FFFFFFFF" />
+					</Border>
+					<TextBox
+						Name="XTxtSeq"
+						Grid.Row="1"
+						Height="30"
+						Width="140" />
+					<Button
+						Name="XBtnSeqSave"
+						Grid.Row="2"
+						Width="60"
+						Height="24"
+						Content="确 定"
+						FontSize="12"
+						Click="XBtnSeqSave_OnClick" />
+				</Grid>
+			</Border>
+		</Popup>
+	</Grid>
+</UserControl>

@@ -1,0 +1,322 @@
+<controls:CMetroWindow
+	x:Class="TTLX.WindowsTool.Dialogs.AudioEditWnd" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:local="clr-namespace:TTLX.WindowsTool.Dialogs" xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls" xmlns:controls="clr-namespace:TTLX.WindowsTool.Common.Controls;assembly=TTLX.WindowsTool.Common" xmlns:ctls="clr-namespace:TTLX.WindowsTool.Controls" xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity" xmlns:core="clr-namespace:TTLX.WindowsTool.Common.Core;assembly=TTLX.WindowsTool.Common" xmlns:system="clr-namespace:System;assembly=mscorlib"
+	Style="{StaticResource WindowStyle}"
+	Title="音频编辑"
+	WindowStartupLocation="CenterOwner"
+	Height="400"
+	Width="1000">
+	<FrameworkElement.Resources>
+		<ResourceDictionary>
+			<local:WidthToVisibilityConverter
+				x:Key="WidthToVisibilityConverter" />
+		</ResourceDictionary>
+	</FrameworkElement.Resources>
+	<Grid
+		Margin="10">
+		<Grid.RowDefinitions>
+			<RowDefinition
+				Height="*" />
+			<RowDefinition
+				Height="70" />
+		</Grid.RowDefinitions>
+		<Grid>
+			<Grid.RowDefinitions>
+				<RowDefinition
+					Height="*" />
+				<RowDefinition
+					Height="Auto" />
+			</Grid.RowDefinitions>
+			<Grid
+				Name="XGdImg"
+				Background="#00FFFFFF"
+				SizeChanged="XGd_OnSizeChanged"
+				MouseWheel="XGd_OnMouseWheel">
+				<ctls:AudioEditScaleCanvas
+					Name="XAudioSacle"
+					Start="{Binding StartTime}"
+					Stop="{Binding StopTime}" />
+				<Image
+					Name="XImgWave"
+					Margin="4,0"
+					VerticalAlignment="Center" />
+				<Canvas
+					Name="XCavCut"
+					Margin="0,0,0,30"
+					Background="#00FFFFFF"
+					MouseDown="XCavCut_OnMouseDown"
+					MouseMove="XCavCut_OnMouseMove"
+					MouseUp="XCavCut_OnMouseUp">
+					<Rectangle
+						Name="XRectCut"
+						Fill="#FFFFFFFF"
+						Opacity="0.5"
+						Height="{Binding Path=ActualHeight, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Canvas}}"
+						MouseDown="XRectCut_OnMouseDown" />
+					<ctls:AudioEditCutMarker
+						Name="XLeftMarker"
+						Margin="-30,0,0,0"
+						ParentCanvas="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Canvas}}"
+						MarkTime="{Binding CutStartTime, Mode=TwoWay}"
+						Start="{Binding StartTime}"
+						Stop="{Binding StopTime}"
+						Height="{Binding Path=ActualHeight, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Canvas}}" />
+					<ctls:AudioEditCutMarker
+						Name="XRightMarker"
+						Margin="-30,0,0,0"
+						ParentCanvas="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Canvas}}"
+						MarkTime="{Binding CutStopTime, Mode=TwoWay}"
+						Start="{Binding StartTime}"
+						Stop="{Binding StopTime}"
+						Height="{Binding Path=ActualHeight, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Canvas}}" />
+					<ctls:AudioEditPlayMarker
+						Name="XPosMarker"
+						Margin="-30,0,0,0"
+						MarkTime="{Binding CurrentTime}"
+						Visibility="{Binding ElementName=XMedia, Path=IsPlaying, Converter={StaticResource BoolToVisibilityConverter}}"
+						Height="{Binding Path=ActualHeight, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Canvas}}" />
+				</Canvas>
+			</Grid>
+			<ScrollBar
+				Name="XBar"
+				Grid.Row="1"
+				Orientation="Horizontal"
+				Cursor="Arrow"
+				Minimum="0"
+				Scroll="XBar_OnScroll" />
+		</Grid>
+		<Grid
+			Row="1">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition
+					Width="100" />
+				<ColumnDefinition
+					Width="100" />
+				<ColumnDefinition
+					Width="*" />
+				<ColumnDefinition
+					Width="240" />
+				<ColumnDefinition
+					Width="40" />
+			</Grid.ColumnDefinitions>
+			<StackPanel
+				Orientation="Horizontal">
+				<Button
+					Name="XBtnLarger"
+					Style="{DynamicResource BtnBorderStyle}"
+					Margin="2,0"
+					Content="放大"
+					Click="XBtnLarger_OnClick" />
+				<Button
+					Name="XBtnSmaller"
+					Style="{DynamicResource BtnBorderStyle}"
+					Margin="2,0"
+					Content="缩小"
+					Click="XBtnSmaller_OnClick" />
+			</StackPanel>
+			<StackPanel
+				Grid.Column="1"
+				Orientation="Horizontal">
+				<Button
+					Name="XBtnPlay"
+					Style="{DynamicResource BtnBorderStyle}"
+					Margin="2,0"
+					Content="播放"
+					Click="XBtnPlay_OnClick" />
+				<Button
+					Name="XBtnStop"
+					Style="{DynamicResource BtnBorderStyle}"
+					Margin="2,0"
+					Content="停止"
+					Click="XBtnStop_OnClick" />
+			</StackPanel>
+			<Button
+				Name="XBtnSave"
+				Grid.Column="2"
+				Width="160"
+				Height="40"
+				Content="确定范围"
+				Click="XBtnSave_OnClick" />
+			<Grid
+				Column="3"
+				VerticalAlignment="Center">
+				<FrameworkElement.Resources>
+					<ResourceDictionary>
+						<Style
+							TargetType="{x:Type TextBox}"
+							x:Key="{x:Type TextBox}">
+							<Setter
+								Property="Foreground"
+								Value="{DynamicResource NormalAccentColor}" />
+							<Setter
+								Property="VerticalContentAlignment"
+								Value="Center" />
+							<Setter
+								Property="HorizontalContentAlignment"
+								Value="Center" />
+							<Setter
+								Property="TextBoxBase.IsReadOnly"
+								Value="True" />
+						</Style>
+					</ResourceDictionary>
+				</FrameworkElement.Resources>
+				<Grid.RowDefinitions>
+					<RowDefinition
+						Height="*" />
+					<RowDefinition
+						Height="*" />
+				</Grid.RowDefinitions>
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition
+						Width="50" />
+					<ColumnDefinition
+						Width="*" />
+				</Grid.ColumnDefinitions>
+				<TextBlock
+					Text="选中范围"
+					Foreground="{DynamicResource NormalAccentColor}"
+					FontWeight="Bold"
+					VerticalAlignment="Center" />
+				<StackPanel
+					Orientation="Horizontal"
+					Grid.Column="1">
+					<TextBox
+						Width="80"
+						Height="26"
+						Margin="2"
+						IsReadOnly="True"
+						Text="{Binding CutStartTime.TotalMilliseconds, Mode=OneWay, Converter={StaticResource NumberToTimeConverter}}" />
+					<TextBlock
+						Text="-"
+						Margin="2,0"
+						VerticalAlignment="Center" />
+					<TextBox
+						Width="80"
+						Height="26"
+						Margin="2"
+						IsReadOnly="True"
+						Text="{Binding CutStopTime.TotalMilliseconds, Mode=OneWay, Converter={StaticResource NumberToTimeConverter}}" />
+				</StackPanel>
+				<TextBlock
+					Grid.Row="1"
+					Text="查看范围"
+					Foreground="{DynamicResource NormalAccentColor}"
+					FontWeight="Bold"
+					VerticalAlignment="Center" />
+				<StackPanel
+					Grid.Row="1"
+					Orientation="Horizontal"
+					Grid.Column="1">
+					<TextBox
+						Width="80"
+						Height="26"
+						Margin="2"
+						IsReadOnly="True"
+						Text="{Binding StartTime.TotalMilliseconds, Mode=OneWay, Converter={StaticResource NumberToTimeConverter}}" />
+					<TextBlock
+						Text="-"
+						Margin="2,0"
+						VerticalAlignment="Center" />
+					<TextBox
+						Width="80"
+						Height="26"
+						Margin="2"
+						IsReadOnly="True"
+						Text="{Binding StopTime.TotalMilliseconds, Mode=OneWay, Converter={StaticResource NumberToTimeConverter}}" />
+				</StackPanel>
+			</Grid>
+			<Button
+				Name="XBtnHelp"
+				Grid.Column="4"
+				Style="{DynamicResource BtnBorderStyle}"
+				Margin="2,0"
+				Content="帮助">
+				<i:Interaction.Triggers>
+					<i:EventTrigger
+						EventName="Click">
+						<core:SetPropertyAction
+							PropertyName="IsOpen"
+							TargetObject="{Binding ElementName=XPopHelp}">
+							<core:SetPropertyAction.PropertyValue>
+								<system:Boolean>True</system:Boolean>
+							</core:SetPropertyAction.PropertyValue>
+						</core:SetPropertyAction>
+					</i:EventTrigger>
+				</i:Interaction.Triggers>
+			</Button>
+		</Grid>
+		<controls:MediaElementWrapper
+			Name="XMedia"
+			Grid.Row="1"
+			Height="0"
+			VerticalAlignment="Bottom"
+			UpdatePosition="XMedia_OnUpdatePosition" />
+		<Rectangle
+			Name="XPos"
+			Height="0" />
+		<Popup
+			Name="XPopHelp"
+			Grid.RowSpan="2"
+			Width="500"
+			Height="200"
+			AllowsTransparency="True"
+			PopupAnimation="Fade"
+			Placement="Center"
+			StaysOpen="False"
+			PlacementTarget="{Binding ElementName=XPos}">
+			<Border
+				BorderThickness="1"
+				BorderBrush="#FFD3D3D3"
+				Margin="10">
+				<UIElement.Effect>
+					<DropShadowEffect
+						BlurRadius="4"
+						Opacity="0.4"
+						ShadowDepth="4"
+						Color="Black" />
+				</UIElement.Effect>
+				<Grid
+					Background="#FFFFFFFF">
+					<Grid.RowDefinitions>
+						<RowDefinition
+							Height="30" />
+						<RowDefinition
+							Height="Auto" />
+					</Grid.RowDefinitions>
+					<Border
+						Background="{DynamicResource GradientBlue1}">
+						<TextBlock
+							Text="音频编辑帮助"
+							VerticalAlignment="Center"
+							Margin="4,0"
+							Foreground="#FFFFFFFF" />
+					</Border>
+					<StackPanel
+						Grid.Row="1"
+						VerticalAlignment="Center">
+						<FrameworkElement.Resources>
+							<ResourceDictionary>
+								<Style
+									TargetType="{x:Type TextBlock}"
+									x:Key="{x:Type TextBlock}">
+									<Setter
+										Property="TextBlock.Padding"
+										Value="10,6" />
+								</Style>
+							</ResourceDictionary>
+						</FrameworkElement.Resources>
+						<TextBlock
+							Text="◆ 鼠标滚轮放大，缩小谱图；" />
+						<TextBlock
+							Text="◆ 左键拖拽可选择范围，右键拖拽可更改查看范围；" />
+						<TextBlock
+							Text="◆ shift + 鼠标左键或者拖拽修改选取范围；" />
+						<TextBlock
+							Text="◆ 长按鼠标左键，开始从当前位置播放音频直到按键松手停止，并选中；" />
+						<TextBlock
+							Text="◆ 双击选取范围播放音频；" />
+					</StackPanel>
+				</Grid>
+			</Border>
+		</Popup>
+	</Grid>
+</controls:CMetroWindow>

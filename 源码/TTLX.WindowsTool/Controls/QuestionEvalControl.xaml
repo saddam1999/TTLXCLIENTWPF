@@ -1,0 +1,137 @@
+<UserControl
+	x:Class="TTLX.WindowsTool.Controls.QuestionEvalControl" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:local="clr-namespace:TTLX.WindowsTool.Controls" xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls" xmlns:questions1="clr-namespace:TTLX.WindowsTool.Models.Questions;assembly=TTLX.WindowsTool.Models"
+	Background="#FFFFFFFF">
+	<FrameworkElement.Resources>
+		<ResourceDictionary>
+			<local:SyncCheckedMultiConverter
+				x:Key="SyncCheckedMultiConverter" />
+			<local:EnumTypeToCheckedConverter
+				x:Key="EnumTypeToCheckedConverter" />
+		</ResourceDictionary>
+	</FrameworkElement.Resources>
+	<Grid>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition
+				Width="100" />
+			<ColumnDefinition
+				Width="*" />
+		</Grid.ColumnDefinitions>
+		<Grid.RowDefinitions>
+			<RowDefinition
+				Height="Auto" />
+			<RowDefinition
+				Height="Auto" />
+			<RowDefinition
+				Height="Auto" />
+			<RowDefinition
+				Height="Auto" />
+			<RowDefinition
+				Height="Auto" />
+			<RowDefinition
+				Height="Auto" />
+		</Grid.RowDefinitions>
+		<StackPanel
+			Orientation="Vertical"
+			HorizontalAlignment="Center"
+			VerticalAlignment="Center">
+			<RadioButton
+				Name="XRdoWord"
+				Content="单词"
+				Margin="0,0,0,4"
+				IsChecked="{Binding EvalModel.Mode, Converter={StaticResource EnumTypeToCheckedConverter}, ConverterParameter={x:Static questions1:EvalModeEnum.单词}}" />
+			<RadioButton
+				Name="XRdoSen"
+				Content="句子"
+				Margin="0,4,0,0"
+				IsChecked="{Binding EvalModel.Mode, Converter={StaticResource EnumTypeToCheckedConverter}, ConverterParameter={x:Static questions1:EvalModeEnum.句子}}" />
+		</StackPanel>
+		<TextBox
+			Name="XTxtE"
+			Grid.Column="1"
+			MinHeight="60"
+			Style="{DynamicResource TxtMulStyle}"
+			mah:TextBoxHelper.Watermark="原文"
+			Margin="4"
+			SpellCheck.IsEnabled="True"
+			Language="en"
+			Text="{Binding ForeignText, UpdateSourceTrigger=PropertyChanged}"
+			TextChanged="XTxtE_OnTextChanged" />
+		<StackPanel
+			Grid.Row="1"
+			Grid.ColumnSpan="2"
+			Orientation="Horizontal"
+			Margin="10">
+			<RadioButton
+				Name="XBtnTxtEval"
+				Style="{StaticResource RBtnTabStyle}"
+				Height="26"
+				Content="文本评测"
+				IsChecked="{Binding EvalModel.Type, Converter={StaticResource EnumTypeToCheckedConverter}, ConverterParameter={x:Static questions1:EvalTypeEnum.自定义文本}}" />
+			<RadioButton
+				Name="XBtnSymbolEval"
+				Style="{StaticResource RBtnTabStyle}"
+				Height="26"
+				Content="音标评测"
+				IsChecked="{Binding EvalModel.Type, Converter={StaticResource EnumTypeToCheckedConverter}, ConverterParameter={x:Static questions1:EvalTypeEnum.自定义音标}}" />
+		</StackPanel>
+		<Grid
+			Row="2"
+			ColumnSpan="2"
+			Visibility="{Binding ElementName=XBtnSymbolEval, Path=IsChecked, Converter={StaticResource BoolToVisibilityConverter}}">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition
+					Width="100" />
+				<ColumnDefinition
+					Width="*" />
+			</Grid.ColumnDefinitions>
+			<Button
+				Name="XBtnAddWordPron"
+				Height="30"
+				VerticalAlignment="Top"
+				Margin="10"
+				Content="自定义"
+				Click="XBtnAddWordPron_OnClick" />
+			<local:WordPronSymbolPanel
+				AddSymbol="WordPronSymbolPanel_OnAddSymbol"
+				Grid.Column="1"
+				ItemsSource="{Binding EvalModel.WordPronunciationMap}" />
+		</Grid>
+		<Grid
+			Row="3"
+			ColumnSpan="2"
+			Visibility="{Binding ElementName=XBtnTxtEval, Path=IsChecked, Converter={StaticResource BoolToVisibilityConverter}}">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition
+					Width="100" />
+				<ColumnDefinition
+					Width="*" />
+			</Grid.ColumnDefinitions>
+			<CheckBox
+				Name="XCbSync"
+				Content="同原文"
+				HorizontalAlignment="Center"
+				VerticalAlignment="Bottom"
+				Margin="0,0,0,10"
+				Checked="XCbSync_OnChecked">
+				<ToggleButton.IsChecked>
+					<MultiBinding
+						Mode="OneTime"
+						Converter="{StaticResource SyncCheckedMultiConverter}">
+						<Binding
+							Path="ForeignText" />
+						<Binding
+							Path="EvalModel.Text" />
+					</MultiBinding>
+				</ToggleButton.IsChecked>
+			</CheckBox>
+			<TextBox
+				Grid.Column="1"
+				Style="{DynamicResource TxtMulStyle}"
+				Margin="4"
+				mah:TextBoxHelper.Watermark="提示：评测内容不可出现中文"
+				MinHeight="60"
+				Text="{Binding EvalModel.Text}"
+				IsEnabled="{Binding ElementName=XCbSync, Path=IsChecked, Converter={StaticResource ReverseBoolConverter}}" />
+		</Grid>
+	</Grid>
+</UserControl>

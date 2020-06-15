@@ -1,0 +1,322 @@
+<UserControl
+	x:Class="TTLX.WindowsTool.Controls.AudioEditScaleCanvas" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:local="clr-namespace:TTLX.WindowsTool.Controls">
+	<FrameworkElement.Resources>
+		<ResourceDictionary>
+			<SolidColorBrush
+				Color="DarkGreen"
+				x:Key="LineColor" />
+		</ResourceDictionary>
+	</FrameworkElement.Resources>
+	<Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition
+				Height="*" />
+			<RowDefinition
+				Height="30" />
+		</Grid.RowDefinitions>
+		<Border
+			BorderThickness="1"
+			BorderBrush="{StaticResource LineColor}"
+			Background="#FF000000">
+			<Grid>
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition
+						Width="*" />
+					<ColumnDefinition
+						Width="*" />
+					<ColumnDefinition
+						Width="*" />
+					<ColumnDefinition
+						Width="*" />
+					<ColumnDefinition
+						Width="*" />
+					<ColumnDefinition
+						Width="*" />
+					<ColumnDefinition
+						Width="*" />
+					<ColumnDefinition
+						Width="*" />
+					<ColumnDefinition
+						Width="*" />
+					<ColumnDefinition
+						Width="*" />
+					<ColumnDefinition
+						Width="*" />
+					<ColumnDefinition
+						Width="*" />
+				</Grid.ColumnDefinitions>
+				<Grid.RowDefinitions>
+					<RowDefinition
+						Height="*" />
+					<RowDefinition
+						Height="*" />
+					<RowDefinition
+						Height="*" />
+					<RowDefinition
+						Height="*" />
+					<RowDefinition
+						Height="*" />
+					<RowDefinition
+						Height="*" />
+				</Grid.RowDefinitions>
+				<Rectangle
+					Grid.Row="0"
+					Grid.ColumnSpan="12"
+					Height="1"
+					Fill="{StaticResource LineColor}"
+					VerticalAlignment="Bottom" />
+				<Rectangle
+					Grid.Row="1"
+					Grid.ColumnSpan="12"
+					Height="1"
+					Fill="{StaticResource LineColor}"
+					VerticalAlignment="Bottom" />
+				<Rectangle
+					Grid.Row="2"
+					Grid.ColumnSpan="12"
+					Height="1"
+					Fill="{StaticResource LineColor}"
+					VerticalAlignment="Bottom" />
+				<Rectangle
+					Grid.Row="3"
+					Grid.ColumnSpan="12"
+					Height="1"
+					Fill="{StaticResource LineColor}"
+					VerticalAlignment="Bottom" />
+				<Rectangle
+					Grid.Row="4"
+					Grid.ColumnSpan="12"
+					Height="1"
+					Fill="{StaticResource LineColor}"
+					VerticalAlignment="Bottom" />
+				<Rectangle
+					Grid.Column="0"
+					Grid.RowSpan="6"
+					Width="1"
+					Fill="{StaticResource LineColor}"
+					HorizontalAlignment="Right" />
+				<Rectangle
+					Grid.Column="1"
+					Grid.RowSpan="6"
+					Width="1"
+					Fill="{StaticResource LineColor}"
+					HorizontalAlignment="Right" />
+				<Rectangle
+					Grid.Column="2"
+					Grid.RowSpan="6"
+					Width="1"
+					Fill="{StaticResource LineColor}"
+					HorizontalAlignment="Right" />
+				<Rectangle
+					Grid.Column="3"
+					Grid.RowSpan="6"
+					Width="1"
+					Fill="{StaticResource LineColor}"
+					HorizontalAlignment="Right" />
+				<Rectangle
+					Grid.Column="4"
+					Grid.RowSpan="6"
+					Width="1"
+					Fill="{StaticResource LineColor}"
+					HorizontalAlignment="Right" />
+				<Rectangle
+					Grid.Column="5"
+					Grid.RowSpan="6"
+					Width="1"
+					Fill="{StaticResource LineColor}"
+					HorizontalAlignment="Right" />
+				<Rectangle
+					Grid.Column="6"
+					Grid.RowSpan="6"
+					Width="1"
+					Fill="{StaticResource LineColor}"
+					HorizontalAlignment="Right" />
+				<Rectangle
+					Grid.Column="7"
+					Grid.RowSpan="6"
+					Width="1"
+					Fill="{StaticResource LineColor}"
+					HorizontalAlignment="Right" />
+				<Rectangle
+					Grid.Column="8"
+					Grid.RowSpan="6"
+					Width="1"
+					Fill="{StaticResource LineColor}"
+					HorizontalAlignment="Right" />
+				<Rectangle
+					Grid.Column="9"
+					Grid.RowSpan="6"
+					Width="1"
+					Fill="{StaticResource LineColor}"
+					HorizontalAlignment="Right" />
+				<Rectangle
+					Grid.Column="10"
+					Grid.RowSpan="6"
+					Width="1"
+					Fill="{StaticResource LineColor}"
+					HorizontalAlignment="Right" />
+			</Grid>
+		</Border>
+		<Grid
+			Row="1"
+			Background="#FF000000">
+			<FrameworkElement.Resources>
+				<ResourceDictionary>
+					<Style
+						TargetType="{x:Type TextBlock}"
+						x:Key="{x:Type TextBlock}">
+						<Setter
+							Property="Foreground"
+							Value="#FFFFFFFF" />
+						<Setter
+							Property="FontSize"
+							Value="9" />
+					</Style>
+				</ResourceDictionary>
+			</FrameworkElement.Resources>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition
+					Width="*" />
+				<ColumnDefinition
+					Width="*" />
+				<ColumnDefinition
+					Width="*" />
+				<ColumnDefinition
+					Width="*" />
+				<ColumnDefinition
+					Width="*" />
+				<ColumnDefinition
+					Width="*" />
+				<ColumnDefinition
+					Width="*" />
+				<ColumnDefinition
+					Width="*" />
+				<ColumnDefinition
+					Width="*" />
+				<ColumnDefinition
+					Width="*" />
+				<ColumnDefinition
+					Width="*" />
+				<ColumnDefinition
+					Width="*" />
+				<ColumnDefinition
+					Width="*" />
+				<ColumnDefinition
+					Width="*" />
+				<ColumnDefinition
+					Width="*" />
+				<ColumnDefinition
+					Width="*" />
+				<ColumnDefinition
+					Width="*" />
+				<ColumnDefinition
+					Width="*" />
+				<ColumnDefinition
+					Width="*" />
+				<ColumnDefinition
+					Width="*" />
+				<ColumnDefinition
+					Width="*" />
+				<ColumnDefinition
+					Width="*" />
+				<ColumnDefinition
+					Width="*" />
+				<ColumnDefinition
+					Width="*" />
+			</Grid.ColumnDefinitions>
+			<TextBlock
+				Name="Tb1"
+				VerticalAlignment="Center"
+				HorizontalAlignment="Left"
+				Grid.Column="0"
+				Grid.ColumnSpan="2"
+				Text="00:00"
+				Margin="1,0,0,0" />
+			<TextBlock
+				Name="Tb2"
+				VerticalAlignment="Center"
+				HorizontalAlignment="Center"
+				Grid.Column="1"
+				Grid.ColumnSpan="2"
+				Text="00:00" />
+			<TextBlock
+				Name="Tb3"
+				VerticalAlignment="Center"
+				HorizontalAlignment="Center"
+				Grid.Column="3"
+				Grid.ColumnSpan="2"
+				Text="00:00" />
+			<TextBlock
+				Name="Tb4"
+				VerticalAlignment="Center"
+				HorizontalAlignment="Center"
+				Grid.Column="5"
+				Grid.ColumnSpan="2"
+				Text="00:00" />
+			<TextBlock
+				Name="Tb5"
+				VerticalAlignment="Center"
+				HorizontalAlignment="Center"
+				Grid.Column="7"
+				Grid.ColumnSpan="2"
+				Text="00:00" />
+			<TextBlock
+				Name="Tb6"
+				VerticalAlignment="Center"
+				HorizontalAlignment="Center"
+				Grid.Column="9"
+				Grid.ColumnSpan="2"
+				Text="00:00" />
+			<TextBlock
+				Name="Tb7"
+				VerticalAlignment="Center"
+				HorizontalAlignment="Center"
+				Grid.Column="11"
+				Grid.ColumnSpan="2"
+				Text="00:00" />
+			<TextBlock
+				Name="Tb8"
+				VerticalAlignment="Center"
+				HorizontalAlignment="Center"
+				Grid.Column="13"
+				Grid.ColumnSpan="2"
+				Text="00:00" />
+			<TextBlock
+				Name="Tb9"
+				VerticalAlignment="Center"
+				HorizontalAlignment="Center"
+				Grid.Column="15"
+				Grid.ColumnSpan="2"
+				Text="00:00" />
+			<TextBlock
+				Name="Tb10"
+				VerticalAlignment="Center"
+				HorizontalAlignment="Center"
+				Grid.Column="17"
+				Grid.ColumnSpan="2"
+				Text="00:00" />
+			<TextBlock
+				Name="Tb11"
+				VerticalAlignment="Center"
+				HorizontalAlignment="Center"
+				Grid.Column="19"
+				Grid.ColumnSpan="2"
+				Text="00:00" />
+			<TextBlock
+				Name="Tb12"
+				VerticalAlignment="Center"
+				HorizontalAlignment="Center"
+				Grid.Column="21"
+				Grid.ColumnSpan="2"
+				Text="00:00" />
+			<TextBlock
+				Name="Tb13"
+				VerticalAlignment="Center"
+				HorizontalAlignment="Right"
+				Grid.Column="22"
+				Grid.ColumnSpan="2"
+				Text="00:00"
+				Margin="0,0,1,0" />
+		</Grid>
+	</Grid>
+</UserControl>

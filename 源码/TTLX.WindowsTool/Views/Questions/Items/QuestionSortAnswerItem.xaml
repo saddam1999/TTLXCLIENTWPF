@@ -1,0 +1,42 @@
+<UserControl
+	x:Class="TTLX.WindowsTool.Views.Questions.Items.QuestionSortAnswerItem" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:local="clr-namespace:TTLX.WindowsTool.Views.Questions.Items" xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls">
+	<Grid
+		Background="#FFFFFFFF">
+		<Grid.RowDefinitions>
+			<RowDefinition
+				Height="Auto" />
+			<RowDefinition
+				Height="Auto" />
+		</Grid.RowDefinitions>
+		<Border
+			Width="40"
+			Height="40"
+			Margin="3"
+			CornerRadius="10"
+			BorderThickness="2"
+			BorderBrush="{DynamicResource NormalAccentColor}">
+			<TextBlock
+				VerticalAlignment="Center"
+				HorizontalAlignment="Center"
+				Text="{Binding OptionMark}" />
+		</Border>
+		<Border
+			Width="40"
+			Height="40"
+			Margin="3"
+			CornerRadius="10"
+			Background="#FFFFFFFF"
+			Opacity="0.7"
+			Visibility="{Binding ElementName=XSwitchStatus, Path=IsChecked, Converter={StaticResource ReverseBoolToVisibilityConverter}}" />
+		<mah:ToggleSwitch
+			Name="XSwitchStatus"
+			Grid.Row="1"
+			OnLabel="显示"
+			OffLabel="问题"
+			Margin="0,10"
+			Height="30"
+			HorizontalAlignment="Center"
+			Style="{StaticResource MahApps.Metro.Styles.ToggleSwitch.Win10}"
+			IsChecked="{Binding IsVisible}" />
+	</Grid>
+</UserControl>

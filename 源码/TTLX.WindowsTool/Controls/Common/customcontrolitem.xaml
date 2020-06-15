@@ -1,0 +1,62 @@
+<UserControl
+	x:Class="TTLX.WindowsTool.Controls.Common.CommonUserControlItem" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:local="clr-namespace:TTLX.WindowsTool.Controls.Common">
+	<FrameworkElement.Style>
+		<Style
+			TargetType="{x:Type UserControl}">
+			<Setter
+				Property="Template">
+				<Setter.Value>
+					<ControlTemplate
+						TargetType="{x:Type UserControl}">
+						<Border
+							Background="#FFFFFFFF"
+							Padding="4"
+							BorderBrush="{DynamicResource NormalGrayColor}"
+							BorderThickness="1">
+							<Grid>
+								<Grid.ColumnDefinitions>
+									<ColumnDefinition
+										Width="Auto" />
+									<ColumnDefinition
+										Width="*" />
+									<ColumnDefinition
+										Width="Auto" />
+								</Grid.ColumnDefinitions>
+								<Border
+									Name="XBdMove"
+									Height="30"
+									Width="40"
+									Background="{DynamicResource LightAccentColor}"
+									HorizontalAlignment="Left"
+									Margin="0,0,10,0"
+									Cursor="Hand">
+									<TextBlock
+										Text="移动"
+										VerticalAlignment="Center"
+										HorizontalAlignment="Center"
+										Foreground="#FFFFFFFF"
+										Cursor="Hand" />
+								</Border>
+								<ContentPresenter
+									Grid.Column="1"
+									ContentTemplate="{TemplateBinding ContentTemplate}"
+									Content="{TemplateBinding Content}"
+									HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+									VerticalAlignment="Center" />
+								<!--未知连接 ID：1-->
+								<Button
+									Name="XBtnDel"
+									Style="{DynamicResource BtnDeleteStyle}"
+									Grid.Column="2"
+									Width="60"
+									Margin="4,0,0,0"
+									HorizontalAlignment="Right"
+									Content="删除" />
+							</Grid>
+						</Border>
+					</ControlTemplate>
+				</Setter.Value>
+			</Setter>
+		</Style>
+	</FrameworkElement.Style>
+</UserControl>

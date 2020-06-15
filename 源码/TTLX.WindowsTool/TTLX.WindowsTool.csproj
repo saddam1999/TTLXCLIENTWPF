@@ -1,0 +1,1027 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProjectGuid>{E7272935-63A9-4829-8A2B-3FFC4B0933E4}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>TTLX.WindowsTool</RootNamespace>
+    <AssemblyName>TTLX.WindowsTool</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60DC8134-EBA5-43B8-BCC9-BB4BC16C2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <ApplicationIcon>TTLX.WindowsTool.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoStdLib>true</NoStdLib>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoStdLib>true</NoStdLib>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Autofac">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\北京天天乐学教育科技有限公司\天天乐学\Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="Autofac.Extras.CommonServiceLocator">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\北京天天乐学教育科技有限公司\天天乐学\Autofac.Extras.CommonServiceLocator.dll</HintPath>
+    </Reference>
+    <Reference Include="AutoUpdater.NET">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\北京天天乐学教育科技有限公司\天天乐学\AutoUpdater.NET.dll</HintPath>
+    </Reference>
+    <Reference Include="CefSharp">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\北京天天乐学教育科技有限公司\天天乐学\CefSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="CefSharp.Core">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\北京天天乐学教育科技有限公司\天天乐学\CefSharp.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="CefSharp.Wpf">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\北京天天乐学教育科技有限公司\天天乐学\CefSharp.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="GalaSoft.MvvmLight">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\北京天天乐学教育科技有限公司\天天乐学\GalaSoft.MvvmLight.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlRenderer.WPF">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\北京天天乐学教育科技有限公司\天天乐学\HtmlRenderer.WPF.dll</HintPath>
+    </Reference>
+    <Reference Include="ImageProcessor">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\北京天天乐学教育科技有限公司\天天乐学\ImageProcessor.dll</HintPath>
+    </Reference>
+    <Reference Include="MahApps.Metro">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\北京天天乐学教育科技有限公司\天天乐学\MahApps.Metro.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\北京天天乐学教育科技有限公司\天天乐学\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\北京天天乐学教育科技有限公司\天天乐学\Microsoft.Threading.Tasks.dll</HintPath>
+    </Reference>
+    <Reference Include="NAudio">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\北京天天乐学教育科技有限公司\天天乐学\NAudio.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\北京天天乐学教育科技有限公司\天天乐学\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\北京天天乐学教育科技有限公司\天天乐学\System.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\北京天天乐学教育科技有限公司\天天乐学\System.Threading.Tasks.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="TTLX.WindowsTool.Models">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\北京天天乐学教育科技有限公司\天天乐学\TTLX.WindowsTool.Models.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="WriteableBitmapEx.Wpf">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\北京天天乐学教育科技有限公司\天天乐学\WriteableBitmapEx.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Interactivity" />
+    <Reference Include="GongSolutions.WPF.DragDrop" />
+    <Reference Include="Smith.WPF.HtmlEditor" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ConfigWnd.xaml.cs">
+      <DependentUpon>ConfigWnd.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\AudioComboBoxEdit.xaml.cs">
+      <DependentUpon>AudioComboBoxEdit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\AudioEdit.cs" />
+    <Compile Include="Controls\AudioEditCutMarker.cs" />
+    <Compile Include="Controls\AudioEditPlayMarker.cs" />
+    <Compile Include="Controls\AudioEditScaleCanvas.cs" />
+    <Compile Include="Controls\AudioLocalComboBox.cs" />
+    <Compile Include="Controls\AudioLocalList.xaml.cs">
+      <DependentUpon>AudioLocalList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\AudioUrlToVisibilityConverter.cs" />
+    <Compile Include="Controls\BookTagControl.xaml.cs">
+      <DependentUpon>BookTagControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ClickReadImageEdit.xaml.cs">
+      <DependentUpon>ClickReadImageEdit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ClickReadImageEditItem.xaml.cs">
+      <DependentUpon>ClickReadImageEditItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ClosePopupBehavior.cs" />
+    <Compile Include="Controls\Common\CommonUserControlItem.cs" />
+    <Compile Include="Controls\Common\QuestionHorizontalListView.xaml.cs">
+      <DependentUpon>QuestionHorizontalListView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Common\QuestionVideoHorizontalListView.xaml.cs">
+      <DependentUpon>QuestionVideoHorizontalListView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Common\RichTextBoxEditor.xaml.cs">
+      <DependentUpon>RichTextBoxEditor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Common\RichTextEntity.cs" />
+    <Compile Include="Controls\EnumTypeToCheckedConverter.cs" />
+    <Compile Include="Controls\FlyToNormalSymbolConverter.cs" />
+    <Compile Include="Controls\ImageWrapper.xaml.cs">
+      <DependentUpon>ImageWrapper.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\MediaElementWrapperPlayer.xaml.cs">
+      <DependentUpon>MediaElementWrapperPlayer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\MultiSliderValueConverter.cs" />
+    <Compile Include="Controls\QuestionEvalControl.xaml.cs">
+      <DependentUpon>QuestionEvalControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\QuestionTypeItem.cs" />
+    <Compile Include="Controls\QuestionTypeSelection.xaml.cs">
+      <DependentUpon>QuestionTypeSelection.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\SeriesIdToImageVisibilityConverter.cs" />
+    <Compile Include="Controls\SeriesItem.xaml.cs">
+      <DependentUpon>SeriesItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\SyncCheckedMultiConverter.cs" />
+    <Compile Include="Controls\ToggleButtonCheckedToContentConverter.cs" />
+    <Compile Include="Controls\TopicTypeItem.cs" />
+    <Compile Include="Controls\TopicTypeSelection.xaml.cs">
+      <DependentUpon>TopicTypeSelection.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ValueToVisibilityConverter.cs" />
+    <Compile Include="Controls\WordPronSymbolPanel.xaml.cs">
+      <DependentUpon>WordPronSymbolPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\AudioEditWnd.xaml.cs">
+      <DependentUpon>AudioEditWnd.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\AudioEditWndData.cs" />
+    <Compile Include="Dialogs\ImageEditWnd.xaml.cs">
+      <DependentUpon>ImageEditWnd.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\KnowledgeWordDialog.xaml.cs">
+      <DependentUpon>KnowledgeWordDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\LessonMoveDialog.xaml.cs">
+      <DependentUpon>LessonMoveDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\MaterialsWnd.xaml.cs">
+      <DependentUpon>MaterialsWnd.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\PackageQuestionDatabaseWnd.xaml.cs">
+      <DependentUpon>PackageQuestionDatabaseWnd.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\PackageQuestionEditWnd.xaml.cs">
+      <DependentUpon>PackageQuestionEditWnd.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\QuestionJsonEditWnd.xaml.cs">
+      <DependentUpon>QuestionJsonEditWnd.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\QuestionKnowledgeWnd.xaml.cs">
+      <DependentUpon>QuestionKnowledgeWnd.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\TopicMoveDialog.xaml.cs">
+      <DependentUpon>TopicMoveDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\VideoEditWnd.xaml.cs">
+      <DependentUpon>VideoEditWnd.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\WidthToVisibilityConverter.cs" />
+    <Compile Include="Dialogs\WordPronSymbolMapDialog.xaml.cs">
+      <DependentUpon>WordPronSymbolMapDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <DependentUpon>Settings.settings</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="ViewModel\ViewModelLocator.cs" />
+    <Compile Include="Views\BookDetails.xaml.cs">
+      <DependentUpon>BookDetails.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\BookList.xaml.cs">
+      <DependentUpon>BookList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\BookTypeToCheckBtnVisibilityConverter.cs" />
+    <Compile Include="Views\BookTypeToDelBtnVisibilityConverter.cs" />
+    <Compile Include="Views\BookTypeToEvalVisibilityConverter.cs" />
+    <Compile Include="Views\BtnExerciseVisibilityConverter.cs" />
+    <Compile Include="Views\BtnLessonContentVisibilityConverter.cs" />
+    <Compile Include="Views\INav.cs" />
+    <Compile Include="Views\ITopicDetails.cs" />
+    <Compile Include="Views\KET\KETLessonDetails.xaml.cs">
+      <DependentUpon>KETLessonDetails.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\KET\KETQuestionItemDetails.xaml.cs">
+      <DependentUpon>KETQuestionItemDetails.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\KET\KETQuestionList.xaml.cs">
+      <DependentUpon>KETQuestionList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\KET\KETQuestionTypeEnum.cs" />
+    <Compile Include="Views\LessonDetails.xaml.cs">
+      <DependentUpon>LessonDetails.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\LessonList.xaml.cs">
+      <DependentUpon>LessonList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Login.xaml.cs">
+      <DependentUpon>Login.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MainNavService.cs" />
+    <Compile Include="Views\MaterialMedia\MaterialAudioList.xaml.cs">
+      <DependentUpon>MaterialAudioList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MaterialMedia\MaterialPictureList.xaml.cs">
+      <DependentUpon>MaterialPictureList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Materials\LessonEditableToDelBtnVisibilityConverter.cs" />
+    <Compile Include="Views\Materials\MaterialBookDetails.xaml.cs">
+      <DependentUpon>MaterialBookDetails.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Materials\MaterialLessonDetails.xaml.cs">
+      <DependentUpon>MaterialLessonDetails.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Materials\MaterialLessonList.xaml.cs">
+      <DependentUpon>MaterialLessonList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\NavBar.xaml.cs">
+      <DependentUpon>NavBar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\NavControlEx.cs" />
+    <Compile Include="Views\QuestionKnowledge\Controls\KnowledgeHierarchicalItemsControl.xaml.cs">
+      <DependentUpon>KnowledgeHierarchicalItemsControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\QuestionKnowledge\Controls\KnowledgeTagItemsControl.xaml.cs">
+      <DependentUpon>KnowledgeTagItemsControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\QuestionKnowledge\Controls\KnowledgeTagListView.xaml.cs">
+      <DependentUpon>KnowledgeTagListView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\QuestionKnowledge\Controls\KnowledgeTagsControl.xaml.cs">
+      <DependentUpon>KnowledgeTagsControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\QuestionKnowledge\Controls\KnowledgeTagTreeView.xaml.cs">
+      <DependentUpon>KnowledgeTagTreeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\QuestionKnowledge\KnowledgeDetails.xaml.cs">
+      <DependentUpon>KnowledgeDetails.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\QuestionKnowledge\KnowledgeList.xaml.cs">
+      <DependentUpon>KnowledgeList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\QuestionKnowledge\KnowledgeTagTreeList.xaml.cs">
+      <DependentUpon>KnowledgeTagTreeList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Questions\IQuestionItem.cs" />
+    <Compile Include="Views\Questions\Items\ArrangeTypeToVisibilityConverter.cs" />
+    <Compile Include="Views\Questions\Items\QuestionSelectionItem.xaml.cs">
+      <DependentUpon>QuestionSelectionItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Questions\Items\QuestionSortAnswerItem.xaml.cs">
+      <DependentUpon>QuestionSortAnswerItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Questions\Items\QuestionSortItem.xaml.cs">
+      <DependentUpon>QuestionSortItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Questions\Items\SelectionTypeToVisibilityConverter.cs" />
+    <Compile Include="Views\Questions\QuestionAudioClickReadDetails.cs" />
+    <Compile Include="Views\Questions\QuestionAudioDetails.xaml.cs">
+      <DependentUpon>QuestionAudioDetails.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Questions\QuestionAudioTxtDetails.cs" />
+    <Compile Include="Views\Questions\QuestionAudioVolumeDetails.xaml.cs">
+      <DependentUpon>QuestionAudioVolumeDetails.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Questions\QuestionDubDetails.xaml.cs">
+      <DependentUpon>QuestionDubDetails.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Questions\QuestionFillBlankDetails.xaml.cs">
+      <DependentUpon>QuestionFillBlankDetails.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Questions\QuestionItem.xaml.cs">
+      <DependentUpon>QuestionItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Questions\QuestionQADetails.cs" />
+    <Compile Include="Views\Questions\QuestionSelectionDetails.xaml.cs">
+      <DependentUpon>QuestionSelectionDetails.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Questions\QuestionSortDetails.xaml.cs">
+      <DependentUpon>QuestionSortDetails.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Questions\QuestionTextInputDetails.xaml.cs">
+      <DependentUpon>QuestionTextInputDetails.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Questions\QuestionTrueFalseDetails.xaml.cs">
+      <DependentUpon>QuestionTrueFalseDetails.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Questions\SplitResultTypeToVisibilityConverter.cs" />
+    <Compile Include="Views\TopicContents\ITopicContent.cs" />
+    <Compile Include="Views\TopicContents\TopicContentAudio.cs" />
+    <Compile Include="Views\TopicContents\TopicContentHTMLText.cs" />
+    <Compile Include="Views\TopicContents\TopicContentImage.cs" />
+    <Compile Include="Views\TopicContents\TopicContentItem.cs" />
+    <Compile Include="Views\TopicContents\TopicContentRichText.cs" />
+    <Compile Include="Views\TopicContents\TopicContentText.cs" />
+    <Compile Include="Views\TopicContents\TopicContentVideo.cs" />
+    <Compile Include="Views\TopicContents\TypeToTopicContentConverter.cs" />
+    <Compile Include="Views\TopicDetails.xaml.cs">
+      <DependentUpon>TopicDetails.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TopicList.xaml.cs">
+      <DependentUpon>TopicList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TopicPackages\Controls\CountToLinkButtonStyleConverter.cs" />
+    <Compile Include="Views\TopicPackages\Controls\IsCompletedToLinkButtonStyleConverter.cs" />
+    <Compile Include="Views\TopicPackages\Controls\KnowledgeItemEdit.xaml.cs">
+      <DependentUpon>KnowledgeItemEdit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TopicPackages\Controls\KnowledgeItemsInLessonList.xaml.cs">
+      <DependentUpon>KnowledgeItemsInLessonList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TopicPackages\Controls\MediaItemTipTextBox.xaml.cs">
+      <DependentUpon>MediaItemTipTextBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TopicPackages\Controls\PackageQuestionAudioEdit.cs" />
+    <Compile Include="Views\TopicPackages\Controls\PackageQuestionConversationItem.xaml.cs">
+      <DependentUpon>PackageQuestionConversationItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TopicPackages\Controls\PackageQuestionDatabase.xaml.cs">
+      <DependentUpon>PackageQuestionDatabase.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TopicPackages\Controls\PackageQuestionHorizontalListView.xaml.cs">
+      <DependentUpon>PackageQuestionHorizontalListView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TopicPackages\Controls\PackageQuestionImageEdit.cs" />
+    <Compile Include="Views\TopicPackages\Controls\PackageQuestionMatchItem.xaml.cs">
+      <DependentUpon>PackageQuestionMatchItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TopicPackages\Controls\PackageQuestionReadingItem.xaml.cs">
+      <DependentUpon>PackageQuestionReadingItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TopicPackages\Controls\PackageQuestionRichTextEdit.cs" />
+    <Compile Include="Views\TopicPackages\Controls\PackageQuestionRootChildDetails.xaml.cs">
+      <DependentUpon>PackageQuestionRootChildDetails.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TopicPackages\Controls\PackageQuestionSelectionItem.xaml.cs">
+      <DependentUpon>PackageQuestionSelectionItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TopicPackages\Controls\PackageQuestionStemItem.xaml.cs">
+      <DependentUpon>PackageQuestionStemItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TopicPackages\Controls\PackageQuestionStemItemsControl.xaml.cs">
+      <DependentUpon>PackageQuestionStemItemsControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TopicPackages\Controls\PackageQuestionTagFiltView.xaml.cs">
+      <DependentUpon>PackageQuestionTagFiltView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TopicPackages\Controls\PackageQuestionTagSelection.xaml.cs">
+      <DependentUpon>PackageQuestionTagSelection.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TopicPackages\Controls\PackageQuestionTextEdit.cs" />
+    <Compile Include="Views\TopicPackages\Controls\PackageQuestionTypeFiltView.xaml.cs">
+      <DependentUpon>PackageQuestionTypeFiltView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TopicPackages\Controls\PackageQuestionTypeSelection.xaml.cs">
+      <DependentUpon>PackageQuestionTypeSelection.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TopicPackages\Controls\QuestionTypeFiltItem.cs" />
+    <Compile Include="Views\TopicPackages\Controls\SelectionMediaTypeToVisibilityConverter.cs" />
+    <Compile Include="Views\TopicPackages\CountToColorConverter.cs" />
+    <Compile Include="Views\TopicPackages\KnowledgeTagVisibilityConverter.cs" />
+    <Compile Include="Views\TopicPackages\Questions\ConversationData.cs" />
+    <Compile Include="Views\TopicPackages\Questions\IPackageQuestionItem.cs" />
+    <Compile Include="Views\TopicPackages\Questions\PackageQuestionAudioDetails.xaml.cs">
+      <DependentUpon>PackageQuestionAudioDetails.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TopicPackages\Questions\PackageQuestionBlankSelectionDetails.xaml.cs">
+      <DependentUpon>PackageQuestionBlankSelectionDetails.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TopicPackages\Questions\PackageQuestionConversationDetails.xaml.cs">
+      <DependentUpon>PackageQuestionConversationDetails.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TopicPackages\Questions\PackageQuestionDrawDetails.xaml.cs">
+      <DependentUpon>PackageQuestionDrawDetails.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TopicPackages\Questions\PackageQuestionFillBlankDetails.xaml.cs">
+      <DependentUpon>PackageQuestionFillBlankDetails.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TopicPackages\Questions\PackageQuestionFillBlankMediaItemDetails.xaml.cs">
+      <DependentUpon>PackageQuestionFillBlankMediaItemDetails.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TopicPackages\Questions\PackageQuestionItem.xaml.cs">
+      <DependentUpon>PackageQuestionItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TopicPackages\Questions\PackageQuestionMatchDetails.xaml.cs">
+      <DependentUpon>PackageQuestionMatchDetails.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TopicPackages\Questions\PackageQuestionReadingDetails.xaml.cs">
+      <DependentUpon>PackageQuestionReadingDetails.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TopicPackages\Questions\PackageQuestionRootDetails.xaml.cs">
+      <DependentUpon>PackageQuestionRootDetails.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TopicPackages\Questions\PackageQuestionSelectionDetails.xaml.cs">
+      <DependentUpon>PackageQuestionSelectionDetails.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TopicPackages\Questions\PackageQuestionTrueFalseDetails.xaml.cs">
+      <DependentUpon>PackageQuestionTrueFalseDetails.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TopicPackages\Questions\PackageQuestionUnkownDetails.xaml.cs">
+      <DependentUpon>PackageQuestionUnkownDetails.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TopicPackages\Questions\RoleTypeEnum.cs" />
+    <Compile Include="Views\TopicPackages\TopicPackageLessonDetails.xaml.cs">
+      <DependentUpon>TopicPackageLessonDetails.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TopicPackages\TopicPackageLessonList.xaml.cs">
+      <DependentUpon>TopicPackageLessonList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TopicPackages\TopicPackageQuestionBeforeList.xaml.cs">
+      <DependentUpon>TopicPackageQuestionBeforeList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TopicPackages\TopicPackageQuestionCheckDetails.xaml.cs">
+      <DependentUpon>TopicPackageQuestionCheckDetails.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TopicPackages\TopicPackageQuestionList.xaml.cs">
+      <DependentUpon>TopicPackageQuestionList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Topics\ClickReadDetails.xaml.cs">
+      <DependentUpon>ClickReadDetails.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Topics\CustomWebDetails.xaml.cs">
+      <DependentUpon>CustomWebDetails.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Topics\DubVideoDetails.xaml.cs">
+      <DependentUpon>DubVideoDetails.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Topics\ImageReadDetails.xaml.cs">
+      <DependentUpon>ImageReadDetails.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Topics\QuestionsHasAnySortToEnable.cs" />
+    <Compile Include="Views\Topics\SongAudioDetails.xaml.cs">
+      <DependentUpon>SongAudioDetails.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Topics\SongVideoDetails.xaml.cs">
+      <DependentUpon>SongVideoDetails.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Topics\TopicContentDetails.xaml.cs">
+      <DependentUpon>TopicContentDetails.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Topics\TxtReadDetails.xaml.cs">
+      <DependentUpon>TxtReadDetails.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resources" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TTLX.WindowsTool.Business\TTLX.WindowsTool.Business.csproj">
+      <Project>{e7272935-63a9-4829-8a2b-3ffc4b0933e2}</Project>
+      <Name>TTLX.WindowsTool.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TTLX.WindowsTool.Common\TTLX.WindowsTool.Common.csproj">
+      <Project>{e7272935-63a9-4829-8a2b-3ffc4b0933e3}</Project>
+      <Name>TTLX.WindowsTool.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="app.manifest" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </ApplicationDefinition>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="ConfigWnd.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\AudioComboBoxEdit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="controls\audioedit\audioedit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="controls\audioedit\audioeditcutmarker.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="controls\audioedit\audioeditplaymarker.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="controls\audioedit\audioeditscalecanvas.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\AudioLocalList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\BookTagControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\ClickReadImageEdit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\ClickReadImageEditItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Common\customcontrolitem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Common\QuestionHorizontalListView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Common\QuestionVideoHorizontalListView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Common\RichTextBoxEditor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\ImageWrapper.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\MediaElementWrapperPlayer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\QuestionEvalControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\QuestionTypeSelection.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\SeriesItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\TopicTypeSelection.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\WordPronSymbolPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Dialogs\AudioEditWnd.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Dialogs\ImageEditWnd.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Dialogs\KnowledgeWordDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Dialogs\LessonMoveDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Dialogs\MaterialsWnd.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Dialogs\PackageQuestionDatabaseWnd.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Dialogs\PackageQuestionEditWnd.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Dialogs\QuestionJsonEditWnd.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Dialogs\QuestionKnowledgeWnd.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Dialogs\TopicMoveDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Dialogs\VideoEditWnd.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Dialogs\WordPronSymbolMapDialog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\BookDetails.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\BookList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\KET\KETLessonDetails.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\KET\KETQuestionItemDetails.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\KET\KETQuestionList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\LessonDetails.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\LessonList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Login.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MaterialMedia\MaterialAudioList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\MaterialMedia\MaterialPictureList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Materials\MaterialBookDetails.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Materials\MaterialLessonDetails.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Materials\MaterialLessonList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\NavBar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\QuestionKnowledge\Controls\KnowledgeHierarchicalItemsControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\QuestionKnowledge\Controls\KnowledgeTagItemsControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\QuestionKnowledge\Controls\KnowledgeTagListView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\QuestionKnowledge\Controls\KnowledgeTagsControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\QuestionKnowledge\Controls\KnowledgeTagTreeView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\QuestionKnowledge\KnowledgeDetails.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\QuestionKnowledge\KnowledgeList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\QuestionKnowledge\KnowledgeTagTreeList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Questions\Items\QuestionSelectionItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Questions\Items\QuestionSortAnswerItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Questions\Items\QuestionSortItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Questions\QuestionAudioDetails.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Questions\QuestionAudioVolumeDetails.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Questions\QuestionDubDetails.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Questions\QuestionFillBlankDetails.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Questions\QuestionItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Questions\QuestionSelectionDetails.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Questions\QuestionSortDetails.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Questions\QuestionTextInputDetails.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Questions\QuestionTrueFalseDetails.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\TopicDetails.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\TopicList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\TopicPackages\Controls\KnowledgeItemEdit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\TopicPackages\Controls\KnowledgeItemsInLessonList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\TopicPackages\Controls\MediaItemTipTextBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="views\topicpackages\controls\mediaitem\packagequestionaudioedit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="views\topicpackages\controls\mediaitem\packagequestionimageedit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="views\topicpackages\controls\mediaitem\packagequestionrichtextedit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="views\topicpackages\controls\mediaitem\packagequestiontextedit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\TopicPackages\Controls\PackageQuestionConversationItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\TopicPackages\Controls\PackageQuestionDatabase.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\TopicPackages\Controls\PackageQuestionHorizontalListView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\TopicPackages\Controls\PackageQuestionMatchItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\TopicPackages\Controls\PackageQuestionReadingItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\TopicPackages\Controls\PackageQuestionRootChildDetails.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\TopicPackages\Controls\PackageQuestionSelectionItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\TopicPackages\Controls\PackageQuestionStemItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\TopicPackages\Controls\PackageQuestionStemItemsControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\TopicPackages\Controls\PackageQuestionTagFiltView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\TopicPackages\Controls\PackageQuestionTagSelection.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\TopicPackages\Controls\PackageQuestionTypeFiltView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\TopicPackages\Controls\PackageQuestionTypeSelection.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\TopicPackages\Questions\PackageQuestionAudioDetails.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\TopicPackages\Questions\PackageQuestionBlankSelectionDetails.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\TopicPackages\Questions\PackageQuestionConversationDetails.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\TopicPackages\Questions\PackageQuestionDrawDetails.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\TopicPackages\Questions\PackageQuestionFillBlankDetails.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\TopicPackages\Questions\PackageQuestionFillBlankMediaItemDetails.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\TopicPackages\Questions\PackageQuestionItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\TopicPackages\Questions\PackageQuestionMatchDetails.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\TopicPackages\Questions\PackageQuestionReadingDetails.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\TopicPackages\Questions\PackageQuestionRootDetails.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\TopicPackages\Questions\PackageQuestionSelectionDetails.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\TopicPackages\Questions\PackageQuestionTrueFalseDetails.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\TopicPackages\Questions\PackageQuestionUnkownDetails.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\TopicPackages\TopicPackageLessonDetails.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\TopicPackages\TopicPackageLessonList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\TopicPackages\TopicPackageQuestionBeforeList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\TopicPackages\TopicPackageQuestionCheckDetails.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\TopicPackages\TopicPackageQuestionList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Topics\ClickReadDetails.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Topics\CustomWebDetails.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Topics\DubVideoDetails.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Topics\ImageReadDetails.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Topics\SongAudioDetails.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Topics\SongVideoDetails.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Topics\TopicContentDetails.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="views\topics\topiccontents\topiccontentaudio.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="views\topics\topiccontents\topiccontenthtmltext.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="views\topics\topiccontents\topiccontentimage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="views\topics\topiccontents\topiccontentitem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="views\topics\topiccontents\topiccontentrichtext.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="views\topics\topiccontents\topiccontenttext.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="views\topics\topiccontents\topiccontentvideo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Topics\TxtReadDetails.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="icon.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

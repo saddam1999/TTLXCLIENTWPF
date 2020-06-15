@@ -1,0 +1,174 @@
+<UserControl
+	x:Class="TTLX.WindowsTool.Views.MaterialMedia.MaterialAudioList" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:local="clr-namespace:TTLX.WindowsTool.Views.MaterialMedia" xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity" xmlns:core="clr-namespace:TTLX.WindowsTool.Common.Core;assembly=TTLX.WindowsTool.Common" xmlns:controls="clr-namespace:TTLX.WindowsTool.Controls" xmlns:models="clr-namespace:TTLX.WindowsTool.Models;assembly=TTLX.WindowsTool.Models" xmlns:controls1="clr-namespace:TTLX.WindowsTool.Common.Controls;assembly=TTLX.WindowsTool.Common" xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
+	Background="#FFFFFFFF">
+	<Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition
+				Height="40" />
+			<RowDefinition
+				Height="*" />
+			<RowDefinition
+				Height="Auto" />
+		</Grid.RowDefinitions>
+		<StackPanel
+			Orientation="Horizontal"
+			VerticalAlignment="Center"
+			HorizontalAlignment="Left">
+			<TextBox
+				Name="XTxtSearch"
+				Width="240"
+				Height="26"
+				Style="{DynamicResource SearchMetroTextBox}"
+				Margin="20,0"
+				mah:TextBoxHelper.ButtonCommand="{Binding SearchCmd, Mode=OneWay}"
+				mah:TextBoxHelper.ButtonCommandParameter="{Binding ElementName=XTxtSearch, Path=Text}"
+				TextChanged="XTxtSearch_OnTextChanged">
+				<UIElement.InputBindings>
+					<KeyBinding
+						Key="Return"
+						Command="{Binding SearchCmd, Mode=OneWay}"
+						CommandParameter="{Binding Path=Text, Mode=OneWay, RelativeSource={RelativeSource FindAncestor, AncestorType=TextBox}}" />
+				</UIElement.InputBindings>
+			</TextBox>
+		</StackPanel>
+		<StackPanel
+			Name="XPanelEdit"
+			Orientation="Horizontal"
+			VerticalAlignment="Center"
+			HorizontalAlignment="Right">
+			<Button
+				Name="XBtnImport"
+				Content="上传音频"
+				Width="80"
+				Visibility="{Binding ElementName=XBtnEdit, Path=IsChecked, Converter={StaticResource BoolToVisibilityConverter}}"
+				Click="XBtnImport_OnClick" />
+			<ToggleButton
+				Name="XBtnEdit"
+				Width="60"
+				Margin="10,0"
+				Content="编辑" />
+		</StackPanel>
+		<ListBox
+			Name="XLst"
+			Grid.Row="1"
+			Margin="10,0,10,10"
+			ScrollViewer.HorizontalScrollBarVisibility="Disabled"
+			ItemsSource="{Binding AudioItemsSource}"
+			ScrollViewer.ScrollChanged="ScrollViewer_OnScrollChanged">
+			<ItemsControl.ItemContainerStyle>
+				<!--未知连接 ID：6-->
+				<Style
+					BasedOn="{StaticResource ListBoxItem}"
+					TargetType="{x:Type ListBoxItem}" />
+			</ItemsControl.ItemContainerStyle>
+			<ItemsControl.ItemsPanel>
+				<ItemsPanelTemplate>
+					<controls1:VirtualizingWrapPanel
+						ChildWidth="160"
+						ChildHeight="160" />
+				</ItemsPanelTemplate>
+			</ItemsControl.ItemsPanel>
+			<ItemsControl.ItemTemplate>
+				<DataTemplate
+					DataType="{x:Type models:MediaItem}">
+					<Grid
+						Background="#00FFFFFF"
+						ToolTip="{Binding Name}">
+						<Grid.RowDefinitions>
+							<RowDefinition
+								Height="*" />
+							<RowDefinition
+								Height="30" />
+						</Grid.RowDefinitions>
+						<Border
+							BorderBrush="{DynamicResource NormalGrayColor}"
+							BorderThickness="1"
+							Margin="4">
+							<Image
+								Height="60"
+								Source="/TTLX.WindowsTool.Assets;component/Images/img_audio.png" />
+						</Border>
+						<!--未知连接 ID：7-->
+						<Button
+							Name="XBtnReplace"
+							Style="{DynamicResource BtnBorderStyle}"
+							Content="替换"
+							VerticalAlignment="Bottom"
+							HorizontalAlignment="Right"
+							Margin="4"
+							Visibility="{Binding ElementName=XBtnEdit, Path=IsChecked, Converter={StaticResource BoolToVisibilityConverter}}"
+							Tag="{Binding}" />
+						<TextBlock
+							Grid.Row="1"
+							HorizontalAlignment="Center"
+							MaxWidth="140"
+							TextTrimming="CharacterEllipsis"
+							Text="{Binding Name}" />
+					</Grid>
+				</DataTemplate>
+			</ItemsControl.ItemTemplate>
+		</ListBox>
+		<StackPanel
+			Name="XPanelOKCancel"
+			Grid.Row="2"
+			Orientation="Horizontal"
+			HorizontalAlignment="Right"
+			Margin="0,12">
+			<Button
+				Name="XBtnOK"
+				Content="确定"
+				Width="80"
+				Height="26"
+				Click="XBtnOK_OnClick" />
+			<Button
+				Name="XBtnCancel"
+				Style="{DynamicResource BtnGrayStyle}"
+				Content="取消"
+				Width="80"
+				Height="26"
+				Margin="20,0"
+				Click="XBtnCancel_OnClick" />
+		</StackPanel>
+		<Grid
+			Name="XAudioDetails"
+			RowSpan="3"
+			Style="{StaticResource UIElementVisibleFadeStyle}"
+			Margin="0,-50,0,0"
+			Visibility="Hidden"
+			IsVisibleChanged="XAudioDetails_OnIsVisibleChanged">
+			<Canvas
+				Background="#FF000000"
+				Opacity="0.6">
+				<i:Interaction.Triggers>
+					<i:EventTrigger
+						EventName="MouseDown">
+						<core:SetPropertyAction
+							PropertyName="Visibility"
+							PropertyValue="{x:Static Visibility.Hidden}"
+							TargetObject="{Binding ElementName=XAudioDetails}" />
+					</i:EventTrigger>
+				</i:Interaction.Triggers>
+			</Canvas>
+			<Border
+				Margin="50"
+				CornerRadius="10"
+				Padding="10"
+				Background="#FFFFFFFF"
+				HorizontalAlignment="Center"
+				VerticalAlignment="Center">
+				<UIElement.Effect>
+					<DropShadowEffect
+						BlurRadius="4"
+						Opacity="0.4"
+						ShadowDepth="4"
+						Color="Black" />
+				</UIElement.Effect>
+				<controls:MediaElementWrapperPlayer
+					Name="XAudioPlayer"
+					Width="600"
+					VideoVisibility="Collapsed"
+					AutoPlay="True" />
+			</Border>
+		</Grid>
+	</Grid>
+</UserControl>

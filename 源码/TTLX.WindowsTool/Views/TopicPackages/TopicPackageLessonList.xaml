@@ -1,0 +1,321 @@
+<UserControl
+	x:Class="TTLX.WindowsTool.Views.TopicPackages.TopicPackageLessonList" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:local="clr-namespace:TTLX.WindowsTool.Views.TopicPackages" xmlns:controls="clr-namespace:TTLX.WindowsTool.Views.TopicPackages.Controls" xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity" xmlns:itemsControlDragDropBehavior="clr-namespace:TTLX.WindowsTool.Common.Core.ItemsControlDragDropBehavior;assembly=TTLX.WindowsTool.Common" xmlns:models="clr-namespace:TTLX.WindowsTool.Models;assembly=TTLX.WindowsTool.Models" xmlns:topicPackage="clr-namespace:TTLX.WindowsTool.Models.TopicPackage;assembly=TTLX.WindowsTool.Models">
+	<FrameworkElement.Resources>
+		<ResourceDictionary>
+			<local:CountToColorConverter
+				x:Key="CountToColorConverter" />
+		</ResourceDictionary>
+	</FrameworkElement.Resources>
+	<Grid>
+		<DataGrid
+			Name="XDg"
+			Margin="4,0"
+			BorderThickness="0"
+			MinRowHeight="75"
+			AutoGenerateColumns="False"
+			IsReadOnly="True"
+			SelectionMode="Single"
+			ItemsSource="{Binding LessonCollection}">
+			<i:Interaction.Behaviors>
+				<itemsControlDragDropBehavior:ItemsControlDragDropBehavior
+					ItemType="{x:Type topicPackage:TopicPackageLesson}"
+					IndexChanged="OnIndexChanged" />
+			</i:Interaction.Behaviors>
+			<FrameworkElement.Resources>
+				<ResourceDictionary>
+					<Style
+						TargetType="{x:Type DataGrid}"
+						BasedOn="{StaticResource {x:Type DataGrid}}"
+						x:Key="{x:Type DataGrid}">
+						<Setter
+							Property="DataGrid.RowStyle">
+							<Setter.Value>
+								<!--未知连接 ID：3-->
+								<Style
+									TargetType="{x:Type DataGridRow}"
+									BasedOn="{StaticResource {x:Type DataGridRow}}" />
+							</Setter.Value>
+						</Setter>
+					</Style>
+				</ResourceDictionary>
+			</FrameworkElement.Resources>
+			<DataGrid.Columns>
+				<DataGridTemplateColumn
+					Header="序号"
+					Width="100">
+					<DataGridTemplateColumn.CellTemplate>
+						<DataTemplate>
+							<Grid>
+								<Grid.ColumnDefinitions>
+									<ColumnDefinition
+										Width="30" />
+									<ColumnDefinition
+										Width="60" />
+								</Grid.ColumnDefinitions>
+								<TextBlock
+									Grid.Column="0"
+									VerticalAlignment="Center"
+									HorizontalAlignment="Center"
+									Text="{Binding Idx}" />
+								<StackPanel
+									Grid.Column="1"
+									Background="#00FFFFFF"
+									ToolTip="拖拽改变行位置"
+									Cursor="Hand">
+									<Image
+										Source="/TTLX.WindowsTool.Assets;component/Images/DataGrid/up.png"
+										Width="26"
+										Height="16"
+										Margin="0,2"
+										Cursor="Hand" />
+									<Image
+										Source="/TTLX.WindowsTool.Assets;component/Images/DataGrid/down.png"
+										Width="26"
+										Height="16"
+										Margin="0,2"
+										Cursor="Hand" />
+								</StackPanel>
+							</Grid>
+						</DataTemplate>
+					</DataGridTemplateColumn.CellTemplate>
+				</DataGridTemplateColumn>
+				<DataGridTemplateColumn
+					Header="课程名称"
+					Width="*">
+					<DataGridTemplateColumn.CellTemplate>
+						<DataTemplate>
+							<StackPanel
+								Orientation="Horizontal">
+								<TextBlock
+									Text="{Binding Name}" />
+								<TextBlock
+									Text=" [不完整]"
+									Foreground="{DynamicResource NormalRedColor}"
+									Margin="4,0,0,0"
+									Visibility="{Binding IsTagQuestionsCompleted, Converter={StaticResource ReverseBoolToVisibilityConverter}}" />
+							</StackPanel>
+						</DataTemplate>
+					</DataGridTemplateColumn.CellTemplate>
+				</DataGridTemplateColumn>
+				<DataGridTemplateColumn
+					Header="知识点"
+					Width="*">
+					<DataGridTemplateColumn.CellTemplate>
+						<DataTemplate>
+							<controls:KnowledgeItemsInLessonList
+								SelectKnowledgeTag="KnowledgeItemsInLessonList_OnSelectKnowledgeTag"
+								ItemsSource="{Binding Knowledges}" />
+						</DataTemplate>
+					</DataGridTemplateColumn.CellTemplate>
+				</DataGridTemplateColumn>
+				<DataGridTemplateColumn
+					Header="题目类型"
+					Width="*">
+					<DataGridTemplateColumn.CellTemplate>
+						<DataTemplate>
+							<TextBlock
+								TextWrapping="Wrap"
+								Text="{Binding QuestionTypesToString}" />
+						</DataTemplate>
+					</DataGridTemplateColumn.CellTemplate>
+				</DataGridTemplateColumn>
+				<DataGridTemplateColumn
+					Header="题目数量"
+					Width="80">
+					<DataGridTemplateColumn.CellTemplate>
+						<DataTemplate>
+							<TextBlock
+								Text="{Binding QuestionCount}"
+								Foreground="{Binding QuestionCount, Converter={StaticResource CountToColorConverter}}" />
+						</DataTemplate>
+					</DataGridTemplateColumn.CellTemplate>
+				</DataGridTemplateColumn>
+				<DataGridTemplateColumn
+					Header="课前预习"
+					Width="80">
+					<DataGridTemplateColumn.CellTemplate>
+						<DataTemplate />
+					</DataGridTemplateColumn.CellTemplate>
+				</DataGridTemplateColumn>
+				<DataGridTemplateColumn
+					Header="课后练习"
+					Width="80">
+					<DataGridTemplateColumn.CellTemplate>
+						<DataTemplate />
+					</DataGridTemplateColumn.CellTemplate>
+				</DataGridTemplateColumn>
+				<DataGridTemplateColumn
+					Header="操作"
+					Width="220">
+					<DataGridTemplateColumn.CellTemplate>
+						<DataTemplate>
+							<Grid>
+								<Grid.ColumnDefinitions>
+									<ColumnDefinition
+										Width="*" />
+									<ColumnDefinition
+										Width="*" />
+									<ColumnDefinition
+										Width="*" />
+								</Grid.ColumnDefinitions>
+								<!--未知连接 ID：4-->
+								<Button
+									Name="XBtnLessonCheck"
+									Style="{DynamicResource BtnBorderStyle}"
+									Grid.Column="0"
+									Width="60"
+									Height="26"
+									Content="检查"
+									VerticalAlignment="Center"
+									HorizontalAlignment="Center"
+									Margin="4" />
+								<!--未知连接 ID：5-->
+								<Button
+									Name="XBtnLessonDetails"
+									Style="{DynamicResource BtnBorderStyle}"
+									Grid.Column="1"
+									Width="60"
+									Height="26"
+									Content="详情"
+									VerticalAlignment="Center"
+									HorizontalAlignment="Center"
+									Margin="4" />
+								<!--未知连接 ID：6-->
+								<Button
+									Name="XBtnLessonDel"
+									Style="{DynamicResource BtnDeleteStyle}"
+									Grid.Column="2"
+									Width="60"
+									Height="26"
+									Content="删除"
+									VerticalAlignment="Center"
+									HorizontalAlignment="Center"
+									Margin="4" />
+							</Grid>
+						</DataTemplate>
+					</DataGridTemplateColumn.CellTemplate>
+				</DataGridTemplateColumn>
+			</DataGrid.Columns>
+		</DataGrid>
+		<Button
+			Name="XBtnAdd"
+			Style="{DynamicResource BtnGreenStyle}"
+			HorizontalAlignment="Right"
+			VerticalAlignment="Top"
+			Margin="0,-40,4,0"
+			Content="批量添加课程"
+			Click="XBtnAdd_OnClick" />
+		<Button
+			Name="XBtnCompleteCheck"
+			Style="{DynamicResource BtnGreenStyle}"
+			HorizontalAlignment="Right"
+			VerticalAlignment="Top"
+			Margin="0,-40,140,0"
+			Content="完整度检查"
+			Click="XBtnCompleteCheck_OnClick" />
+		<Rectangle
+			Name="XRectPos"
+			VerticalAlignment="Top"
+			Width="400"
+			Margin="0,100,0,0" />
+		<Popup
+			Name="XPopAddLessons"
+			AllowsTransparency="True"
+			PopupAnimation="Fade"
+			StaysOpen="False"
+			PlacementTarget="{Binding ElementName=XRectPos}">
+			<Border
+				BorderThickness="1"
+				BorderBrush="#FFD3D3D3"
+				Margin="10"
+				Width="400">
+				<UIElement.Effect>
+					<DropShadowEffect
+						BlurRadius="4"
+						Opacity="0.4"
+						ShadowDepth="4"
+						Color="Black" />
+				</UIElement.Effect>
+				<Grid
+					Background="#FFFFFFFF">
+					<Grid.RowDefinitions>
+						<RowDefinition
+							Height="30" />
+						<RowDefinition
+							Height="Auto" />
+					</Grid.RowDefinitions>
+					<Border
+						Background="{DynamicResource GradientBlue1}">
+						<TextBlock
+							Text="批量添加课程"
+							VerticalAlignment="Center"
+							Margin="4,0"
+							Foreground="#FFFFFFFF" />
+					</Border>
+					<Grid
+						Row="1">
+						<Grid.RowDefinitions>
+							<RowDefinition
+								Height="40" />
+							<RowDefinition
+								Height="40" />
+							<RowDefinition
+								Height="40" />
+						</Grid.RowDefinitions>
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition
+								Width="100" />
+							<ColumnDefinition
+								Width="*" />
+						</Grid.ColumnDefinitions>
+						<TextBlock
+							Text="课程名称"
+							VerticalAlignment="Center"
+							HorizontalAlignment="Center" />
+						<TextBox
+							Name="XTxtBatchName"
+							Grid.Row="0"
+							Grid.Column="1"
+							Height="30"
+							Width="260"
+							HorizontalAlignment="Left" />
+						<TextBlock
+							Text="课程数量"
+							Grid.Row="1"
+							VerticalAlignment="Center"
+							HorizontalAlignment="Center" />
+						<ComboBox
+							Name="XCmbLessonCount"
+							Grid.Row="1"
+							Grid.Column="1"
+							Height="30"
+							Width="260"
+							HorizontalAlignment="Left"
+							SelectedIndex="4">
+							<ComboBoxItem>1</ComboBoxItem>
+							<ComboBoxItem>2</ComboBoxItem>
+							<ComboBoxItem>3</ComboBoxItem>
+							<ComboBoxItem>4</ComboBoxItem>
+							<ComboBoxItem>5</ComboBoxItem>
+							<ComboBoxItem>10</ComboBoxItem>
+							<ComboBoxItem>15</ComboBoxItem>
+							<ComboBoxItem>20</ComboBoxItem>
+							<ComboBoxItem>30</ComboBoxItem>
+							<ComboBoxItem>50</ComboBoxItem>
+							<ComboBoxItem>100</ComboBoxItem>
+						</ComboBox>
+						<Button
+							Name="XBtnAddLessons"
+							Grid.Row="2"
+							Grid.Column="1"
+							HorizontalAlignment="Center"
+							Content="添加"
+							Width="80"
+							Margin="10,0"
+							Click="XBtnAddLessons_OnClick" />
+					</Grid>
+				</Grid>
+			</Border>
+		</Popup>
+	</Grid>
+</UserControl>

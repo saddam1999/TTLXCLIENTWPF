@@ -1,0 +1,155 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProjectGuid>{FD57E781-0436-4EFE-93EC-139DEF1BB70B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>TTLX.WindowsTool.Models</RootNamespace>
+    <AssemblyName>TTLX.WindowsTool.Models</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="GalaSoft.MvvmLight">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\北京天天乐学教育科技有限公司\天天乐学\GalaSoft.MvvmLight.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\北京天天乐学教育科技有限公司\天天乐学\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="TTLX.WindowsTool.Common">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\北京天天乐学教育科技有限公司\天天乐学\TTLX.WindowsTool.Common.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Admin.cs" />
+    <Compile Include="AnswerTypeEnum.cs" />
+    <Compile Include="ArrangeActionEnum.cs" />
+    <Compile Include="ArrangeData.cs" />
+    <Compile Include="ArrangeSelection.cs" />
+    <Compile Include="ArrangeTypeEnum.cs" />
+    <Compile Include="Book.cs" />
+    <Compile Include="BookStatusEnum.cs" />
+    <Compile Include="BookTypeEnum.cs" />
+    <Compile Include="Candidate.cs" />
+    <Compile Include="ClickReadInfo.cs" />
+    <Compile Include="Company.cs" />
+    <Compile Include="Config.cs" />
+    <Compile Include="ExceptMaterialRequiredAttribute.cs" />
+    <Compile Include="FillBlankData.cs" />
+    <Compile Include="IChanged.cs" />
+    <Compile Include="IQuestionRequiredAttribute.cs" />
+    <Compile Include="Json\DateTimeConvert.cs" />
+    <Compile Include="Json\EnumJsonConvert.cs" />
+    <Compile Include="Json\JsonHelper.cs" />
+    <Compile Include="KnowledgeTag.cs" />
+    <Compile Include="Lesson.cs" />
+    <Compile Include="MaterialLessonNameStringLengthAttribue.cs" />
+    <Compile Include="MaterialTopicNameStringLengthAttribue.cs" />
+    <Compile Include="MediaItem.cs" />
+    <Compile Include="MediaItemType.cs" />
+    <Compile Include="OrganizationStatus.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QAData.cs" />
+    <Compile Include="Question.cs" />
+    <Compile Include="QuestionRequiredAttribute.cs" />
+    <Compile Include="QuestionSelections.cs" />
+    <Compile Include="QuestionSharedContent.cs" />
+    <Compile Include="Questions\EvalEntity.cs" />
+    <Compile Include="Questions\EvalModeEnum.cs" />
+    <Compile Include="Questions\EvalTypeEnum.cs" />
+    <Compile Include="QuestionTypeConfigEntity.cs" />
+    <Compile Include="QuestionTypeEnum.cs" />
+    <Compile Include="RequiredAudioUrlBySelectionTypeAttribute.cs" />
+    <Compile Include="RequiredImageUrlByArrangeTypeAttribute.cs" />
+    <Compile Include="RequiredImageUrlBySelectionTypeAttribute.cs" />
+    <Compile Include="RequiredImgUrlByTopicTypeAttribute.cs" />
+    <Compile Include="RequiredMediaUrlByTopicTypeAttribute.cs" />
+    <Compile Include="RequiredTextByArrangeTypeAttribute.cs" />
+    <Compile Include="RequiredTextBySelectionTypeAttribute.cs" />
+    <Compile Include="Selection.cs" />
+    <Compile Include="SelectionTypeEnum.cs" />
+    <Compile Include="Series.cs" />
+    <Compile Include="SplitResult.cs" />
+    <Compile Include="SplitResultType.cs" />
+    <Compile Include="Tag.cs" />
+    <Compile Include="TagTypeEnum.cs" />
+    <Compile Include="TextInputData.cs" />
+    <Compile Include="Timeline.cs" />
+    <Compile Include="Topic.cs" />
+    <Compile Include="TopicContent.cs" />
+    <Compile Include="TopicContents.cs" />
+    <Compile Include="TopicContentTypeEnum.cs" />
+    <Compile Include="TopicMediaTypeEnum.cs" />
+    <Compile Include="TopicPackage\BeforeLessonPackage.cs" />
+    <Compile Include="TopicPackage\BeforeLessonPackageGroup.cs" />
+    <Compile Include="TopicPackage\Contents\ConversationRole.cs" />
+    <Compile Include="TopicPackage\Contents\InteractionExtraData.cs" />
+    <Compile Include="TopicPackage\Contents\MediaItemCandidateEntity.cs" />
+    <Compile Include="TopicPackage\Contents\SelectMediaItemCandidates.cs" />
+    <Compile Include="TopicPackage\InputStringSingleBlankSolution.cs" />
+    <Compile Include="TopicPackage\InputStringSolution.cs" />
+    <Compile Include="TopicPackage\KnowledgeTypeEnum.cs" />
+    <Compile Include="TopicPackage\MatchingMatrix.cs" />
+    <Compile Include="TopicPackage\MatchingMatrixEntry.cs" />
+    <Compile Include="TopicPackage\MatchingMatrixItem.cs" />
+    <Compile Include="TopicPackage\MatchingMatrixSolution.cs" />
+    <Compile Include="TopicPackage\MultiLanguageText.cs" />
+    <Compile Include="TopicPackage\QuestionContent.cs" />
+    <Compile Include="TopicPackage\QuestionSelection.cs" />
+    <Compile Include="TopicPackage\QuestionSelectionItemEntity.cs" />
+    <Compile Include="TopicPackage\QuestionSelectionSolution.cs" />
+    <Compile Include="TopicPackage\QuestionSolution.cs" />
+    <Compile Include="TopicPackage\QuestionStem.cs" />
+    <Compile Include="TopicPackage\QuestionTag.cs" />
+    <Compile Include="TopicPackage\QuestionTagTypeEnum.cs" />
+    <Compile Include="TopicPackage\RequiredAudioBySetAttribute.cs" />
+    <Compile Include="TopicPackage\RequiredImageBySetAttribute.cs" />
+    <Compile Include="TopicPackage\RequiredTextBySetAttribute.cs" />
+    <Compile Include="TopicPackage\SelectTextCandidates.cs" />
+    <Compile Include="TopicPackage\Solutions\AudioEvalSolution.cs" />
+    <Compile Include="TopicPackage\Solutions\InputMediaItemSolution.cs" />
+    <Compile Include="TopicPackage\Solutions\InputMediaItemSolutionBlank.cs" />
+    <Compile Include="TopicPackage\TagRelation.cs" />
+    <Compile Include="TopicPackage\TagRelationType.cs" />
+    <Compile Include="TopicPackage\TopicPackageLesson.cs" />
+    <Compile Include="TopicPackage\TopicPackageQuestion.cs" />
+    <Compile Include="TopicPackage\TopicPackageQuestionContentTypeEnum.cs" />
+    <Compile Include="TopicPackage\TopicPackageQuestionTypeEnum.cs" />
+    <Compile Include="TopicPackage\WordEntity.cs" />
+    <Compile Include="TopicTypeEnum.cs" />
+    <Compile Include="TrueOrFalseData.cs" />
+    <Compile Include="User.cs" />
+    <Compile Include="UserTypeEnum.cs" />
+    <Compile Include="WordPronunciation.cs" />
+    <Compile Include="WordTypeEnum.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

@@ -1,0 +1,18 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:local="clr-namespace:TTLX.WindowsTool.Assets.Converters">
+	<local:BoolToVisibilityConverter
+		x:Key="BoolToVisibilityConverter" />
+	<local:ReverseBoolToVisibilityConverter
+		x:Key="ReverseBoolToVisibilityConverter" />
+	<local:EnumToIntConverter
+		x:Key="EnumToIntConverter" />
+	<local:NumberToTimeConverter
+		x:Key="NumberToTimeConverter" />
+	<local:ReverseBoolConverter
+		x:Key="ReverseBoolConverter" />
+	<local:NullableTimeSpanToSecondsConverter
+		x:Key="NullableTimeSpanToSecondsConverter" />
+	<local:CollectionToBoolConverter
+		x:Key="CollectionToBoolConverter" />
+	<local:StringNullOrEmptyToVisibility
+		x:Key="StringNullOrEmptyToVisibility" />
+</ResourceDictionary>

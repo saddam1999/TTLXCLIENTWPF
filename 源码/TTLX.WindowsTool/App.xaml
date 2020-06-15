@@ -1,0 +1,32 @@
+<Application
+	x:Class="TTLX.WindowsTool.App" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:local="clr-namespace:TTLX.WindowsTool" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:d1p1="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:system="clr-namespace:System;assembly=mscorlib" xmlns:models="clr-namespace:TTLX.WindowsTool.Models;assembly=TTLX.WindowsTool.Models">
+	<Application.Resources>
+		<ResourceDictionary>
+			<ResourceDictionary.MergedDictionaries>
+				<ResourceDictionary
+					Source="/TTLX.WindowsTool.Assets;component/Themes/Default/DefaultTheme.xaml" />
+				<ResourceDictionary
+					Source="/TTLX.WindowsTool.Assets;component/Converters/DefaultConverters.xaml" />
+				<ResourceDictionary>
+					<vm:ViewModelLocator xmlns:vm="clr-namespace:TTLX.WindowsTool.ViewModel"
+						x:Key="Locator" />
+					<ObjectDataProvider
+						MethodName="GetValues"
+						x:Key="BookTypeItemsSource"
+						ObjectType="{x:Type system:Enum}"
+						MethodParameters="{x:Type TypeName=models:BookTypeEnum}" />
+					<ObjectDataProvider
+						MethodName="GetValues"
+						x:Key="TagTypeItemsSource"
+						ObjectType="{x:Type system:Enum}"
+						MethodParameters="{x:Type TypeName=models:TagTypeEnum}" />
+					<ObjectDataProvider
+						MethodName="GetValues"
+						x:Key="WordClassItemsSource"
+						ObjectType="{x:Type system:Enum}"
+						MethodParameters="{x:Type TypeName=models:WordTypeEnum}" />
+				</ResourceDictionary>
+			</ResourceDictionary.MergedDictionaries>
+		</ResourceDictionary>
+	</Application.Resources>
+</Application>

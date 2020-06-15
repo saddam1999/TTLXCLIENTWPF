@@ -1,0 +1,72 @@
+<UserControl
+	x:Class="TTLX.WindowsTool.Views.Questions.QuestionTrueFalseDetails" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:local="clr-namespace:TTLX.WindowsTool.Views.Questions" xmlns:controls="clr-namespace:TTLX.WindowsTool.Controls">
+	<Grid
+		Margin="10">
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition
+				Width="100" />
+			<ColumnDefinition
+				Width="*" />
+		</Grid.ColumnDefinitions>
+		<Grid.RowDefinitions>
+			<RowDefinition
+				Height="0" />
+			<RowDefinition
+				Height="Auto" />
+			<RowDefinition
+				Height="Auto"
+				MinHeight="60" />
+			<RowDefinition
+				Height="Auto"
+				MinHeight="60" />
+			<RowDefinition
+				Height="Auto"
+				MinHeight="60" />
+		</Grid.RowDefinitions>
+		<controls:AudioComboBoxEdit
+			Name="XAudioEdit"
+			Grid.Row="1"
+			Grid.ColumnSpan="2" />
+		<TextBlock
+			Grid.Row="2"
+			Text="题目名称"
+			VerticalAlignment="Center"
+			HorizontalAlignment="Center" />
+		<TextBox
+			Grid.Row="2"
+			Grid.Column="1"
+			Margin="4"
+			Style="{DynamicResource TxtMulStyle}"
+			Text="{Binding ForeignText}" />
+		<TextBlock
+			Grid.Row="3"
+			Text="题目解析"
+			VerticalAlignment="Center"
+			HorizontalAlignment="Center" />
+		<TextBox
+			Grid.Row="3"
+			Grid.Column="1"
+			Margin="4"
+			Style="{DynamicResource TxtMulStyle}"
+			Text="{Binding AnswerExplain}" />
+		<TextBlock
+			Grid.Row="4"
+			Text="答案"
+			VerticalAlignment="Center"
+			HorizontalAlignment="Center" />
+		<StackPanel
+			Grid.Row="4"
+			Grid.Column="1"
+			Orientation="Horizontal">
+			<RadioButton
+				Content="对"
+				Margin="10"
+				VerticalAlignment="Center"
+				IsChecked="{Binding TrueOrFalseData.CorrectSelection, Mode=TwoWay}" />
+			<RadioButton
+				Content="错"
+				IsChecked="True"
+				VerticalAlignment="Center" />
+		</StackPanel>
+	</Grid>
+</UserControl>

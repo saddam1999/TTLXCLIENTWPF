@@ -1,0 +1,52 @@
+<UserControl
+	x:Class="TTLX.WindowsTool.Views.TopicPackages.Questions.PackageQuestionRootDetails" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:local="clr-namespace:TTLX.WindowsTool.Views.TopicPackages.Questions" xmlns:controls="clr-namespace:TTLX.WindowsTool.Views.TopicPackages.Controls">
+	<Grid
+		Margin="10"
+		Background="#FFFFFFFF">
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition
+				Width="100" />
+			<ColumnDefinition
+				Width="*" />
+		</Grid.ColumnDefinitions>
+		<Grid.RowDefinitions>
+			<RowDefinition
+				Height="Auto" />
+			<RowDefinition
+				Height="Auto" />
+			<RowDefinition
+				Height="Auto" />
+			<RowDefinition
+				Height="Auto" />
+		</Grid.RowDefinitions>
+		<TextBlock
+			Name="XTbTitle"
+			Text="题目要求"
+			VerticalAlignment="Center"
+			HorizontalAlignment="Center" />
+		<TextBox
+			Name="XTxtTitle"
+			Grid.Column="1"
+			Margin="4"
+			Text="{Binding QuestionInfo.Title}" />
+		<controls:PackageQuestionStemItemsControl
+			Name="XStem"
+			Grid.Column="1"
+			Grid.Row="1"
+			Margin="4,0"
+			ItemsSource="{Binding Stem.Items}" />
+		<ItemsControl
+			Name="XSubItems"
+			Grid.Row="2"
+			Grid.Column="1"
+			Margin="4"
+			ItemsSource="{Binding QuestionInfo.SubQuestions}">
+			<ItemsControl.ItemTemplate>
+				<DataTemplate>
+					<controls:PackageQuestionRootChildDetails
+						Margin="0,4" />
+				</DataTemplate>
+			</ItemsControl.ItemTemplate>
+		</ItemsControl>
+	</Grid>
+</UserControl>

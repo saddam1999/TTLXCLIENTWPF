@@ -1,0 +1,32 @@
+<UserControl
+	x:Class="TTLX.WindowsTool.Controls.ClickReadImageEdit" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:local="clr-namespace:TTLX.WindowsTool.Controls"
+	Background="#FFFFFFFF">
+	<Grid>
+		<Image
+			Name="XImg"
+			SizeChanged="OnSizeChanged">
+			<Image.Source>
+				<Binding
+					Path="ImgPath"
+					RelativeSource="{RelativeSource Mode=FindAncestor, AncestorType={x:Type UserControl}}">
+					<BindingBase.TargetNullValue>
+						<ImageSource>/TTLX.WindowsTool.Assets;component/Images/img_uploadimg_1.png</ImageSource>
+					</BindingBase.TargetNullValue>
+				</Binding>
+			</Image.Source>
+		</Image>
+		<Canvas
+			Name="XCav"
+			Background="#00FFFFFF"
+			Width="{Binding ElementName=XImg, Path=ActualWidth}"
+			Height="{Binding ElementName=XImg, Path=ActualHeight}"
+			MouseLeftButtonDown="OnMouseLeftButtonDown"
+			MouseMove="OnMouseMove"
+			MouseLeftButtonUp="OnMouseLeftButtonUp"
+			MouseRightButtonDown="OnMouseRightButtonDown" />
+		<Canvas
+			Background="#00FFFFFF"
+			Visibility="{Binding Path=IsEditable, Converter={StaticResource ReverseBoolToVisibilityConverter}, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type UserControl}}}"
+			MouseLeftButtonDown="Image_OnMouseLeftButtonDown" />
+	</Grid>
+</UserControl>

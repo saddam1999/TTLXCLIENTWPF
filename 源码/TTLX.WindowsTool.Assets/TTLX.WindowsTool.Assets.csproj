@@ -1,0 +1,152 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProjectGuid>{E7272935-63A9-4829-8A2B-3FFC4B0933E1}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>TTLX</RootNamespace>
+    <AssemblyName>TTLX.WindowsTool.Assets</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60DC8134-EBA5-43B8-BCC9-BB4BC16C2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoStdLib>true</NoStdLib>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoStdLib>true</NoStdLib>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="GalaSoft.MvvmLight">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\北京天天乐学教育科技有限公司\天天乐学\GalaSoft.MvvmLight.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="System" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="MahApps.Metro" />
+    <Reference Include="Microsoft.Windows.Shell" />
+    <Reference Include="System.Windows.Interactivity" />
+    <Reference Include="Microsoft.Expression.Interactions" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Assets\Properties\Resources.cs" />
+    <Compile Include="Assets\Properties\Settings.Designer.cs">
+      <DependentUpon>Settings.settings</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WindowsTool\Assets\Converters\BoolToVisibilityConverter.cs" />
+    <Compile Include="WindowsTool\Assets\Converters\CollectionToBoolConverter.cs" />
+    <Compile Include="WindowsTool\Assets\Converters\EnumToIntConverter.cs" />
+    <Compile Include="WindowsTool\Assets\Converters\NullableTimeSpanToSecondsConverter.cs" />
+    <Compile Include="WindowsTool\Assets\Converters\NumberToTimeConverter.cs" />
+    <Compile Include="WindowsTool\Assets\Converters\ReverseBoolConverter.cs" />
+    <Compile Include="WindowsTool\Assets\Converters\ReverseBoolToVisibilityConverter.cs" />
+    <Compile Include="WindowsTool\Assets\Converters\StringNullOrEmptyToVisibility.cs" />
+    <Compile Include="WindowsTool\Assets\Converters\TimeUtils.cs" />
+    <Compile Include="WindowsTool\Assets\Extentions\TextBoxAttachProperty.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Assets\Properties\Resources.resources" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Converters\defaultconverters.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="themes\default\brush.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="themes\default\button.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="themes\default\datagrid.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="themes\default\defaulttheme.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="themes\default\slider.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="themes\default\textbox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="themes\default\window.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\button\btn_back.png" />
+    <Resource Include="images\button\btn_edit.png" />
+    <Resource Include="images\button\btn_newbook.png" />
+    <Resource Include="images\button\btn_pause.png" />
+    <Resource Include="images\button\btn_play.png" />
+    <Resource Include="images\button\btn_stop.png" />
+    <Resource Include="images\button\window-close.png" />
+    <Resource Include="images\button\window-config.png" />
+    <Resource Include="images\button\window-max.png" />
+    <Resource Include="images\button\window-min.png" />
+    <Resource Include="images\button\window-restore.png" />
+    <Resource Include="images\control\cut.png" />
+    <Resource Include="images\datagrid\down.png" />
+    <Resource Include="images\datagrid\up.png" />
+    <Resource Include="images\icon.ico" />
+    <Resource Include="images\img_audio.png" />
+    <Resource Include="images\img_logo.png" />
+    <Resource Include="images\img_logo_s.png" />
+    <Resource Include="images\img_signin.png" />
+    <Resource Include="images\img_uploadimg_1.png" />
+    <Resource Include="images\img_uploadimg_2.png" />
+    <Resource Include="images\img_uploading_3.png" />
+    <Resource Include="images\logo.png" />
+    <Resource Include="images\type\btn_type_childrensongaudio.png" />
+    <Resource Include="images\type\btn_type_childrensongvideo.png" />
+    <Resource Include="images\type\btn_type_choice.png" />
+    <Resource Include="images\type\btn_type_clickread.png" />
+    <Resource Include="images\type\btn_type_dubvideo.png" />
+    <Resource Include="images\type\btn_type_exerciseread.png" />
+    <Resource Include="images\type\btn_type_fillblank.png" />
+    <Resource Include="images\type\btn_type_imagehorizontal.png" />
+    <Resource Include="images\type\btn_type_imagevertical.png" />
+    <Resource Include="images\type\btn_type_other.png" />
+    <Resource Include="images\type\btn_type_qa.png" />
+    <Resource Include="images\type\btn_type_text.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

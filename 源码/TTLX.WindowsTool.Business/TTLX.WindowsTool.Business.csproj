@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProjectGuid>{E7272935-63A9-4829-8A2B-3FFC4B0933E2}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>TTLX.WindowsTool.Business</RootNamespace>
+    <AssemblyName>TTLX.WindowsTool.Business</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoStdLib>true</NoStdLib>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <NoStdLib>true</NoStdLib>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="GalaSoft.MvvmLight">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\北京天天乐学教育科技有限公司\天天乐学\GalaSoft.MvvmLight.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Practices.ServiceLocation">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\北京天天乐学教育科技有限公司\天天乐学\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\北京天天乐学教育科技有限公司\天天乐学\Microsoft.Threading.Tasks.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\北京天天乐学教育科技有限公司\天天乐学\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="RestSharp">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\北京天天乐学教育科技有限公司\天天乐学\RestSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\北京天天乐学教育科技有限公司\天天乐学\System.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\北京天天乐学教育科技有限公司\天天乐学\System.Threading.Tasks.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="TTLX.WindowsTool.Models">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\北京天天乐学教育科技有限公司\天天乐学\TTLX.WindowsTool.Models.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AdminLoginResponse.cs" />
+    <Compile Include="AppData.cs" />
+    <Compile Include="AppProperties.cs" />
+    <Compile Include="AppUser.cs" />
+    <Compile Include="AudioFile.cs" />
+    <Compile Include="BatchCreateResponse.cs" />
+    <Compile Include="BeforeLessonPackageResponse.cs" />
+    <Compile Include="BookInfoResponse.cs" />
+    <Compile Include="BookListResponse.cs" />
+    <Compile Include="BookQuestionCheckResponse.cs" />
+    <Compile Include="BookService.cs" />
+    <Compile Include="CompanyLoginResponse.cs" />
+    <Compile Include="ConfigService.cs" />
+    <Compile Include="CopyPasetLessonsManager.cs" />
+    <Compile Include="CreateKnowledgeTagResponse.cs" />
+    <Compile Include="GetKnowledgeTagResponse.cs" />
+    <Compile Include="IBookService.cs" />
+    <Compile Include="IConfigService.cs" />
+    <Compile Include="IKnowledgeService.cs" />
+    <Compile Include="IKnowledgeTagService.cs" />
+    <Compile Include="ILessonService.cs" />
+    <Compile Include="IMaterialMediaService.cs" />
+    <Compile Include="IPackageQuestionService.cs" />
+    <Compile Include="IQuestionService.cs" />
+    <Compile Include="ISeriesService.cs" />
+    <Compile Include="ITopicService.cs" />
+    <Compile Include="ITranslateService.cs" />
+    <Compile Include="IUserService.cs" />
+    <Compile Include="IWordPronService.cs" />
+    <Compile Include="KnowledgeService.cs" />
+    <Compile Include="KnowledgeTagManager.cs" />
+    <Compile Include="KnowledgeTagService.cs" />
+    <Compile Include="LessonInfoResponse.cs" />
+    <Compile Include="LessonService.cs" />
+    <Compile Include="MaterialMediaItemManager.cs" />
+    <Compile Include="MaterialMediaService.cs" />
+    <Compile Include="MediaListResponse.cs" />
+    <Compile Include="PackageQuestionResponse.cs" />
+    <Compile Include="PackageQuestionsDatabaseResponse.cs" />
+    <Compile Include="PackageQuestionService.cs" />
+    <Compile Include="PackageQuestionsResponse.cs" />
+    <Compile Include="PackageQuestionTypeManager.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QCTextTranslateResponse.cs" />
+    <Compile Include="QuestionService.cs" />
+    <Compile Include="RequestUtility.cs" />
+    <Compile Include="Response.cs" />
+    <Compile Include="SeriesListResponse.cs" />
+    <Compile Include="SeriesService.cs" />
+    <Compile Include="TencentTranslateService.cs" />
+    <Compile Include="TopicInfoResponse.cs" />
+    <Compile Include="TopicPackageLessonListResponse.cs" />
+    <Compile Include="TopicService.cs" />
+    <Compile Include="UserService.cs" />
+    <Compile Include="WordPronService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TTLX.WindowsTool.Common\TTLX.WindowsTool.Common.csproj">
+      <Project>{e7272935-63a9-4829-8a2b-3ffc4b0933e3}</Project>
+      <Name>TTLX.WindowsTool.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

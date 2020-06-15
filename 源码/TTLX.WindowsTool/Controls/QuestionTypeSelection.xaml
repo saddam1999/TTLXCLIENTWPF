@@ -1,0 +1,65 @@
+<UserControl
+	x:Class="TTLX.WindowsTool.Controls.QuestionTypeSelection" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:local="clr-namespace:TTLX.WindowsTool.Controls" xmlns:dialogs="clr-namespace:TTLX.WindowsTool.Dialogs"
+	Width="500">
+	<Grid>
+		<Border
+			BorderThickness="1"
+			BorderBrush="#FFD3D3D3"
+			Margin="10">
+			<UIElement.Effect>
+				<DropShadowEffect
+					BlurRadius="4"
+					Opacity="0.4"
+					ShadowDepth="4"
+					Color="Black" />
+			</UIElement.Effect>
+			<Grid
+				Background="#FFFFFFFF">
+				<Grid.RowDefinitions>
+					<RowDefinition
+						Height="30" />
+					<RowDefinition
+						Height="Auto" />
+				</Grid.RowDefinitions>
+				<Border
+					Background="{DynamicResource GradientBlue1}">
+					<TextBlock
+						Text="类型选择"
+						VerticalAlignment="Center"
+						Margin="4,0"
+						Foreground="#FFFFFFFF" />
+				</Border>
+				<ListView
+					Name="XListQuestion"
+					Grid.Row="1"
+					Margin="10"
+					BorderThickness="0"
+					SelectionChanged="XListQuestion_OnSelectionChanged">
+					<ItemsControl.ItemsPanel>
+						<ItemsPanelTemplate>
+							<WrapPanel
+								Width="440" />
+						</ItemsPanelTemplate>
+					</ItemsControl.ItemsPanel>
+					<ItemsControl.ItemTemplate>
+						<DataTemplate
+							DataType="local:QuestionTypeItem">
+							<StackPanel
+								Width="100"
+								Height="100">
+								<Image
+									Width="40"
+									Height="40"
+									Margin="30,20,30,10"
+									Source="{Binding ImageSource}" />
+								<Label
+									HorizontalAlignment="Center"
+									Content="{Binding QuestionCon}" />
+							</StackPanel>
+						</DataTemplate>
+					</ItemsControl.ItemTemplate>
+				</ListView>
+			</Grid>
+		</Border>
+	</Grid>
+</UserControl>

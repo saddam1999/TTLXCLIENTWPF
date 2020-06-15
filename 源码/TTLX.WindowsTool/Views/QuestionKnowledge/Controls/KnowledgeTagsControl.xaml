@@ -1,0 +1,139 @@
+<UserControl
+	x:Class="TTLX.WindowsTool.Views.QuestionKnowledge.Controls.KnowledgeTagsControl" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:local="clr-namespace:TTLX.WindowsTool.Views.QuestionKnowledge.Controls" xmlns:topicPackage="clr-namespace:TTLX.WindowsTool.Models.TopicPackage;assembly=TTLX.WindowsTool.Models"
+	Background="#FFFFFFFF">
+	<Grid>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition
+				Width="100" />
+			<ColumnDefinition
+				Width="*" />
+		</Grid.ColumnDefinitions>
+		<Grid.RowDefinitions>
+			<RowDefinition
+				Height="Auto" />
+			<RowDefinition
+				Height="Auto"
+				MinHeight="50" />
+			<RowDefinition
+				Height="Auto"
+				MinHeight="50" />
+			<RowDefinition
+				Height="Auto"
+				MinHeight="50" />
+			<RowDefinition
+				Height="Auto"
+				MinHeight="50" />
+			<RowDefinition
+				Height="Auto"
+				MinHeight="50" />
+			<RowDefinition
+				Height="Auto"
+				MinHeight="50" />
+		</Grid.RowDefinitions>
+		<TextBlock
+			Grid.Row="1"
+			Grid.Column="0"
+			Text="类型"
+			VerticalAlignment="Center"
+			HorizontalAlignment="Center"
+			FontSize="15"
+			FontWeight="Bold" />
+		<local:KnowledgeHierarchicalItemsControl
+			Name="XTypes"
+			Grid.Row="1"
+			Grid.Column="1"
+			RelationType="{x:Static topicPackage:TagRelationType.KNOWLEDGE_TYPE_KNOWLEDGE}"
+			VerticalAlignment="Center"
+			Margin="10" />
+		<TextBlock
+			Grid.Row="2"
+			Grid.Column="0"
+			Text="话题"
+			VerticalAlignment="Center"
+			HorizontalAlignment="Center"
+			FontSize="15"
+			FontWeight="Bold" />
+		<local:KnowledgeTagItemsControl
+			Name="XTopic"
+			Grid.Row="2"
+			Grid.Column="1"
+			RelationType="{x:Static topicPackage:TagRelationType.TOPIC_KNOWLEDGE}"
+			SelectionMode="Multiple"
+			DisplayMemberPath="Name"
+			VerticalAlignment="Center"
+			HorizontalAlignment="Left"
+			Margin="10" />
+		<TextBlock
+			Grid.Row="3"
+			Grid.Column="0"
+			Text="场景"
+			VerticalAlignment="Center"
+			HorizontalAlignment="Center"
+			FontSize="15"
+			FontWeight="Bold" />
+		<local:KnowledgeTagItemsControl
+			Name="XScene"
+			Grid.Row="3"
+			Grid.Column="1"
+			RelationType="{x:Static topicPackage:TagRelationType.SCENE_KNOWLEDGE}"
+			SelectionMode="Multiple"
+			DisplayMemberPath="Name"
+			VerticalAlignment="Center"
+			HorizontalAlignment="Left"
+			Margin="10" />
+		<TextBlock
+			Grid.Row="4"
+			Grid.Column="0"
+			Text="欧标"
+			VerticalAlignment="Center"
+			HorizontalAlignment="Center"
+			FontSize="15"
+			FontWeight="Bold" />
+		<local:KnowledgeTagItemsControl
+			Name="XEuropean"
+			Grid.Row="4"
+			Grid.Column="1"
+			RelationType="{x:Static topicPackage:TagRelationType.EUROPEANSTANDARD_KNOWLEDGE}"
+			SelectionMode="Multiple"
+			DisplayMemberPath="Name"
+			VerticalAlignment="Center"
+			HorizontalAlignment="Left"
+			Margin="10" />
+		<TextBlock
+			Grid.Row="5"
+			Grid.Column="0"
+			Text="美标"
+			VerticalAlignment="Center"
+			HorizontalAlignment="Center"
+			FontSize="15"
+			FontWeight="Bold" />
+		<local:KnowledgeTagItemsControl
+			Name="XAmerican"
+			Grid.Row="5"
+			Grid.Column="1"
+			RelationType="{x:Static topicPackage:TagRelationType.AMERICANSTANDARD_KNOWLEDGE}"
+			SelectionMode="Multiple"
+			DisplayMemberPath="Name"
+			VerticalAlignment="Center"
+			HorizontalAlignment="Left"
+			Margin="10" />
+		<TextBlock
+			Grid.Row="6"
+			Grid.Column="0"
+			Text="国标"
+			VerticalAlignment="Center"
+			HorizontalAlignment="Center"
+			FontSize="15"
+			FontWeight="Bold" />
+		<local:KnowledgeTagItemsControl
+			Name="XNational"
+			Grid.Row="6"
+			Grid.Column="1"
+			RelationType="{x:Static topicPackage:TagRelationType.NATIONALSTANDARD_KNOWLEDGE}"
+			SelectionMode="Multiple"
+			DisplayMemberPath="Name"
+			VerticalAlignment="Center"
+			HorizontalAlignment="Left"
+			Margin="10" />
+	</Grid>
+</UserControl>

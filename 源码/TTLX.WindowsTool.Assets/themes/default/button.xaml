@@ -1,0 +1,1192 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	<ResourceDictionary.MergedDictionaries>
+		<ResourceDictionary
+			Source="Brush.xaml" />
+	</ResourceDictionary.MergedDictionaries>
+	<Style
+		TargetType="{x:Type Button}"
+		x:Key="{x:Type Button}">
+		<Setter
+			Property="Height"
+			Value="30" />
+		<Setter
+			Property="Background"
+			Value="{DynamicResource NormalAccentColor}" />
+		<Setter
+			Property="BorderBrush"
+			Value="{DynamicResource LightAccentColor}" />
+		<Setter
+			Property="BorderThickness"
+			Value="1" />
+		<Setter
+			Property="Foreground"
+			Value="#FFFFFFFF" />
+		<Setter
+			Property="HorizontalContentAlignment"
+			Value="Center" />
+		<Setter
+			Property="VerticalContentAlignment"
+			Value="Center" />
+		<Setter
+			Property="Padding"
+			Value="4,0" />
+		<Setter
+			Property="FrameworkElement.FocusVisualStyle"
+			Value="{x:Null}" />
+		<Setter
+			Property="Template">
+			<Setter.Value>
+				<ControlTemplate
+					TargetType="{x:Type Button}">
+					<Border
+						Name="Bd"
+						BorderThickness="{TemplateBinding BorderThickness}"
+						BorderBrush="{TemplateBinding BorderBrush}"
+						Background="{TemplateBinding Background}">
+						<ContentPresenter
+							HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+							VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+							Margin="{TemplateBinding Padding}" />
+					</Border>
+					<ControlTemplate.Triggers>
+						<Trigger
+							Property="IsEnabled"
+							Value="False">
+							<Setter
+								TargetName="Bd"
+								Value="{DynamicResource LightGrayColor}"
+								Property="Background" />
+							<Setter
+								TargetName="Bd"
+								Value="{DynamicResource DarkGrayColor}"
+								Property="BorderBrush" />
+							<Setter
+								Value="{DynamicResource DarkGrayColor}"
+								Property="Foreground" />
+						</Trigger>
+						<Trigger
+							Property="IsPressed"
+							Value="True">
+							<Setter
+								TargetName="Bd"
+								Value="{DynamicResource NormalAccentColor}"
+								Property="BorderBrush" />
+							<Setter
+								TargetName="Bd"
+								Value="{DynamicResource DarkAccentColor}"
+								Property="Background" />
+						</Trigger>
+						<Trigger
+							Property="UIElement.IsMouseOver"
+							Value="True">
+							<Setter
+								TargetName="Bd"
+								Value="{DynamicResource NormalAccentColor}"
+								Property="BorderBrush" />
+						</Trigger>
+					</ControlTemplate.Triggers>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+	<Style
+		TargetType="{x:Type Button}"
+		x:Key="BtnBorderStyle">
+		<Setter
+			Property="Height"
+			Value="30" />
+		<Setter
+			Property="Background"
+			Value="#FFFFFFFF" />
+		<Setter
+			Property="BorderBrush"
+			Value="{DynamicResource NormalAccentColor}" />
+		<Setter
+			Property="BorderThickness"
+			Value="1" />
+		<Setter
+			Property="Foreground"
+			Value="{DynamicResource NormalAccentColor}" />
+		<Setter
+			Property="FontWeight"
+			Value="Bold" />
+		<Setter
+			Property="HorizontalContentAlignment"
+			Value="Center" />
+		<Setter
+			Property="VerticalContentAlignment"
+			Value="Center" />
+		<Setter
+			Property="Padding"
+			Value="4,0" />
+		<Setter
+			Property="FrameworkElement.FocusVisualStyle"
+			Value="{x:Null}" />
+		<Setter
+			Property="Template">
+			<Setter.Value>
+				<ControlTemplate
+					TargetType="{x:Type Button}">
+					<Border
+						Name="Bd"
+						BorderThickness="{TemplateBinding BorderThickness}"
+						BorderBrush="{TemplateBinding BorderBrush}"
+						Background="{TemplateBinding Background}">
+						<ContentPresenter
+							HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+							VerticalAlignment="{TemplateBinding VerticalContentAlignment}"
+							Margin="{TemplateBinding Padding}" />
+					</Border>
+					<ControlTemplate.Triggers>
+						<Trigger
+							Property="IsEnabled"
+							Value="False">
+							<Setter
+								TargetName="Bd"
+								Value="{DynamicResource LightGrayColor}"
+								Property="Background" />
+							<Setter
+								TargetName="Bd"
+								Value="{DynamicResource DarkGrayColor}"
+								Property="BorderBrush" />
+							<Setter
+								Value="{DynamicResource DarkGrayColor}"
+								Property="Foreground" />
+						</Trigger>
+						<Trigger
+							Property="IsPressed"
+							Value="True">
+							<Setter
+								TargetName="Bd"
+								Value="{DynamicResource DarkAccentColor}"
+								Property="BorderBrush" />
+							<Setter
+								Value="{DynamicResource DarkAccentColor}"
+								Property="Foreground" />
+						</Trigger>
+						<Trigger
+							Property="UIElement.IsMouseOver"
+							Value="True">
+							<Setter
+								TargetName="Bd"
+								Value="{DynamicResource DarkAccentColor}"
+								Property="BorderBrush" />
+							<Setter
+								Value="{DynamicResource DarkAccentColor}"
+								Property="Foreground" />
+						</Trigger>
+					</ControlTemplate.Triggers>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+	<Style
+		TargetType="{x:Type Button}"
+		x:Key="BtnLinkStyle">
+		<Setter
+			Property="Height"
+			Value="26" />
+		<Setter
+			Property="Background"
+			Value="#00FFFFFF" />
+		<Setter
+			Property="BorderBrush"
+			Value="#FF000000" />
+		<Setter
+			Property="Foreground"
+			Value="#FF000000" />
+		<Setter
+			Property="Padding"
+			Value="0,4,0,0" />
+		<Setter
+			Property="FrameworkElement.FocusVisualStyle"
+			Value="{x:Null}" />
+		<Setter
+			Property="Template">
+			<Setter.Value>
+				<ControlTemplate
+					TargetType="{x:Type Button}">
+					<Border
+						Name="Bd"
+						BorderThickness="0,0,0,1"
+						BorderBrush="{TemplateBinding BorderBrush}"
+						Background="{TemplateBinding Background}">
+						<ContentPresenter
+							HorizontalAlignment="Center"
+							VerticalAlignment="Bottom"
+							Margin="{TemplateBinding Padding}" />
+					</Border>
+					<ControlTemplate.Triggers>
+						<Trigger
+							Property="IsPressed"
+							Value="True">
+							<Setter
+								TargetName="Bd"
+								Value="{DynamicResource DarkAccentColor}"
+								Property="BorderBrush" />
+							<Setter
+								Value="{DynamicResource DarkAccentColor}"
+								Property="Foreground" />
+						</Trigger>
+						<Trigger
+							Property="UIElement.IsMouseOver"
+							Value="True">
+							<Setter
+								TargetName="Bd"
+								Value="{DynamicResource DarkAccentColor}"
+								Property="BorderBrush" />
+							<Setter
+								Value="{DynamicResource DarkAccentColor}"
+								Property="Foreground" />
+						</Trigger>
+					</ControlTemplate.Triggers>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+	<Style
+		TargetType="{x:Type Button}"
+		x:Key="BtnRedLinkStyle">
+		<Setter
+			Property="Height"
+			Value="26" />
+		<Setter
+			Property="Background"
+			Value="#00FFFFFF" />
+		<Setter
+			Property="BorderBrush"
+			Value="{DynamicResource NormalRedColor}" />
+		<Setter
+			Property="Foreground"
+			Value="{DynamicResource NormalRedColor}" />
+		<Setter
+			Property="Padding"
+			Value="0,4,0,0" />
+		<Setter
+			Property="FrameworkElement.FocusVisualStyle"
+			Value="{x:Null}" />
+		<Setter
+			Property="Template">
+			<Setter.Value>
+				<ControlTemplate
+					TargetType="{x:Type Button}">
+					<Border
+						Name="Bd"
+						BorderThickness="0,0,0,1"
+						BorderBrush="{TemplateBinding BorderBrush}"
+						Background="{TemplateBinding Background}">
+						<ContentPresenter
+							HorizontalAlignment="Center"
+							VerticalAlignment="Bottom"
+							Margin="{TemplateBinding Padding}" />
+					</Border>
+					<ControlTemplate.Triggers>
+						<Trigger
+							Property="IsPressed"
+							Value="True">
+							<Setter
+								TargetName="Bd"
+								Value="{DynamicResource DarkRedColor}"
+								Property="BorderBrush" />
+							<Setter
+								Value="{DynamicResource DarkRedColor}"
+								Property="Foreground" />
+						</Trigger>
+						<Trigger
+							Property="UIElement.IsMouseOver"
+							Value="True">
+							<Setter
+								TargetName="Bd"
+								Value="{DynamicResource DarkRedColor}"
+								Property="BorderBrush" />
+							<Setter
+								Value="{DynamicResource DarkRedColor}"
+								Property="Foreground" />
+						</Trigger>
+					</ControlTemplate.Triggers>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+	<Style
+		TargetType="{x:Type Button}"
+		x:Key="BtnGrayStyle">
+		<Setter
+			Property="Background"
+			Value="{DynamicResource NormalGrayColor}" />
+		<Setter
+			Property="BorderBrush"
+			Value="{DynamicResource LightGrayColor}" />
+		<Setter
+			Property="Foreground"
+			Value="{DynamicResource NormalForegroundColor}" />
+		<Setter
+			Property="Template">
+			<Setter.Value>
+				<ControlTemplate
+					TargetType="{x:Type Button}">
+					<Border
+						Background="{TemplateBinding Background}"
+						BorderBrush="{TemplateBinding BorderBrush}"
+						BorderThickness="1"
+						SnapsToDevicePixels="True">
+						<Grid>
+							<ContentPresenter
+								HorizontalAlignment="Center"
+								VerticalAlignment="Center" />
+						</Grid>
+					</Border>
+					<ControlTemplate.Triggers>
+						<Trigger
+							Property="UIElement.IsMouseOver"
+							Value="True">
+							<Setter
+								Value="{DynamicResource NormalGrayColor}"
+								Property="BorderBrush" />
+						</Trigger>
+						<Trigger
+							Property="IsPressed"
+							Value="True">
+							<Setter
+								Value="{DynamicResource DarkGrayColor}"
+								Property="Background" />
+							<Setter
+								Value="{DynamicResource NormalGrayColor}"
+								Property="BorderBrush" />
+							<Setter
+								Property="Foreground"
+								Value="#FFFFFFFF" />
+						</Trigger>
+						<Trigger
+							Property="IsEnabled"
+							Value="False">
+							<Setter
+								Property="Background"
+								Value="#00FFFFFF" />
+						</Trigger>
+					</ControlTemplate.Triggers>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+	<Style
+		TargetType="{x:Type Button}"
+		x:Key="BtnDeleteStyle">
+		<Setter
+			Property="Height"
+			Value="30" />
+		<Setter
+			Property="Background"
+			Value="#F18384" />
+		<Setter
+			Property="BorderBrush"
+			Value="#F9B0B1" />
+		<Setter
+			Property="BorderThickness"
+			Value="1" />
+		<Setter
+			Property="Foreground"
+			Value="#FFFFFFFF" />
+		<Setter
+			Property="HorizontalContentAlignment"
+			Value="Center" />
+		<Setter
+			Property="VerticalContentAlignment"
+			Value="Center" />
+		<Setter
+			Property="Padding"
+			Value="4,1" />
+		<Setter
+			Property="FrameworkElement.FocusVisualStyle"
+			Value="{x:Null}" />
+		<Setter
+			Property="Template">
+			<Setter.Value>
+				<ControlTemplate
+					TargetType="{x:Type Button}">
+					<Border
+						Name="Bd"
+						BorderThickness="{TemplateBinding BorderThickness}"
+						BorderBrush="{TemplateBinding BorderBrush}"
+						Background="{TemplateBinding Background}">
+						<ContentPresenter
+							HorizontalAlignment="Center"
+							VerticalAlignment="Center"
+							Margin="{TemplateBinding Padding}" />
+					</Border>
+					<ControlTemplate.Triggers>
+						<Trigger
+							Property="IsEnabled"
+							Value="False">
+							<Setter
+								TargetName="Bd"
+								Value="{DynamicResource LightGrayColor}"
+								Property="Background" />
+							<Setter
+								TargetName="Bd"
+								Value="{DynamicResource DarkGrayColor}"
+								Property="BorderBrush" />
+							<Setter
+								Property="Foreground"
+								Value="#FFA9A9A9" />
+						</Trigger>
+						<Trigger
+							Property="IsPressed"
+							Value="True">
+							<Setter
+								TargetName="Bd"
+								Property="BorderBrush"
+								Value="#F18384" />
+							<Setter
+								TargetName="Bd"
+								Property="Background"
+								Value="#D77576" />
+						</Trigger>
+						<Trigger
+							Property="UIElement.IsMouseOver"
+							Value="True">
+							<Setter
+								TargetName="Bd"
+								Property="BorderBrush"
+								Value="#F18384" />
+						</Trigger>
+					</ControlTemplate.Triggers>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+	<Style
+		TargetType="{x:Type Button}"
+		x:Key="BtnGreenStyle">
+		<Setter
+			Property="Background"
+			Value="#76edb1" />
+		<Setter
+			Property="Padding"
+			Value="10,0" />
+		<Setter
+			Property="BorderThickness"
+			Value="0" />
+		<Setter
+			Property="FontSize"
+			Value="13" />
+		<Setter
+			Property="Height"
+			Value="36" />
+		<Setter
+			Property="Foreground"
+			Value="#FFFFFFFF" />
+		<Setter
+			Property="HorizontalContentAlignment"
+			Value="Center" />
+		<Setter
+			Property="VerticalContentAlignment"
+			Value="Center" />
+		<Setter
+			Property="FrameworkElement.FocusVisualStyle"
+			Value="{x:Null}" />
+		<Setter
+			Property="Template">
+			<Setter.Value>
+				<ControlTemplate
+					TargetType="{x:Type Button}">
+					<Border
+						Name="Bd"
+						Background="{TemplateBinding Background}">
+						<ContentPresenter
+							HorizontalAlignment="Center"
+							VerticalAlignment="Center"
+							Margin="{TemplateBinding Padding}" />
+					</Border>
+					<ControlTemplate.Triggers>
+						<Trigger
+							Property="IsPressed"
+							Value="True">
+							<Setter
+								TargetName="Bd"
+								Property="Background"
+								Value="#46bd81" />
+						</Trigger>
+						<Trigger
+							Property="UIElement.IsMouseOver"
+							Value="True">
+							<Setter
+								TargetName="Bd"
+								Property="Background"
+								Value="#66dda1" />
+						</Trigger>
+					</ControlTemplate.Triggers>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+	<Style
+		TargetType="{x:Type RadioButton}"
+		x:Key="RBtnTabStyle">
+		<Setter
+			Property="FrameworkElement.FocusVisualStyle"
+			Value="{x:Null}" />
+		<Setter
+			Property="Height"
+			Value="36" />
+		<Setter
+			Property="Background"
+			Value="{DynamicResource NormalGrayColor}" />
+		<Setter
+			Property="BorderBrush"
+			Value="{DynamicResource LightGrayColor}" />
+		<Setter
+			Property="Foreground"
+			Value="{DynamicResource NormalForegroundColor}" />
+		<Setter
+			Property="BorderThickness"
+			Value="1" />
+		<Setter
+			Property="Padding"
+			Value="16,0" />
+		<Setter
+			Property="FontSize"
+			Value="13" />
+		<Setter
+			Property="Template">
+			<Setter.Value>
+				<ControlTemplate
+					TargetType="{x:Type RadioButton}">
+					<Border
+						Name="Bd"
+						BorderThickness="{TemplateBinding BorderThickness}"
+						BorderBrush="{TemplateBinding BorderBrush}"
+						Background="{TemplateBinding Background}">
+						<ContentPresenter
+							HorizontalAlignment="Center"
+							VerticalAlignment="Center"
+							Margin="{TemplateBinding Padding}" />
+					</Border>
+					<ControlTemplate.Triggers>
+						<Trigger
+							Property="ToggleButton.IsChecked"
+							Value="True">
+							<Setter
+								TargetName="Bd"
+								Value="{DynamicResource NormalAccentColor}"
+								Property="Background" />
+							<Setter
+								TargetName="Bd"
+								Value="{DynamicResource LightAccentColor}"
+								Property="BorderBrush" />
+							<Setter
+								Property="Foreground"
+								Value="#FFFFFFFF" />
+						</Trigger>
+						<Trigger
+							Property="ToggleButton.IsChecked"
+							Value="{x:Null}">
+							<Setter
+								TargetName="Bd"
+								Value="{DynamicResource NormalGrayColor}"
+								Property="Background" />
+							<Setter
+								TargetName="Bd"
+								Value="{DynamicResource LightGrayColor}"
+								Property="BorderBrush" />
+							<Setter
+								Value="{DynamicResource NormalForegroundColor}"
+								Property="Foreground" />
+						</Trigger>
+						<MultiTrigger>
+							<MultiTrigger.Conditions>
+								<Condition
+									Property="ToggleButton.IsChecked"
+									Value="True" />
+								<Condition
+									Property="UIElement.IsMouseOver"
+									Value="True" />
+							</MultiTrigger.Conditions>
+							<Setter
+								TargetName="Bd"
+								Value="{DynamicResource NormalAccentColor}"
+								Property="BorderBrush" />
+						</MultiTrigger>
+						<MultiTrigger>
+							<MultiTrigger.Conditions>
+								<Condition
+									Property="ToggleButton.IsChecked"
+									Value="True" />
+								<Condition
+									Property="IsPressed"
+									Value="True" />
+							</MultiTrigger.Conditions>
+							<Setter
+								TargetName="Bd"
+								Value="{DynamicResource NormalAccentColor}"
+								Property="BorderBrush" />
+						</MultiTrigger>
+						<MultiTrigger>
+							<MultiTrigger.Conditions>
+								<Condition
+									Property="ToggleButton.IsChecked"
+									Value="False" />
+								<Condition
+									Property="UIElement.IsMouseOver"
+									Value="True" />
+							</MultiTrigger.Conditions>
+							<Setter
+								TargetName="Bd"
+								Value="{DynamicResource NormalGrayColor}"
+								Property="BorderBrush" />
+						</MultiTrigger>
+						<MultiTrigger>
+							<MultiTrigger.Conditions>
+								<Condition
+									Property="ToggleButton.IsChecked"
+									Value="False" />
+								<Condition
+									Property="IsPressed"
+									Value="True" />
+							</MultiTrigger.Conditions>
+							<Setter
+								TargetName="Bd"
+								Value="{DynamicResource NormalAccentColor}"
+								Property="Background" />
+							<Setter
+								TargetName="Bd"
+								Value="{DynamicResource LightAccentColor}"
+								Property="BorderBrush" />
+							<Setter
+								Property="Foreground"
+								Value="#FFFFFFFF" />
+						</MultiTrigger>
+					</ControlTemplate.Triggers>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+	<Style
+		TargetType="{x:Type RadioButton}"
+		x:Key="RdoBtnItemStyle">
+		<Setter
+			Property="Foreground"
+			Value="{DynamicResource NormalForegroundColor}" />
+		<Setter
+			Property="FrameworkElement.FocusVisualStyle"
+			Value="{x:Null}" />
+		<Setter
+			Property="Height"
+			Value="26" />
+		<Setter
+			Property="Template">
+			<Setter.Value>
+				<ControlTemplate
+					TargetType="{x:Type RadioButton}">
+					<Border
+						Name="Bd"
+						CornerRadius="8"
+						BorderThickness="1"
+						BorderBrush="{DynamicResource NormalGrayColor}"
+						Background="{DynamicResource LightGrayColor}">
+						<ContentPresenter
+							HorizontalAlignment="Center"
+							VerticalAlignment="Center"
+							Margin="4,0" />
+					</Border>
+					<ControlTemplate.Triggers>
+						<Trigger
+							Property="ToggleButton.IsChecked"
+							Value="True">
+							<Setter
+								TargetName="Bd"
+								Value="{DynamicResource NormalAccentColor}"
+								Property="Background" />
+							<Setter
+								Property="Foreground"
+								Value="#FFFFFFFF" />
+						</Trigger>
+						<Trigger
+							Property="UIElement.IsMouseOver"
+							Value="True">
+							<Setter
+								TargetName="Bd"
+								Value="{DynamicResource NormalAccentColor}"
+								Property="BorderBrush" />
+						</Trigger>
+						<Trigger
+							Property="IsEnabled"
+							Value="False">
+							<Setter
+								TargetName="Bd"
+								Value="{DynamicResource LightGrayColor}"
+								Property="BorderBrush" />
+							<Setter
+								Value="{DynamicResource NormalGrayColor}"
+								Property="Foreground" />
+						</Trigger>
+					</ControlTemplate.Triggers>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+	<Style
+		TargetType="{x:Type ToggleButton}"
+		x:Key="TogBtnItemStyle">
+		<Setter
+			Property="Foreground"
+			Value="{DynamicResource NormalForegroundColor}" />
+		<Setter
+			Property="FrameworkElement.FocusVisualStyle"
+			Value="{x:Null}" />
+		<Setter
+			Property="Height"
+			Value="26" />
+		<Setter
+			Property="Template">
+			<Setter.Value>
+				<ControlTemplate
+					TargetType="{x:Type ToggleButton}">
+					<Border
+						Name="Bd"
+						CornerRadius="8"
+						BorderThickness="1"
+						BorderBrush="{DynamicResource NormalGrayColor}"
+						Background="{DynamicResource LightGrayColor}">
+						<ContentPresenter
+							HorizontalAlignment="Center"
+							VerticalAlignment="Center"
+							Margin="4,0" />
+					</Border>
+					<ControlTemplate.Triggers>
+						<Trigger
+							Property="ToggleButton.IsChecked"
+							Value="True">
+							<Setter
+								TargetName="Bd"
+								Value="{DynamicResource NormalAccentColor}"
+								Property="Background" />
+							<Setter
+								Property="Foreground"
+								Value="#FFFFFFFF" />
+						</Trigger>
+						<Trigger
+							Property="UIElement.IsMouseOver"
+							Value="True">
+							<Setter
+								TargetName="Bd"
+								Value="{DynamicResource NormalAccentColor}"
+								Property="BorderBrush" />
+						</Trigger>
+						<Trigger
+							Property="IsEnabled"
+							Value="False">
+							<Setter
+								TargetName="Bd"
+								Value="{DynamicResource LightGrayColor}"
+								Property="BorderBrush" />
+							<Setter
+								Value="{DynamicResource NormalGrayColor}"
+								Property="Foreground" />
+						</Trigger>
+					</ControlTemplate.Triggers>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+	<Style
+		TargetType="{x:Type ToggleButton}"
+		x:Key="TBtnPlayStyle">
+		<Setter
+			Property="FrameworkElement.FocusVisualStyle"
+			Value="{x:Null}" />
+		<Setter
+			Property="Template">
+			<Setter.Value>
+				<ControlTemplate
+					TargetType="{x:Type ToggleButton}">
+					<Grid
+						Width="30"
+						Height="30">
+						<Image
+							Name="XPlay"
+							Source="/TTLX.WindowsTool.Assets;component/Images/Button/btn_play.png" />
+						<Image
+							Name="XPause"
+							Source="/TTLX.WindowsTool.Assets;component/Images/Button/btn_pause.png"
+							Visibility="Hidden" />
+					</Grid>
+					<ControlTemplate.Triggers>
+						<Trigger
+							Property="ToggleButton.IsChecked"
+							Value="True">
+							<Setter
+								TargetName="XPause"
+								Property="Visibility"
+								Value="Visible" />
+							<Setter
+								TargetName="XPlay"
+								Property="Visibility"
+								Value="Hidden" />
+						</Trigger>
+					</ControlTemplate.Triggers>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+	<Style
+		TargetType="{x:Type ToggleButton}"
+		x:Key="{x:Type ToggleButton}">
+		<Setter
+			Property="Height"
+			Value="30" />
+		<Setter
+			Property="Background"
+			Value="#FFFFFFFF" />
+		<Setter
+			Property="BorderBrush"
+			Value="{DynamicResource DarkGrayColor}" />
+		<Setter
+			Property="BorderThickness"
+			Value="1" />
+		<Setter
+			Property="Foreground"
+			Value="{DynamicResource NormalForegroundColor}" />
+		<Setter
+			Property="HorizontalContentAlignment"
+			Value="Center" />
+		<Setter
+			Property="VerticalContentAlignment"
+			Value="Center" />
+		<Setter
+			Property="Padding"
+			Value="4,0" />
+		<Setter
+			Property="FrameworkElement.FocusVisualStyle"
+			Value="{x:Null}" />
+		<Setter
+			Property="Template">
+			<Setter.Value>
+				<ControlTemplate
+					TargetType="{x:Type ToggleButton}">
+					<Border
+						Name="Bd"
+						BorderThickness="{TemplateBinding BorderThickness}"
+						BorderBrush="{TemplateBinding BorderBrush}"
+						Background="{TemplateBinding Background}">
+						<ContentPresenter
+							HorizontalAlignment="Center"
+							VerticalAlignment="Center"
+							Margin="{TemplateBinding Padding}" />
+					</Border>
+					<ControlTemplate.Triggers>
+						<Trigger
+							Property="IsEnabled"
+							Value="False">
+							<Setter
+								TargetName="Bd"
+								Value="{DynamicResource LightGrayColor}"
+								Property="Background" />
+							<Setter
+								TargetName="Bd"
+								Value="{DynamicResource DarkGrayColor}"
+								Property="BorderBrush" />
+							<Setter
+								Value="{DynamicResource DarkGrayColor}"
+								Property="Foreground" />
+						</Trigger>
+						<Trigger
+							Property="IsPressed"
+							Value="True">
+							<Setter
+								TargetName="Bd"
+								Value="{DynamicResource LightAccentColor}"
+								Property="BorderBrush" />
+							<Setter
+								TargetName="Bd"
+								Value="{DynamicResource NormalAccentColor}"
+								Property="Background" />
+							<Setter
+								Property="Foreground"
+								Value="#FFFFFFFF" />
+						</Trigger>
+						<Trigger
+							Property="ToggleButton.IsChecked"
+							Value="true">
+							<Setter
+								TargetName="Bd"
+								Value="{DynamicResource LightAccentColor}"
+								Property="BorderBrush" />
+						</Trigger>
+						<Trigger
+							Property="UIElement.IsMouseOver"
+							Value="True">
+							<Setter
+								TargetName="Bd"
+								Value="{DynamicResource NormalAccentColor}"
+								Property="BorderBrush" />
+						</Trigger>
+						<EventTrigger
+							RoutedEvent="Checked">
+							<BeginStoryboard>
+								<Storyboard
+									RepeatBehavior="Forever"
+									TargetName="Bd"
+									TargetProperty="Background.Color"
+									AutoReverse="True">
+									<ColorAnimation
+										To="#2ac2fa"
+										Duration="00:00:01" />
+								</Storyboard>
+							</BeginStoryboard>
+						</EventTrigger>
+					</ControlTemplate.Triggers>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+	<Style
+		TargetType="{x:Type Button}"
+		x:Key="BtnPronSymbolStyle">
+		<Setter
+			Property="Width"
+			Value="46" />
+		<Setter
+			Property="Height"
+			Value="26" />
+		<Setter
+			Property="Background"
+			Value="#FFFFFFFF" />
+		<Setter
+			Property="BorderBrush"
+			Value="{DynamicResource NormalAccentColor}" />
+		<Setter
+			Property="BorderThickness"
+			Value="1" />
+		<Setter
+			Property="Foreground"
+			Value="{DynamicResource NormalAccentColor}" />
+		<Setter
+			Property="FontSize"
+			Value="14" />
+		<Setter
+			Property="HorizontalContentAlignment"
+			Value="Center" />
+		<Setter
+			Property="VerticalContentAlignment"
+			Value="Center" />
+		<Setter
+			Property="Padding"
+			Value="4,1" />
+		<Setter
+			Property="FrameworkElement.FocusVisualStyle"
+			Value="{x:Null}" />
+		<Setter
+			Property="Template">
+			<Setter.Value>
+				<ControlTemplate
+					TargetType="{x:Type Button}">
+					<Border
+						Name="Bd"
+						CornerRadius="3"
+						BorderThickness="{TemplateBinding BorderThickness}"
+						BorderBrush="{TemplateBinding BorderBrush}"
+						Background="{TemplateBinding Background}">
+						<ContentPresenter
+							HorizontalAlignment="Center"
+							VerticalAlignment="Center"
+							Margin="{TemplateBinding Padding}" />
+					</Border>
+					<ControlTemplate.Triggers>
+						<Trigger
+							Property="IsEnabled"
+							Value="False">
+							<Setter
+								TargetName="Bd"
+								Value="{DynamicResource LightGrayColor}"
+								Property="Background" />
+							<Setter
+								TargetName="Bd"
+								Value="{DynamicResource DarkGrayColor}"
+								Property="BorderBrush" />
+							<Setter
+								Value="{DynamicResource DarkGrayColor}"
+								Property="Foreground" />
+						</Trigger>
+						<Trigger
+							Property="UIElement.IsMouseOver"
+							Value="True">
+							<Setter
+								TargetName="Bd"
+								Value="{DynamicResource DarkAccentColor}"
+								Property="BorderBrush" />
+							<Setter
+								TargetName="Bd"
+								Value="{DynamicResource LightGrayColor}"
+								Property="Background" />
+							<Setter
+								Value="{DynamicResource DarkAccentColor}"
+								Property="Foreground" />
+						</Trigger>
+						<Trigger
+							Property="IsPressed"
+							Value="True">
+							<Setter
+								TargetName="Bd"
+								Value="{DynamicResource DarkAccentColor}"
+								Property="BorderBrush" />
+							<Setter
+								TargetName="Bd"
+								Value="{DynamicResource NormalAccentColor}"
+								Property="Background" />
+							<Setter
+								Property="Foreground"
+								Value="#FFFFFFFF" />
+						</Trigger>
+					</ControlTemplate.Triggers>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+	<Style
+		TargetType="{x:Type Button}"
+		x:Key="WindowButton">
+		<Setter
+			Property="Width"
+			Value="40" />
+		<Setter
+			Property="Height"
+			Value="40" />
+		<Setter
+			Property="VerticalAlignment"
+			Value="Center" />
+		<Setter
+			Property="FrameworkElement.FocusVisualStyle"
+			Value="{x:Null}" />
+	</Style>
+	<Style
+		TargetType="{x:Type Button}"
+		BasedOn="{StaticResource WindowButton}"
+		x:Key="BtnWndCloseStyle">
+		<Setter
+			Property="FrameworkElement.ToolTip"
+			Value="关闭" />
+		<Setter
+			Property="Template">
+			<Setter.Value>
+				<ControlTemplate
+					TargetType="{x:Type Button}">
+					<Grid>
+						<Border
+							Name="Bd"
+							SnapsToDevicePixels="True"
+							Background="#00FFFFFF" />
+						<Image
+							Source="/TTLX.WindowsTool.Assets;component/Images/Button/window-close.png"
+							Width="12" />
+					</Grid>
+					<ControlTemplate.Triggers>
+						<Trigger
+							Property="UIElement.IsMouseOver"
+							Value="True">
+							<Setter
+								TargetName="Bd"
+								Property="Background"
+								Value="#E94242" />
+						</Trigger>
+						<Trigger
+							Property="IsPressed"
+							Value="True">
+							<Setter
+								TargetName="Bd"
+								Property="Background"
+								Value="#D72323" />
+						</Trigger>
+					</ControlTemplate.Triggers>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+	<Style
+		TargetType="{x:Type Button}"
+		BasedOn="{StaticResource WindowButton}"
+		x:Key="BtnWndStyle">
+		<Setter
+			Property="Template">
+			<Setter.Value>
+				<ControlTemplate
+					TargetType="{x:Type Button}">
+					<Grid>
+						<Border
+							Name="Bd"
+							SnapsToDevicePixels="True"
+							Background="#00FFFFFF">
+							<ContentPresenter
+								HorizontalAlignment="Center"
+								VerticalAlignment="Center" />
+						</Border>
+					</Grid>
+					<ControlTemplate.Triggers>
+						<Trigger
+							Property="UIElement.IsMouseOver"
+							Value="True">
+							<Setter
+								TargetName="Bd"
+								Property="Background"
+								Value="{StaticResource LightBlueColor}" />
+						</Trigger>
+						<Trigger
+							Property="IsPressed"
+							Value="True">
+							<Setter
+								TargetName="Bd"
+								Property="Background"
+								Value="{StaticResource DarkBlueColor}" />
+						</Trigger>
+					</ControlTemplate.Triggers>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+	<Style
+		TargetType="{x:Type Button}"
+		x:Key="BtnTextBoxClearStyle">
+		<Setter
+			Property="FrameworkElement.FocusVisualStyle"
+			Value="{x:Null}" />
+		<Setter
+			Property="Template">
+			<Setter.Value>
+				<ControlTemplate
+					TargetType="{x:Type Button}">
+					<Grid
+						Background="#00FFFFFF">
+						<Ellipse
+							Name="XPath"
+							Width="{TemplateBinding Width}"
+							Height="{TemplateBinding Height}"
+							Fill="{StaticResource NormalGrayColor}" />
+						<Path
+							Margin="4"
+							Stretch="Fill"
+							Fill="#FFFFFFFF"
+							Data="F1 M26.9166,22.1667 L37.9999,33.25 L49.0832,22.1668 L53.8332,26.9168 L42.7499,38 L53.8332,49.0834 L49.0833,53.8334 L37.9999,42.75 L26.9166,53.8334 L22.1666,49.0833 L33.25,38 L22.1667,26.9167 L26.9166,22.1667" />
+					</Grid>
+					<ControlTemplate.Triggers>
+						<Trigger
+							Property="IsPressed"
+							Value="True">
+							<Setter
+								TargetName="XPath"
+								Property="Fill"
+								Value="{StaticResource DarkGrayColor}" />
+						</Trigger>
+						<Trigger
+							Property="UIElement.IsMouseOver"
+							Value="True">
+							<Setter
+								TargetName="XPath"
+								Property="Fill"
+								Value="{StaticResource DarkGrayColor}" />
+						</Trigger>
+					</ControlTemplate.Triggers>
+				</ControlTemplate>
+			</Setter.Value>
+		</Setter>
+	</Style>
+</ResourceDictionary>

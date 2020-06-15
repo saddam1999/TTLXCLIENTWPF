@@ -1,0 +1,31 @@
+<UserControl
+	x:Class="TTLX.WindowsTool.Views.TopicContents.TopicContentImage" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:topiccontents="clr-namespace:TTLX.WindowsTool.Views.TopicContents">
+	<Grid>
+		<Button
+			Width="60"
+			Height="30"
+			Content="选图"
+			HorizontalAlignment="Left"
+			VerticalAlignment="Top"
+			Margin="110,-35,0,0"
+			Click="XSelectImg_OnClick" />
+		<Border
+			Margin="10">
+			<Image
+				Name="XImg"
+				MaxHeight="300"
+				Validation.ErrorTemplate="{x:Null}">
+				<Image.Source>
+					<Binding
+						Path="ImageUrl"
+						Mode="TwoWay"
+						ValidatesOnDataErrors="True">
+						<BindingBase.TargetNullValue>
+							<ImageSource>/TTLX.WindowsTool.Assets;component/Images/img_uploading_3.png</ImageSource>
+						</BindingBase.TargetNullValue>
+					</Binding>
+				</Image.Source>
+			</Image>
+		</Border>
+	</Grid>
+</UserControl>

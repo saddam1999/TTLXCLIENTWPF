@@ -1,0 +1,63 @@
+<UserControl
+	x:Class="TTLX.WindowsTool.Views.TopicPackages.Questions.PackageQuestionConversationDetails" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:local="clr-namespace:TTLX.WindowsTool.Views.TopicPackages.Questions" xmlns:controls="clr-namespace:TTLX.WindowsTool.Views.TopicPackages.Controls">
+	<Grid
+		Margin="10"
+		Background="#FFFFFFFF">
+		<Grid.RowDefinitions>
+			<RowDefinition
+				Height="*" />
+			<RowDefinition
+				Height="Auto" />
+		</Grid.RowDefinitions>
+		<Border
+			Background="{DynamicResource LightGrayColor}">
+			<ItemsControl
+				ItemsSource="{Binding ConversationDataCollection}">
+				<ItemsControl.ItemTemplate>
+					<DataTemplate>
+						<controls:PackageQuestionConversationItem
+							Delete="PackageQuestionConversationItem_OnDelete"
+							Margin="10" />
+					</DataTemplate>
+				</ItemsControl.ItemTemplate>
+			</ItemsControl>
+		</Border>
+		<Grid
+			Row="1"
+			Margin="4"
+			DataContext="{Binding SendData}">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition
+					Width="*" />
+				<ColumnDefinition
+					Width="80" />
+			</Grid.ColumnDefinitions>
+			<StackPanel>
+				<controls:PackageQuestionAudioEdit
+					Name="XAudioEdit"
+					Margin="0,4"
+					AudioItem="{Binding Audio, Mode=TwoWay}" />
+				<controls:PackageQuestionRichTextEdit
+					Name="XTxtEdit"
+					Margin="0,4"
+					RichTextItem="{Binding Content, Mode=TwoWay}" />
+			</StackPanel>
+			<ComboBox
+				Name="XCmbRole"
+				Grid.Column="1"
+				Height="30"
+				VerticalAlignment="Top"
+				VerticalContentAlignment="Center"
+				Margin="4,9,0,0"
+				SelectedItem="{Binding RoleType}" />
+			<Button
+				Name="XBtnAdd"
+				Grid.Column="1"
+				VerticalAlignment="Bottom"
+				Margin="4,4,0,4"
+				Content="添加对话"
+				Height="{Binding ElementName=XTxtEdit, Path=ActualHeight}"
+				Click="XBtnAdd_OnClick" />
+		</Grid>
+	</Grid>
+</UserControl>

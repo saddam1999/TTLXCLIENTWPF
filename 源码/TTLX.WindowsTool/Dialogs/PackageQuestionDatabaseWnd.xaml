@@ -1,0 +1,118 @@
+<controls:CMetroWindow
+	x:Class="TTLX.WindowsTool.Dialogs.PackageQuestionDatabaseWnd" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:local="clr-namespace:TTLX.WindowsTool.Dialogs" xmlns:controls="clr-namespace:TTLX.WindowsTool.Common.Controls;assembly=TTLX.WindowsTool.Common" xmlns:questions="clr-namespace:TTLX.WindowsTool.Views.TopicPackages.Questions" xmlns:controls1="clr-namespace:TTLX.WindowsTool.Views.TopicPackages.Controls"
+	Style="{StaticResource WindowStyle}"
+	WindowStartupLocation="CenterOwner"
+	Title="题库"
+	Height="600"
+	Width="1000">
+	<Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition
+				Height="50" />
+			<RowDefinition
+				Height="*" />
+			<RowDefinition
+				Height="60" />
+		</Grid.RowDefinitions>
+		<StackPanel
+			VerticalAlignment="Center"
+			Orientation="Horizontal">
+			<TextBlock
+				Text="知识点"
+				VerticalAlignment="Center"
+				Margin="20,0,10,0" />
+			<TextBlock
+				VerticalAlignment="Center"
+				FontWeight="Bold"
+				Text="{Binding QuestionTag.Name}" />
+			<TextBlock
+				Text="题型"
+				VerticalAlignment="Center"
+				Margin="30,0,10,0" />
+			<ComboBox
+				Name="XCmbQuestionType"
+				MinWidth="80"
+				Height="30"
+				SelectedIndex="0"
+				SelectedItem="{Binding QuestionType}"
+				SelectionChanged="XCmbQuestionType_OnSelectionChanged" />
+		</StackPanel>
+		<TextBlock
+			VerticalAlignment="Center"
+			HorizontalAlignment="Right"
+			Margin="40,0"
+			Text="{Binding TotalCount, StringFormat=Total: 0}" />
+		<Border
+			Grid.Row="1"
+			Margin="10,0,10,10"
+			BorderThickness="1"
+			BorderBrush="#FFD3D3D3">
+			<Grid>
+				<controls1:PackageQuestionHorizontalListView
+					Name="XLstQuestion"
+					ItemsSource="{Binding PackageQuestionsDatabaseCollection}"
+					ScrollViewer.ScrollChanged="XLstQuestion_OnScrollChanged">
+					<ItemsControl.ItemTemplate>
+						<DataTemplate>
+							<Grid>
+								<questions:PackageQuestionItem
+									Width="800"
+									IsReadOnly="True" />
+								<Grid>
+									<Canvas
+										Background="#FFFFFFFF"
+										Opacity="0.2" />
+									<Border
+										Background="#FF90EE90"
+										Height="30"
+										Width="60"
+										Margin="0,5"
+										HorizontalAlignment="Right"
+										VerticalAlignment="Top"
+										Visibility="{Binding IsExistInLesson, Converter={StaticResource BoolToVisibilityConverter}}">
+										<TextBlock
+											Text="已添加"
+											VerticalAlignment="Center"
+											HorizontalAlignment="Center"
+											Foreground="#FFFFFFFF" />
+									</Border>
+								</Grid>
+							</Grid>
+						</DataTemplate>
+					</ItemsControl.ItemTemplate>
+				</controls1:PackageQuestionHorizontalListView>
+				<TextBlock
+					Text="没有符合要求的题目"
+					Margin="10"
+					Visibility="{Binding ElementName=XLstQuestion, Path=HasItems, Converter={StaticResource ReverseBoolToVisibilityConverter}}" />
+			</Grid>
+		</Border>
+		<Button
+			Name="XBtnAddClone"
+			Grid.Row="2"
+			Width="120"
+			Content="添加题目拷贝"
+			HorizontalAlignment="Right"
+			Margin="360,0"
+			Visibility="Hidden"
+			Click="XBtnAddClone_OnClick" />
+		<Button
+			Name="XBtnAddRef"
+			Grid.Row="2"
+			Width="100"
+			Content="添加题目"
+			HorizontalAlignment="Right"
+			Margin="180,0"
+			Click="XBtnAddRef_OnClick" />
+		<Button
+			Name="XBtnCancel"
+			Style="{DynamicResource BtnGrayStyle}"
+			Grid.Row="2"
+			Height="30"
+			Width="100"
+			Content="取消"
+			HorizontalAlignment="Right"
+			Margin="40,0"
+			Click="XBtnCancel_OnClick" />
+	</Grid>
+</controls:CMetroWindow>

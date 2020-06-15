@@ -1,0 +1,28 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	<ResourceDictionary.MergedDictionaries>
+		<ResourceDictionary
+			Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.xaml" />
+		<ResourceDictionary
+			Source="pack://application:,,,/MahApps.Metro;component/Styles/Fonts.xaml" />
+		<ResourceDictionary
+			Source="pack://application:,,,/MahApps.Metro;component/Styles/Colors.xaml" />
+		<ResourceDictionary
+			Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/Blue.xaml" />
+		<ResourceDictionary
+			Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/BaseLight.xaml" />
+		<ResourceDictionary
+			Source="pack://application:,,,/MahApps.Metro;component/Styles/FlatButton.xaml" />
+		<ResourceDictionary
+			Source="/TTLX.WindowsTool.Assets;component/Themes/Default/Brush.xaml" />
+		<ResourceDictionary
+			Source="/TTLX.WindowsTool.Assets;component/Themes/Default/Button.xaml" />
+		<ResourceDictionary
+			Source="/TTLX.WindowsTool.Assets;component/Themes/Default/TextBox.xaml" />
+		<ResourceDictionary
+			Source="/TTLX.WindowsTool.Assets;component/Themes/Default/Slider.xaml" />
+		<ResourceDictionary
+			Source="/TTLX.WindowsTool.Assets;component/Themes/Default/DataGrid.xaml" />
+		<ResourceDictionary
+			Source="/TTLX.WindowsTool.Assets;component/Themes/Default/Window.xaml" />
+	</ResourceDictionary.MergedDictionaries>
+</ResourceDictionary>

@@ -1,0 +1,46 @@
+<controls:CMetroWindow
+	x:Class="TTLX.WindowsTool.Dialogs.PackageQuestionEditWnd" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:local="clr-namespace:TTLX.WindowsTool.Dialogs" xmlns:controls="clr-namespace:TTLX.WindowsTool.Common.Controls;assembly=TTLX.WindowsTool.Common" xmlns:questions="clr-namespace:TTLX.WindowsTool.Views.TopicPackages.Questions"
+	Style="{StaticResource WindowStyle}"
+	WindowStartupLocation="CenterOwner"
+	Title="题目编辑"
+	Width="840"
+	Height="600">
+	<Grid
+		Name="XGdAfter"
+		Background="#FFFFFFFF">
+		<Grid.RowDefinitions>
+			<RowDefinition
+				Height="*" />
+			<RowDefinition
+				Height="40" />
+		</Grid.RowDefinitions>
+		<ScrollViewer
+			VerticalScrollBarVisibility="Auto"
+			Margin="10">
+			<questions:PackageQuestionItem
+				Name="XQuestionEdit"
+				Delete="XQuestionEdit_OnDelete"
+				Width="800"
+				DataContext="{Binding}" />
+		</ScrollViewer>
+		<StackPanel
+			Grid.Row="1"
+			Orientation="Horizontal"
+			HorizontalAlignment="Right">
+			<Button
+				Name="XBtnSave"
+				Content="保存"
+				Width="80"
+				Height="26"
+				Click="XBtnSave_OnClick" />
+			<Button
+				Name="XBtnCancel"
+				Style="{DynamicResource BtnGrayStyle}"
+				Content="取消"
+				Width="80"
+				Height="26"
+				Margin="20,0,20,0"
+				Click="XBtnCancel_OnClick" />
+		</StackPanel>
+	</Grid>
+</controls:CMetroWindow>

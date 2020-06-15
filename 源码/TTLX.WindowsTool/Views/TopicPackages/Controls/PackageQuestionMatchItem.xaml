@@ -1,0 +1,24 @@
+<UserControl
+	x:Class="TTLX.WindowsTool.Views.TopicPackages.Controls.PackageQuestionMatchItem" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:local="clr-namespace:TTLX.WindowsTool.Views.TopicPackages.Controls"
+	Height="140"
+	Width="240">
+	<Grid
+		Cursor="Hand">
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition
+				Width="*" />
+			<ColumnDefinition
+				Width="Auto" />
+		</Grid.ColumnDefinitions>
+		<Border
+			Name="XCon" />
+		<Button
+			Name="XBtnDel"
+			Style="{DynamicResource BtnDeleteStyle}"
+			Grid.Column="1"
+			VerticalAlignment="Center"
+			Margin="4"
+			Content="删除"
+			Click="XBtnDel_OnClick" />
+	</Grid>
+</UserControl>

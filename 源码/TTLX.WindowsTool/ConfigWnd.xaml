@@ -1,0 +1,126 @@
+<mah:MetroWindow
+	x:Class="TTLX.WindowsTool.ConfigWnd" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:local="clr-namespace:TTLX.WindowsTool" xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
+	WindowStartupLocation="CenterOwner"
+	Style="{StaticResource WindowStyle}"
+	Title="设置"
+	Height="240"
+	Width="400">
+	<Grid
+		Margin="20,10,20,20">
+		<Grid.RowDefinitions>
+			<RowDefinition
+				Height="*" />
+			<RowDefinition
+				Height="Auto" />
+		</Grid.RowDefinitions>
+		<Grid
+			Margin="4">
+			<Grid.RowDefinitions>
+				<RowDefinition
+					Height="40" />
+				<RowDefinition
+					Height="0" />
+				<RowDefinition
+					Height="40" />
+				<RowDefinition
+					Height="0" />
+			</Grid.RowDefinitions>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition
+					Width="140" />
+				<ColumnDefinition />
+			</Grid.ColumnDefinitions>
+			<TextBlock
+				Grid.Row="0"
+				Grid.Column="0"
+				VerticalAlignment="Center"
+				HorizontalAlignment="Center"
+				Text="文字识别" />
+			<StackPanel
+				Grid.Row="0"
+				Grid.Column="1"
+				Orientation="Horizontal">
+				<RadioButton
+					VerticalAlignment="Center"
+					GroupName="OcrSwitch"
+					Content="打开"
+					IsChecked="{Binding EnableOCR}" />
+				<RadioButton
+					VerticalAlignment="Center"
+					GroupName="OcrSwitch"
+					Content="关闭"
+					Margin="10,0,0,0"
+					IsChecked="True" />
+			</StackPanel>
+			<TextBlock
+				Grid.Row="2"
+				Grid.Column="0"
+				Margin="10"
+				VerticalAlignment="Center"
+				HorizontalAlignment="Center"
+				Text="编辑点读更新文字" />
+			<StackPanel
+				Grid.Row="2"
+				Grid.Column="1"
+				Orientation="Horizontal">
+				<RadioButton
+					Name="OcrEditButton1"
+					VerticalAlignment="Center"
+					GroupName="OcrEditSwitch"
+					Content="打开"
+					IsChecked="{Binding EnableEdit}" />
+				<RadioButton
+					Name="OcrEditButton2"
+					VerticalAlignment="Center"
+					GroupName="OcrEditSwitch"
+					Content="关闭"
+					Margin="10,0,0,0"
+					IsChecked="True" />
+			</StackPanel>
+			<TextBlock
+				Grid.Row="3"
+				Grid.Column="0"
+				Margin="10"
+				VerticalAlignment="Center"
+				HorizontalAlignment="Center"
+				Text="自动翻译" />
+			<StackPanel
+				Grid.Row="3"
+				Grid.Column="1"
+				Orientation="Horizontal">
+				<RadioButton
+					Name="AutoTransButton1"
+					VerticalAlignment="Center"
+					GroupName="TransEditSwitch"
+					Content="打开"
+					IsChecked="{Binding EnableAutoTranslation}" />
+				<RadioButton
+					Name="AutoTransButton2"
+					VerticalAlignment="Center"
+					GroupName="TransEditSwitch"
+					Content="关闭"
+					Margin="10,0,0,0"
+					IsChecked="True" />
+			</StackPanel>
+		</Grid>
+		<StackPanel
+			Grid.Row="1"
+			Orientation="Horizontal"
+			HorizontalAlignment="Right">
+			<Button
+				Name="XBtnOK"
+				Content="确定"
+				Width="100"
+				Height="30"
+				Click="XBtnOK_OnClick" />
+			<Button
+				Name="XBtnCancel"
+				Style="{DynamicResource BtnGrayStyle}"
+				Content="取消"
+				Width="100"
+				Height="30"
+				Margin="20,0,0,0"
+				Click="XBtnCancel_OnClick" />
+		</StackPanel>
+	</Grid>
+</mah:MetroWindow>

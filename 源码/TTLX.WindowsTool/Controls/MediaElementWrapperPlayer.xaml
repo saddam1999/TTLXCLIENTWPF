@@ -1,0 +1,83 @@
+<UserControl
+	x:Class="TTLX.WindowsTool.Controls.MediaElementWrapperPlayer" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:local="clr-namespace:TTLX.WindowsTool.Controls" xmlns:controls="clr-namespace:TTLX.WindowsTool.Common.Controls;assembly=TTLX.WindowsTool.Common" xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls">
+	<Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition
+				Height="*" />
+			<RowDefinition
+				Height="60" />
+		</Grid.RowDefinitions>
+		<controls:MediaElementWrapper
+			Name="XMedia"
+			Visibility="{Binding Path=VideoVisibility, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:MediaElementWrapperPlayer}}}"
+			Source="{Binding Path=MediaFileName, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:MediaElementWrapperPlayer}}}"
+			MediaInited="XMedia_OnMediaInited" />
+		<Grid
+			Row="1"
+			Background="#FFFFFFFF">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition
+					Width="60" />
+				<ColumnDefinition
+					Width="*" />
+			</Grid.ColumnDefinitions>
+			<ToggleButton
+				Style="{DynamicResource TBtnPlayStyle}"
+				Width="40"
+				Height="40"
+				IsChecked="{Binding ElementName=XMedia, Path=IsPlaying, Mode=TwoWay}" />
+			<Slider
+				Name="XSidPlayer"
+				Grid.Column="1"
+				VerticalAlignment="Center"
+				IsMoveToPointEnabled="True"
+				Margin="0,0,10,0"
+				Minimum="0"
+				Maximum="{Binding ElementName=XMedia, Path=Length, Converter={StaticResource NullableTimeSpanToSecondsConverter}}"
+				Value="{Binding ElementName=XMedia, Path=Position, Converter={StaticResource NullableTimeSpanToSecondsConverter}}" />
+			<StackPanel
+				Grid.Column="1"
+				Orientation="Horizontal"
+				HorizontalAlignment="Right"
+				VerticalAlignment="Bottom"
+				Margin="0,0,4,4">
+				<TextBlock
+					Text="{Binding ElementName=XSidPlayer, Path=Value, Converter={StaticResource NumberToTimeConverter}}" />
+				<TextBlock
+					Text="/" />
+				<TextBlock
+					Text="{Binding ElementName=XSidPlayer, Path=Maximum, Converter={StaticResource NumberToTimeConverter}}" />
+			</StackPanel>
+		</Grid>
+		<mah:MetroProgressBar
+			Name="XPgb"
+			Grid.Row="1"
+			VerticalAlignment="Bottom"
+			Height="60"
+			Opacity="0.3"
+			Minimum="0"
+			Maximum="100">
+			<FrameworkElement.Style>
+				<Style
+					TargetType="{x:Type mah:MetroProgressBar}">
+					<Style.Triggers>
+						<DataTrigger
+							Value="0"
+							Binding="{Binding Path=Value, RelativeSource={RelativeSource Mode=Self}}">
+							<Setter
+								Property="Visibility"
+								Value="Hidden" />
+						</DataTrigger>
+						<DataTrigger
+							Value="100"
+							Binding="{Binding Path=Value, RelativeSource={RelativeSource Mode=Self}}">
+							<Setter
+								Property="Visibility"
+								Value="Hidden" />
+						</DataTrigger>
+					</Style.Triggers>
+				</Style>
+			</FrameworkElement.Style>
+		</mah:MetroProgressBar>
+	</Grid>
+</UserControl>

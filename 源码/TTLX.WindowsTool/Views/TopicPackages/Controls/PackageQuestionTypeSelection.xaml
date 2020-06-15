@@ -1,0 +1,221 @@
+<UserControl
+	x:Class="TTLX.WindowsTool.Views.TopicPackages.Controls.PackageQuestionTypeSelection" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:local="clr-namespace:TTLX.WindowsTool.Views.TopicPackages.Controls" xmlns:topicPackage="clr-namespace:TTLX.WindowsTool.Models.TopicPackage;assembly=TTLX.WindowsTool.Models">
+	<Grid>
+		<Border
+			BorderThickness="1"
+			BorderBrush="#FFD3D3D3"
+			Margin="10">
+			<UIElement.Effect>
+				<DropShadowEffect
+					BlurRadius="4"
+					Opacity="0.4"
+					ShadowDepth="4"
+					Color="Black" />
+			</UIElement.Effect>
+			<Grid>
+				<Grid
+					Name="XGdAfter"
+					Background="#FFFFFFFF">
+					<Grid.RowDefinitions>
+						<RowDefinition
+							Height="30" />
+						<RowDefinition
+							Height="Auto" />
+					</Grid.RowDefinitions>
+					<Border
+						Background="{DynamicResource GradientBlue1}">
+						<TextBlock
+							Text="课后练习"
+							VerticalAlignment="Center"
+							Margin="4,0"
+							Foreground="#FFFFFFFF" />
+					</Border>
+					<StackPanel
+						Grid.Row="1"
+						Orientation="Vertical"
+						HorizontalAlignment="Center"
+						Margin="0,10">
+						<WrapPanel
+							Orientation="Horizontal"
+							Margin="10">
+							<RadioButton
+								Style="{StaticResource RBtnTabStyle}"
+								Content="L0-音素-宝箱（填空）"
+								Margin="4"
+								Tag="{x:Static topicPackage:TopicPackageQuestionTypeEnum.L0}"
+								Click="OnTypeSelected" />
+							<RadioButton
+								Style="{StaticResource RBtnTabStyle}"
+								Content="L1-词（选择）"
+								Margin="4"
+								Tag="{x:Static topicPackage:TopicPackageQuestionTypeEnum.L1}"
+								Click="OnTypeSelected" />
+							<RadioButton
+								Style="{StaticResource RBtnTabStyle}"
+								Content="L2-词-篮球（判断）"
+								Margin="4"
+								Tag="{x:Static topicPackage:TopicPackageQuestionTypeEnum.L2}"
+								Click="OnTypeSelected" />
+							<RadioButton
+								Style="{StaticResource RBtnTabStyle}"
+								Content="L3-句（选择）"
+								Margin="4"
+								Tag="{x:Static topicPackage:TopicPackageQuestionTypeEnum.L3}"
+								Click="OnTypeSelected" />
+							<RadioButton
+								Style="{StaticResource RBtnTabStyle}"
+								Content="L4-篇（填空）"
+								Margin="4"
+								Tag="{x:Static topicPackage:TopicPackageQuestionTypeEnum.L4}"
+								Click="OnTypeSelected" />
+							<RadioButton
+								Style="{StaticResource RBtnTabStyle}"
+								Content="L5-篇（阅读理解）"
+								Margin="4"
+								Tag="{x:Static topicPackage:TopicPackageQuestionTypeEnum.L5}"
+								Click="OnTypeSelected" />
+						</WrapPanel>
+						<WrapPanel
+							Orientation="Horizontal"
+							Margin="10">
+							<RadioButton
+								Style="{StaticResource RBtnTabStyle}"
+								Content="S1-词（录音）"
+								Margin="4"
+								Tag="{x:Static topicPackage:TopicPackageQuestionTypeEnum.S1}"
+								Click="OnTypeSelected" />
+							<RadioButton
+								Style="{StaticResource RBtnTabStyle}"
+								Content="S2-句（录音）"
+								Margin="4"
+								Tag="{x:Static topicPackage:TopicPackageQuestionTypeEnum.S2}"
+								Click="OnTypeSelected" />
+						</WrapPanel>
+						<WrapPanel
+							Orientation="Horizontal"
+							Margin="10">
+							<RadioButton
+								Style="{StaticResource RBtnTabStyle}"
+								Content="R1-词-打地鼠（选择）"
+								Margin="4"
+								Tag="{x:Static topicPackage:TopicPackageQuestionTypeEnum.R1}"
+								Click="OnTypeSelected" />
+							<RadioButton
+								Style="{StaticResource RBtnTabStyle}"
+								Content="R2-词（选择）"
+								Margin="4"
+								Tag="{x:Static topicPackage:TopicPackageQuestionTypeEnum.R2}"
+								Click="OnTypeSelected" />
+							<RadioButton
+								Style="{StaticResource RBtnTabStyle}"
+								Content="R3-词-购物篮（连线）"
+								Margin="4"
+								Tag="{x:Static topicPackage:TopicPackageQuestionTypeEnum.R3}"
+								Click="OnTypeSelected" />
+							<RadioButton
+								Style="{StaticResource RBtnTabStyle}"
+								Content="R4-篇（阅读理解）"
+								Margin="4"
+								Tag="{x:Static topicPackage:TopicPackageQuestionTypeEnum.R4}"
+								Click="OnTypeSelected" />
+						</WrapPanel>
+						<WrapPanel
+							Orientation="Horizontal"
+							Margin="10">
+							<RadioButton
+								Style="{StaticResource RBtnTabStyle}"
+								Content="W1-词-轮船（填空）"
+								Margin="4"
+								Tag="{x:Static topicPackage:TopicPackageQuestionTypeEnum.W1}"
+								Click="OnTypeSelected" />
+							<RadioButton
+								Style="{StaticResource RBtnTabStyle}"
+								Content="W2-句-轮船（填空）"
+								Margin="4"
+								Tag="{x:Static topicPackage:TopicPackageQuestionTypeEnum.W2}"
+								Click="OnTypeSelected" />
+						</WrapPanel>
+					</StackPanel>
+				</Grid>
+				<Grid
+					Name="XGdBefore"
+					Background="#FFFFFFFF">
+					<Grid.RowDefinitions>
+						<RowDefinition
+							Height="30" />
+						<RowDefinition
+							Height="Auto" />
+					</Grid.RowDefinitions>
+					<Border
+						Background="{DynamicResource GradientBlue1}">
+						<TextBlock
+							Text="课前预习"
+							VerticalAlignment="Center"
+							Margin="4,0"
+							Foreground="#FFFFFFFF" />
+					</Border>
+					<StackPanel
+						Grid.Row="1"
+						Orientation="Vertical"
+						HorizontalAlignment="Center"
+						Margin="0,10">
+						<WrapPanel
+							Orientation="Horizontal"
+							Margin="10">
+							<RadioButton
+								Style="{StaticResource RBtnTabStyle}"
+								Content="L6（只听）"
+								Margin="4"
+								Tag="{x:Static topicPackage:TopicPackageQuestionTypeEnum.L6}"
+								Click="OnTypeSelected" />
+							<RadioButton
+								Style="{StaticResource RBtnTabStyle}"
+								Content="L7（只听）"
+								Margin="4"
+								Tag="{x:Static topicPackage:TopicPackageQuestionTypeEnum.L7}"
+								Click="OnTypeSelected" />
+							<RadioButton
+								Style="{StaticResource RBtnTabStyle}"
+								Content="L8（只听）"
+								Margin="4"
+								Tag="{x:Static topicPackage:TopicPackageQuestionTypeEnum.L8}"
+								Click="OnTypeSelected" />
+							<RadioButton
+								Style="{StaticResource RBtnTabStyle}"
+								Content="L1-词（选择）"
+								Margin="4"
+								Tag="{x:Static topicPackage:TopicPackageQuestionTypeEnum.L1}"
+								Click="OnTypeSelected" />
+							<RadioButton
+								Style="{StaticResource RBtnTabStyle}"
+								Content="L9（选择）"
+								Margin="4"
+								Tag="{x:Static topicPackage:TopicPackageQuestionTypeEnum.L9}"
+								Click="OnTypeSelected" />
+						</WrapPanel>
+						<WrapPanel
+							Orientation="Horizontal"
+							Margin="10">
+							<RadioButton
+								Style="{StaticResource RBtnTabStyle}"
+								Content="S1-词（录音）"
+								Margin="4"
+								Tag="{x:Static topicPackage:TopicPackageQuestionTypeEnum.S1}"
+								Click="OnTypeSelected" />
+						</WrapPanel>
+						<WrapPanel
+							Orientation="Horizontal"
+							Margin="10">
+							<RadioButton
+								Style="{StaticResource RBtnTabStyle}"
+								Content="R3-词-购物篮（连线）"
+								Margin="4"
+								Tag="{x:Static topicPackage:TopicPackageQuestionTypeEnum.R3}"
+								Click="OnTypeSelected" />
+						</WrapPanel>
+					</StackPanel>
+				</Grid>
+			</Grid>
+		</Border>
+	</Grid>
+</UserControl>

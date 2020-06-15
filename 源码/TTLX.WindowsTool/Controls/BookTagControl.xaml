@@ -1,0 +1,76 @@
+<UserControl
+	x:Class="TTLX.WindowsTool.Controls.BookTagControl" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:local="clr-namespace:TTLX.WindowsTool.Controls">
+	<FrameworkElement.Resources>
+		<ResourceDictionary>
+			<Style
+				TargetType="{x:Type Button}"
+				x:Key="BtnItemDelStyle">
+				<Setter
+					Property="FrameworkElement.FocusVisualStyle"
+					Value="{x:Null}" />
+				<Setter
+					Property="Template">
+					<Setter.Value>
+						<ControlTemplate
+							TargetType="{x:Type Button}">
+							<Grid
+								Background="#00FFFFFF">
+								<Path
+									Name="XPath"
+									Stretch="Fill"
+									Fill="#FFF08080"
+									Width="18"
+									Height="18"
+									VerticalAlignment="Center"
+									Data="F1 M38,19 C48.4934,19 57,27.5066 57,38 C57,48.4934 48.4934,57 38,57 C27.5066,57 19,48.4934 19,38 C19,27.5066 27.5066,19 38,19 M23.75,34.8334 L23.75,41.1667 L52.25,41.1667 L52.25,34.8334 L23.75,34.8334" />
+							</Grid>
+							<ControlTemplate.Triggers>
+								<Trigger
+									Property="IsPressed"
+									Value="True">
+									<Setter
+										TargetName="XPath"
+										Property="Fill"
+										Value="#FFFF0000" />
+								</Trigger>
+								<Trigger
+									Property="UIElement.IsMouseOver"
+									Value="True">
+									<Setter
+										TargetName="XPath"
+										Property="Fill"
+										Value="#FFFF0000" />
+								</Trigger>
+							</ControlTemplate.Triggers>
+						</ControlTemplate>
+					</Setter.Value>
+				</Setter>
+			</Style>
+		</ResourceDictionary>
+	</FrameworkElement.Resources>
+	<Grid
+		Margin="4,4">
+		<Border
+			Name="XBd"
+			BorderThickness="1"
+			Background="#FFFFFFFF"
+			BorderBrush="#FFD3D3D3"
+			MinWidth="40"
+			MaxWidth="260"
+			Height="20"
+			CornerRadius="10"
+			ToolTip="{Binding Name}">
+			<TextBlock
+				Margin="10,0,24,0"
+				VerticalAlignment="Center"
+				HorizontalAlignment="Center"
+				TextTrimming="CharacterEllipsis"
+				Text="{Binding Name}" />
+		</Border>
+		<Button
+			Name="XBtnTagDel"
+			Style="{DynamicResource BtnItemDelStyle}"
+			HorizontalAlignment="Right"
+			Click="XBtnTagDel_OnClick" />
+	</Grid>
+</UserControl>

@@ -1,0 +1,105 @@
+<UserControl
+	x:Class="TTLX.WindowsTool.Views.TopicPackages.Questions.PackageQuestionFillBlankMediaItemDetails" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:controls="clr-namespace:TTLX.WindowsTool.Views.TopicPackages.Controls" xmlns:common="clr-namespace:TTLX.WindowsTool.Controls.Common" xmlns:topicPackage="clr-namespace:TTLX.WindowsTool.Models.TopicPackage;assembly=TTLX.WindowsTool.Models" xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity" xmlns:itemsControlDragDropBehavior="clr-namespace:TTLX.WindowsTool.Common.Core.ItemsControlDragDropBehavior;assembly=TTLX.WindowsTool.Common" xmlns:models="clr-namespace:TTLX.WindowsTool.Models;assembly=TTLX.WindowsTool.Models" xmlns:contents="clr-namespace:TTLX.WindowsTool.Models.TopicPackage.Contents;assembly=TTLX.WindowsTool.Models" xmlns:questions="clr-namespace:TTLX.WindowsTool.Views.TopicPackages.Questions">
+	<Grid
+		Margin="10"
+		Background="#FFFFFFFF">
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition
+				Width="100" />
+			<ColumnDefinition
+				Width="*" />
+		</Grid.ColumnDefinitions>
+		<Grid.RowDefinitions>
+			<RowDefinition
+				Height="Auto" />
+			<RowDefinition
+				Height="Auto" />
+			<RowDefinition
+				Height="Auto" />
+			<RowDefinition
+				Height="Auto" />
+		</Grid.RowDefinitions>
+		<TextBlock
+			Text="题目要求"
+			VerticalAlignment="Center"
+			HorizontalAlignment="Center" />
+		<TextBox
+			Grid.Column="1"
+			Margin="4"
+			Text="{Binding QuestionInfo.Title}" />
+		<Button
+			Name="XBtnAddStemItem"
+			Content="添加题干"
+			Grid.Row="1"
+			Width="80"
+			VerticalAlignment="Top"
+			Margin="0,2"
+			Click="XBtnAddStemItem_OnClick" />
+		<ItemsControl
+			Grid.Row="1"
+			Grid.Column="1"
+			Margin="4"
+			ItemsSource="{Binding Stem.Items}">
+			<ItemsControl.ItemTemplate>
+				<DataTemplate>
+					<common:CommonUserControlItem
+						Delete="StemItem_OnDelete"
+						Margin="0,2"
+						CanBeMove="False">
+						<ContentControl.ContentTemplate>
+							<DataTemplate>
+								<controls:PackageQuestionAudioEdit
+									HiddenDelBtn="True"
+									AudioItem="{Binding Path=DataContext, Mode=TwoWay, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=common:CommonUserControlItem}}" />
+							</DataTemplate>
+						</ContentControl.ContentTemplate>
+					</common:CommonUserControlItem>
+				</DataTemplate>
+			</ItemsControl.ItemTemplate>
+		</ItemsControl>
+		<TextBlock
+			Text="正确答案"
+			Grid.Row="2"
+			Margin="0,10"
+			FontSize="13"
+			FontWeight="Bold"
+			Foreground="{DynamicResource NormalAccentColor}"
+			VerticalAlignment="Top"
+			HorizontalAlignment="Center" />
+		<ItemsControl
+			Grid.Row="2"
+			Grid.Column="1"
+			Margin="4"
+			ItemsSource="{Binding Candidates}">
+			<i:Interaction.Behaviors>
+				<itemsControlDragDropBehavior:ItemsControlDragDropBehavior
+					ItemType="{x:Type contents:MediaItemCandidateEntity}" />
+			</i:Interaction.Behaviors>
+			<ItemsControl.ItemTemplate>
+				<DataTemplate>
+					<common:CommonUserControlItem
+						Margin="0,2"
+						CanBeDelete="False">
+						<ContentControl.ContentTemplate>
+							<DataTemplate
+								DataType="topicPackage:QuestionSelectionItemEntity">
+								<StackPanel
+									Orientation="Horizontal"
+									DataContext="{Binding Path=DataContext, Mode=TwoWay, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=common:CommonUserControlItem}}">
+									<TextBlock
+										Margin="10,0"
+										VerticalAlignment="Center"
+										FontSize="15"
+										Text="{Binding Id}" />
+									<controls:PackageQuestionImageEdit
+										HiddenDelBtn="True"
+										ImageItem="{Binding MediaItem, Mode=TwoWay}" />
+								</StackPanel>
+							</DataTemplate>
+						</ContentControl.ContentTemplate>
+					</common:CommonUserControlItem>
+				</DataTemplate>
+			</ItemsControl.ItemTemplate>
+		</ItemsControl>
+	</Grid>
+</UserControl>

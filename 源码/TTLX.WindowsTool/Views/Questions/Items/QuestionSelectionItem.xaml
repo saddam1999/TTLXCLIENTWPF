@@ -1,0 +1,99 @@
+<UserControl
+	x:Class="TTLX.WindowsTool.Views.Questions.Items.QuestionSelectionItem" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:local="clr-namespace:TTLX.WindowsTool.Views.Questions.Items" xmlns:controls="clr-namespace:TTLX.WindowsTool.Controls" xmlns:models="clr-namespace:TTLX.WindowsTool.Models;assembly=TTLX.WindowsTool.Models" xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls" xmlns:questions="clr-namespace:TTLX.WindowsTool.Views.Questions">
+	<FrameworkElement.Resources>
+		<ResourceDictionary>
+			<local:SelectionTypeToVisibilityConverter
+				x:Key="SelectionTypeToVisibilityConverter" />
+		</ResourceDictionary>
+	</FrameworkElement.Resources>
+	<Grid
+		Background="#FFFFFFFF"
+		MinHeight="100">
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition
+				Width="60" />
+			<ColumnDefinition
+				Width="Auto" />
+			<ColumnDefinition
+				Width="*" />
+			<ColumnDefinition
+				Width="60" />
+		</Grid.ColumnDefinitions>
+		<Border
+			Height="30"
+			Width="40"
+			Background="{DynamicResource LightAccentColor}"
+			HorizontalAlignment="Left"
+			Cursor="Hand">
+			<TextBlock
+				Text="移动"
+				VerticalAlignment="Center"
+				HorizontalAlignment="Center"
+				Foreground="#FFFFFFFF"
+				Cursor="Hand" />
+		</Border>
+		<RadioButton
+			Grid.Column="1"
+			VerticalAlignment="Center"
+			Margin="10,0"
+			GroupName="{Binding Path=DataContext.Id, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=questions:QuestionSelectionDetails}}"
+			IsChecked="{Binding IsAnswer}" />
+		<Image
+			Name="XImg"
+			Grid.Column="2"
+			Margin="4"
+			HorizontalAlignment="Left"
+			MaxHeight="150"
+			Visibility="{Binding Type, Converter={StaticResource SelectionTypeToVisibilityConverter}, ConverterParameter={x:Static models:SelectionTypeEnum.图片}}"
+			MouseDown="ImgUpload_OnMouseDown">
+			<Image.Source>
+				<Binding
+					Path="ImageUrl"
+					ValidatesOnDataErrors="True">
+					<BindingBase.TargetNullValue>
+						<ImageSource>/TTLX.WindowsTool.Assets;component/Images/img_uploading_3.png</ImageSource>
+					</BindingBase.TargetNullValue>
+				</Binding>
+			</Image.Source>
+		</Image>
+		<Border
+			Grid.Column="2"
+			Margin="4"
+			Visibility="{Binding Type, Converter={StaticResource SelectionTypeToVisibilityConverter}, ConverterParameter={x:Static models:SelectionTypeEnum.文本}}">
+			<TextBox
+				Margin="0,10"
+				Style="{DynamicResource TxtMulStyle}"
+				Text="{Binding Text, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}" />
+		</Border>
+		<Grid
+			Column="2"
+			Margin="4"
+			Visibility="{Binding Type, Converter={StaticResource SelectionTypeToVisibilityConverter}, ConverterParameter={x:Static models:SelectionTypeEnum.音频}}">
+			<Grid.RowDefinitions>
+				<RowDefinition
+					Height="40" />
+				<RowDefinition
+					Height="*" />
+			</Grid.RowDefinitions>
+			<controls:AudioLocalComboBox
+				Name="XCmbAudio"
+				SelectionChanged="OnSelectionChanged"
+				Height="30"
+				Grid.ColumnSpan="2"
+				DisplayMemberPath="FileName"
+				DefaultAudioUrl="{Binding AudioUrl, Mode=OneWay}" />
+			<controls:AudioEdit
+				Name="XAudioEdit"
+				Grid.Row="1"
+				AudioFilePath="{Binding AudioUrl, ValidatesOnDataErrors=True}" />
+		</Grid>
+		<Button
+			Name="XBtnDel"
+			Style="{DynamicResource BtnDeleteStyle}"
+			Grid.Column="3"
+			Width="60"
+			HorizontalAlignment="Right"
+			Content="删除"
+			Click="Del_OnClick" />
+	</Grid>
+</UserControl>

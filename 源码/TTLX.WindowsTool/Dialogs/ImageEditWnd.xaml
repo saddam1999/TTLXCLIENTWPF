@@ -1,0 +1,144 @@
+<mah:MetroWindow
+	x:Class="TTLX.WindowsTool.Dialogs.ImageEditWnd" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:local="clr-namespace:TTLX.WindowsTool.Dialogs" xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls" xmlns:controls="clr-namespace:TTLX.WindowsTool.Common.Controls;assembly=TTLX.WindowsTool.Common"
+	Title="图片编辑"
+	Style="{StaticResource WindowStyle}"
+	ResizeMode="NoResize"
+	WindowStartupLocation="CenterOwner"
+	Height="600"
+	Width="800">
+	<Grid
+		Margin="10">
+		<Grid.RowDefinitions>
+			<RowDefinition
+				Height="*" />
+			<RowDefinition
+				Height="100" />
+		</Grid.RowDefinitions>
+		<controls:MediaElementWrapper
+			Name="XMedia"
+			ScrubbingEnabled="True"
+			MediaInited="XMedia_OnMediaInited" />
+		<controls:ImageEdit
+			Name="XImageEdit"
+			Grid.Row="0" />
+		<Slider
+			Name="XMediaSlider"
+			Grid.Row="0"
+			VerticalAlignment="Bottom"
+			Width="300"
+			Margin="10"
+			Minimum="0"
+			Visibility="Hidden"
+			Maximum="{Binding ElementName=XMedia, Path=Length, Converter={StaticResource NullableTimeSpanToSecondsConverter}, Mode=OneWay}"
+			ValueChanged="XMediaSlider_OnValueChanged" />
+		<Grid
+			Row="1">
+			<Grid.RowDefinitions>
+				<RowDefinition />
+				<RowDefinition />
+			</Grid.RowDefinitions>
+			<StackPanel
+				Orientation="Horizontal"
+				HorizontalAlignment="Center"
+				VerticalAlignment="Center">
+				<TextBox
+					Name="XTxtWidth"
+					Width="40" />
+				<TextBlock
+					Text=":"
+					Margin="6,0"
+					VerticalAlignment="Center" />
+				<TextBox
+					Name="XTxtHeight"
+					Width="40" />
+				<Button
+					Name="XCustomRatio"
+					Style="{DynamicResource BtnBorderStyle}"
+					Margin="10,0"
+					Width="100"
+					Content="自定义比例"
+					IsEnabled="{Binding ElementName=XImageEdit, Path=HasImage}"
+					Click="XBtnCustomRatio_OnClick" />
+				<Button
+					Margin="10,0,10,0"
+					Style="{DynamicResource BtnBorderStyle}"
+					Width="60"
+					Content="16:9"
+					Tag="16:9"
+					IsEnabled="{Binding ElementName=XImageEdit, Path=HasImage}"
+					Click="XBtnSetRatio_OnClick" />
+				<Button
+					Margin="10,0"
+					Style="{DynamicResource BtnBorderStyle}"
+					Width="60"
+					Content="4:3"
+					Tag="4:3"
+					IsEnabled="{Binding ElementName=XImageEdit, Path=HasImage}"
+					Click="XBtnSetRatio_OnClick" />
+				<Button
+					Margin="10,0"
+					Style="{DynamicResource BtnBorderStyle}"
+					Width="60"
+					Content="9:16"
+					Tag="9:16"
+					IsEnabled="{Binding ElementName=XImageEdit, Path=HasImage}"
+					Click="XBtnSetRatio_OnClick" />
+				<Button
+					Margin="10,0"
+					Style="{DynamicResource BtnBorderStyle}"
+					Width="60"
+					Content="3:4"
+					Tag="3:4"
+					IsEnabled="{Binding ElementName=XImageEdit, Path=HasImage}"
+					Click="XBtnSetRatio_OnClick" />
+				<Button
+					Margin="30,0,10,0"
+					Style="{DynamicResource BtnBorderStyle}"
+					Width="60"
+					Content="左旋"
+					Tag="-90"
+					IsEnabled="{Binding ElementName=XImageEdit, Path=HasImage}"
+					Click="XBtnRotate_OnClick" />
+				<Button
+					Margin="10,0"
+					Style="{DynamicResource BtnBorderStyle}"
+					Width="60"
+					Content="右旋"
+					Tag="90"
+					IsEnabled="{Binding ElementName=XImageEdit, Path=HasImage}"
+					Click="XBtnRotate_OnClick" />
+			</StackPanel>
+			<StackPanel
+				Grid.Row="1"
+				Orientation="Horizontal"
+				HorizontalAlignment="Center"
+				VerticalAlignment="Center">
+				<Button
+					Name="XBtnSave"
+					Content="保存裁剪图片"
+					Width="160"
+					Height="40"
+					Margin="20,0"
+					IsEnabled="{Binding ElementName=XImageEdit, Path=HasImage}"
+					Click="XBtnSave_OnClick" />
+				<Button
+					Name="XBtnSaveOrigin"
+					Content="保存原始图片"
+					Width="160"
+					Height="40"
+					Margin="20,0"
+					IsEnabled="{Binding ElementName=XImageEdit, Path=HasImage}"
+					Click="XBtnSaveOrigin_OnClick" />
+			</StackPanel>
+			<Button
+				Name="XBtnOpen"
+				Grid.Row="1"
+				Content="打开"
+				HorizontalAlignment="Left"
+				Width="80"
+				Height="40"
+				Margin="10,0"
+				Click="XBtnOpen_OnClick" />
+		</Grid>
+	</Grid>
+</mah:MetroWindow>

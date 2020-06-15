@@ -1,0 +1,16 @@
+<UserControl
+	x:Class="TTLX.WindowsTool.Views.TopicContents.TopicContentVideo" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:local="clr-namespace:TTLX.WindowsTool.Views.TopicContents" xmlns:controls="clr-namespace:TTLX.WindowsTool.Controls" xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls">
+	<Grid>
+		<Button
+			Width="60"
+			Height="30"
+			Content="选择"
+			HorizontalAlignment="Left"
+			VerticalAlignment="Top"
+			Margin="110,-35,0,0"
+			Click="SelectVideo_OnClick" />
+		<controls:MediaElementWrapperPlayer
+			Name="XMediaPlayer"
+			MediaFileName="{Binding VideoUrl}" />
+	</Grid>
+</UserControl>

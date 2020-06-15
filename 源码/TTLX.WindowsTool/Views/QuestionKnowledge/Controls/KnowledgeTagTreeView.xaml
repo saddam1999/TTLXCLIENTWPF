@@ -1,0 +1,407 @@
+<UserControl
+	x:Class="TTLX.WindowsTool.Views.QuestionKnowledge.Controls.KnowledgeTagTreeView" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:topicPackage="clr-namespace:TTLX.WindowsTool.Models.TopicPackage;assembly=TTLX.WindowsTool.Models" xmlns:controls="clr-namespace:TTLX.WindowsTool.Common.Controls;assembly=TTLX.WindowsTool.Common"
+	Background="#FFFFFFFF" xmlns:controls1="clr-namespace:TTLX.WindowsTool.Views.QuestionKnowledge.Controls">
+	<FrameworkElement.Resources>
+		<ResourceDictionary>
+			<PathGeometry
+				Figures="M0,0 L0,12 L12,0 z"
+				x:Key="TreeArrow" />
+			<Style
+				TargetType="{x:Type ToggleButton}"
+				x:Key="ExpandCollapseToggleStyle">
+				<Setter
+					Property="Focusable"
+					Value="False" />
+				<Setter
+					Property="Template">
+					<Setter.Value>
+						<ControlTemplate
+							TargetType="{x:Type ToggleButton}">
+							<Border
+								Background="#00FFFFFF"
+								Height="26"
+								Padding="5"
+								Width="26">
+								<Path
+									Name="ExpandPath"
+									Data="{StaticResource TreeArrow}"
+									Fill="{StaticResource NormalAccentColor}"
+									Stroke="{StaticResource LightAccentColor}">
+									<UIElement.RenderTransform>
+										<RotateTransform
+											Angle="135"
+											CenterY="6"
+											CenterX="6" />
+									</UIElement.RenderTransform>
+								</Path>
+							</Border>
+							<ControlTemplate.Triggers>
+								<Trigger
+									Property="ToggleButton.IsChecked"
+									Value="True">
+									<Setter
+										TargetName="ExpandPath"
+										Property="RenderTransform">
+										<Setter.Value>
+											<RotateTransform
+												Angle="180"
+												CenterY="6"
+												CenterX="6" />
+										</Setter.Value>
+									</Setter>
+									<Setter
+										TargetName="ExpandPath"
+										Property="Fill"
+										Value="{StaticResource DarkAccentColor}" />
+									<Setter
+										TargetName="ExpandPath"
+										Property="Stroke"
+										Value="{StaticResource LightAccentColor}" />
+								</Trigger>
+								<Trigger
+									Property="UIElement.IsMouseOver"
+									Value="True">
+									<Setter
+										TargetName="ExpandPath"
+										Property="Stroke"
+										Value="{StaticResource NormalAccentColor}" />
+								</Trigger>
+								<MultiTrigger>
+									<MultiTrigger.Conditions>
+										<Condition
+											Property="UIElement.IsMouseOver"
+											Value="True" />
+										<Condition
+											Property="ToggleButton.IsChecked"
+											Value="True" />
+									</MultiTrigger.Conditions>
+									<Setter
+										TargetName="ExpandPath"
+										Property="Stroke"
+										Value="{StaticResource NormalAccentColor}" />
+								</MultiTrigger>
+							</ControlTemplate.Triggers>
+						</ControlTemplate>
+					</Setter.Value>
+				</Setter>
+			</Style>
+			<Style
+				TargetType="{x:Type TreeViewItem}"
+				x:Key="TreeViewItemStyle">
+				<Setter
+					Property="Background"
+					Value="#00FFFFFF" />
+				<Setter
+					Property="FrameworkElement.FocusVisualStyle"
+					Value="{x:Null}" />
+				<Setter
+					Property="Padding"
+					Value="4" />
+				<Setter
+					Property="BorderBrush"
+					Value="{StaticResource NormalGrayColor}" />
+				<Setter
+					Property="Template">
+					<Setter.Value>
+						<ControlTemplate
+							TargetType="{x:Type TreeViewItem}">
+							<Grid>
+								<Grid.ColumnDefinitions>
+									<ColumnDefinition
+										MinWidth="19"
+										Width="Auto" />
+									<ColumnDefinition
+										Width="Auto" />
+									<ColumnDefinition
+										Width="*" />
+								</Grid.ColumnDefinitions>
+								<Grid.RowDefinitions>
+									<RowDefinition
+										Height="Auto" />
+									<RowDefinition />
+								</Grid.RowDefinitions>
+								<ToggleButton
+									Name="Expander"
+									ClickMode="Press"
+									Style="{StaticResource ExpandCollapseToggleStyle}"
+									IsChecked="{Binding IsExpanded, RelativeSource={RelativeSource TemplatedParent}}" />
+								<Border
+									Name="Bd"
+									BorderBrush="{TemplateBinding BorderBrush}"
+									BorderThickness="1"
+									Background="{TemplateBinding Background}"
+									Grid.Column="1"
+									Grid.ColumnSpan="2"
+									Padding="{TemplateBinding Padding}"
+									SnapsToDevicePixels="True">
+									<ContentPresenter
+										Name="PART_Header"
+										ContentSource="Header"
+										HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+										SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+								</Border>
+								<ItemsPresenter
+									Name="ItemsHost"
+									Grid.ColumnSpan="2"
+									Grid.Column="1"
+									Grid.Row="1" />
+							</Grid>
+							<ControlTemplate.Triggers>
+								<Trigger
+									Property="TreeViewItem.IsExpanded"
+									Value="False">
+									<Setter
+										TargetName="ItemsHost"
+										Property="Visibility"
+										Value="Collapsed" />
+								</Trigger>
+								<Trigger
+									Property="ItemsControl.HasItems"
+									Value="False">
+									<Setter
+										TargetName="Expander"
+										Property="Visibility"
+										Value="Hidden" />
+								</Trigger>
+								<Trigger
+									Property="UIElement.IsMouseOver"
+									Value="True">
+									<Setter
+										TargetName="Bd"
+										Value="{DynamicResource NormalAccentColor}"
+										Property="BorderBrush" />
+								</Trigger>
+							</ControlTemplate.Triggers>
+						</ControlTemplate>
+					</Setter.Value>
+				</Setter>
+			</Style>
+		</ResourceDictionary>
+	</FrameworkElement.Resources>
+	<Grid>
+		<TreeView
+			Name="XTree">
+			<ItemsControl.ItemTemplate>
+				<HierarchicalDataTemplate
+					DataType="topicPackage:QuestionTag"
+					ItemsSource="{Binding Children}">
+					<Grid>
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition
+								Width="*" />
+							<ColumnDefinition
+								Width="240" />
+						</Grid.ColumnDefinitions>
+						<Grid.RowDefinitions>
+							<RowDefinition
+								Height="Auto" />
+							<RowDefinition
+								Height="Auto" />
+						</Grid.RowDefinitions>
+						<TextBlock
+							Name="textBlockHeader"
+							VerticalAlignment="Center"
+							Grid.Row="0"
+							Grid.Column="0"
+							FontSize="14"
+							Margin="3,0"
+							Text="{Binding Name}" />
+						<TextBlock
+							VerticalAlignment="Bottom"
+							Grid.Row="1"
+							Grid.Column="0"
+							Foreground="#FF808080"
+							FontSize="9"
+							Margin="10,3,0,1"
+							Text="{Binding KnowledgeTagCount, StringFormat=共0个知识点}"
+							Visibility="{Binding IsRootTag, Converter={StaticResource ReverseBoolToVisibilityConverter}}" />
+						<StackPanel
+							Grid.RowSpan="2"
+							Grid.Column="1"
+							Orientation="Horizontal"
+							HorizontalAlignment="Right">
+							<!--未知连接 ID：2-->
+							<Button
+								Name="XBtnAddChild"
+								Width="80"
+								Height="26"
+								Margin="4,0"
+								Content="增加子类"
+								Tag="{Binding}" />
+							<!--未知连接 ID：3-->
+							<Button
+								Name="XBtnEdit"
+								Width="60"
+								Height="26"
+								Margin="4,0"
+								Content="编辑"
+								Tag="{Binding}" />
+							<!--未知连接 ID：4-->
+							<Button
+								Name="XBtnDel"
+								Style="{DynamicResource BtnDeleteStyle}"
+								Width="60"
+								Height="26"
+								Margin="4,0"
+								Content="删除"
+								Tag="{Binding}" />
+						</StackPanel>
+					</Grid>
+				</HierarchicalDataTemplate>
+			</ItemsControl.ItemTemplate>
+			<ItemsControl.ItemContainerStyle>
+				<!--未知连接 ID：5-->
+				<Style
+					BasedOn="{StaticResource TreeViewItemStyle}"
+					TargetType="{x:Type TreeViewItem}" />
+			</ItemsControl.ItemContainerStyle>
+		</TreeView>
+		<Rectangle
+			Name="XRectPos"
+			Width="240"
+			Height="0"
+			VerticalAlignment="Center"
+			Margin="0,-70,0,0" />
+		<controls:FixedPopup
+			Name="XPopEdit"
+			AllowsTransparency="True"
+			PopupAnimation="Fade"
+			StaysOpen="False"
+			PlacementTarget="{Binding ElementName=XRectPos}">
+			<Border
+				BorderThickness="1"
+				BorderBrush="#FFD3D3D3"
+				Margin="10"
+				Width="240">
+				<UIElement.Effect>
+					<DropShadowEffect
+						BlurRadius="4"
+						Opacity="0.4"
+						ShadowDepth="4"
+						Color="Black" />
+				</UIElement.Effect>
+				<Grid
+					Background="#FFFFFFFF">
+					<Grid.RowDefinitions>
+						<RowDefinition
+							Height="30" />
+						<RowDefinition
+							Height="40" />
+						<RowDefinition
+							Height="40" />
+					</Grid.RowDefinitions>
+					<Border
+						Background="{DynamicResource GradientBlue1}">
+						<TextBlock
+							Text="编辑"
+							VerticalAlignment="Center"
+							Margin="4,0"
+							Foreground="#FFFFFFFF" />
+					</Border>
+					<TextBlock
+						Text="标签名称"
+						Grid.Row="1"
+						VerticalAlignment="Center"
+						Margin="4,0" />
+					<TextBox
+						Grid.Row="1"
+						Height="30"
+						Width="170"
+						HorizontalAlignment="Right"
+						Margin="4,0"
+						Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}" />
+					<Button
+						Name="XBtnSave"
+						Grid.Row="2"
+						Width="60"
+						Height="26"
+						Content="保存"
+						FontSize="12"
+						Click="XBtnSave_OnClick" />
+					<Button
+						Name="XBtnCancel1"
+						Style="{StaticResource BtnGrayStyle}"
+						Grid.Row="2"
+						HorizontalAlignment="Right"
+						Margin="10,0"
+						Width="60"
+						Height="26"
+						Content="取消"
+						FontSize="12"
+						Click="XBtnCancel_OnClick" />
+				</Grid>
+			</Border>
+		</controls:FixedPopup>
+		<controls:FixedPopup
+			Name="XPopAdd"
+			AllowsTransparency="True"
+			PopupAnimation="Fade"
+			StaysOpen="False"
+			PlacementTarget="{Binding ElementName=XRectPos}">
+			<Border
+				BorderThickness="1"
+				BorderBrush="#FFD3D3D3"
+				Margin="10"
+				Width="240">
+				<UIElement.Effect>
+					<DropShadowEffect
+						BlurRadius="4"
+						Opacity="0.4"
+						ShadowDepth="4"
+						Color="Black" />
+				</UIElement.Effect>
+				<Grid
+					Background="#FFFFFFFF">
+					<Grid.RowDefinitions>
+						<RowDefinition
+							Height="30" />
+						<RowDefinition
+							Height="40" />
+						<RowDefinition
+							Height="40" />
+					</Grid.RowDefinitions>
+					<Border
+						Background="{DynamicResource GradientBlue1}">
+						<TextBlock
+							Name="XPopTitle"
+							Text="新增"
+							VerticalAlignment="Center"
+							Margin="4,0"
+							Foreground="#FFFFFFFF" />
+					</Border>
+					<TextBlock
+						Text="标签名称"
+						Grid.Row="1"
+						VerticalAlignment="Center"
+						Margin="4,0" />
+					<TextBox
+						Grid.Row="1"
+						Height="30"
+						Width="170"
+						HorizontalAlignment="Right"
+						Margin="4,0"
+						Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}" />
+					<Button
+						Name="XBtnAdd"
+						Grid.Row="2"
+						Width="60"
+						Height="26"
+						Content="新增"
+						FontSize="12"
+						Click="XBtnAdd_OnClick" />
+					<Button
+						Name="XBtnCancel2"
+						Style="{StaticResource BtnGrayStyle}"
+						Grid.Row="2"
+						HorizontalAlignment="Right"
+						Margin="10,0"
+						Width="60"
+						Height="26"
+						Content="取消"
+						FontSize="12"
+						Click="XBtnCancel_OnClick" />
+				</Grid>
+			</Border>
+		</controls:FixedPopup>
+	</Grid>
+</UserControl>

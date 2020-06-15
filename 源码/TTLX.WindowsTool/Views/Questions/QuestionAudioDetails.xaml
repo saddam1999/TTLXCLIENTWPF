@@ -1,0 +1,100 @@
+<UserControl
+	x:Class="TTLX.WindowsTool.Views.Questions.QuestionAudioDetails" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:local="clr-namespace:TTLX.WindowsTool.Views.Questions" xmlns:controls="clr-namespace:TTLX.WindowsTool.Controls" xmlns:business="clr-namespace:TTLX.WindowsTool.Business;assembly=TTLX.WindowsTool.Business" xmlns:models="clr-namespace:TTLX.WindowsTool.Models;assembly=TTLX.WindowsTool.Models" xmlns:questions="clr-namespace:TTLX.WindowsTool.Models.Questions;assembly=TTLX.WindowsTool.Models"
+	Background="#FFFFFFFF">
+	<Grid
+		Margin="10">
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition
+				Width="100" />
+			<ColumnDefinition
+				Width="*" />
+		</Grid.ColumnDefinitions>
+		<Grid.RowDefinitions>
+			<RowDefinition
+				Height="Auto" />
+			<RowDefinition
+				Height="Auto" />
+			<RowDefinition
+				Height="Auto" />
+			<RowDefinition
+				Height="*" />
+		</Grid.RowDefinitions>
+		<controls:AudioComboBoxEdit
+			Name="XAudioEdit"
+			Grid.ColumnSpan="2" />
+		<controls:QuestionEvalControl
+			Grid.Row="1"
+			Grid.ColumnSpan="2" />
+		<TextBlock
+			Grid.Row="2"
+			Text="翻译："
+			HorizontalAlignment="Center"
+			VerticalAlignment="Top"
+			Margin="0,10,0,0" />
+		<Button
+			Name="XBtnTrans"
+			Content="人工智能翻译"
+			FontSize="11"
+			Grid.Row="2"
+			HorizontalAlignment="Center"
+			VerticalAlignment="Bottom"
+			Margin="0,0,0,6"
+			Height="20"
+			Click="XBtnTrans_OnClick" />
+		<TextBox
+			Grid.Row="2"
+			Grid.Column="1"
+			MinHeight="60"
+			Style="{DynamicResource TxtMulStyle}"
+			Margin="4"
+			Text="{Binding NativeText}" />
+		<Grid
+			Name="XQa"
+			Row="3"
+			ColumnSpan="2"
+			Visibility="Collapsed">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition
+					Width="100" />
+				<ColumnDefinition
+					Width="*" />
+			</Grid.ColumnDefinitions>
+			<Button
+				Name="XBtnAddQa"
+				Height="30"
+				VerticalAlignment="Top"
+				Margin="10"
+				Content="加候选"
+				Click="XBtnAddQa_OnClick" />
+			<ItemsControl
+				Grid.Column="1"
+				Margin="10"
+				ItemsSource="{Binding QaData.CandidateModels}">
+				<ItemsControl.ItemTemplate>
+					<DataTemplate
+						DataType="{x:Type models:Candidate}">
+						<Grid
+							Margin="0,6">
+							<Grid.ColumnDefinitions>
+								<ColumnDefinition
+									Width="200" />
+								<ColumnDefinition
+									Width="50" />
+							</Grid.ColumnDefinitions>
+							<TextBox
+								Text="{Binding CandContent, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}" />
+							<!--未知连接 ID：5-->
+							<Button
+								Name="XBtnDelQa"
+								Style="{DynamicResource BtnDeleteStyle}"
+								Width="30"
+								Content="删"
+								Grid.Column="1"
+								Tag="{Binding}" />
+						</Grid>
+					</DataTemplate>
+				</ItemsControl.ItemTemplate>
+			</ItemsControl>
+		</Grid>
+	</Grid>
+</UserControl>

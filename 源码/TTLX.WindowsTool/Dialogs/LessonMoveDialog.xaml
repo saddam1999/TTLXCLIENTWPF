@@ -1,0 +1,94 @@
+<mah:MetroWindow
+	x:Class="TTLX.WindowsTool.Dialogs.LessonMoveDialog" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:local="clr-namespace:TTLX.WindowsTool.Dialogs" xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls"
+	WindowStartupLocation="CenterOwner"
+	Style="{StaticResource WindowStyle}"
+	Title="移动到教材"
+	Height="180"
+	Width="500">
+	<Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition
+				Height="40" />
+			<RowDefinition
+				Height="50" />
+			<RowDefinition
+				Height="*" />
+			<RowDefinition
+				Height="50" />
+		</Grid.RowDefinitions>
+		<TextBlock
+			FontSize="15"
+			Margin="10,0,0,0"
+			VerticalAlignment="Bottom"
+			Text="{Binding SelectedBook.Name, Mode=OneTime, StringFormat=从《{0}》移动到：}" />
+		<StackPanel
+			Orientation="Horizontal"
+			Grid.Row="1">
+			<TextBox
+				Name="XTxtBookSearch"
+				Height="26"
+				Width="400"
+				Margin="20,0,0,0"
+				mah:TextBoxHelper.Watermark="关键字或者拼音首字母"
+				mah:TextBoxHelper.ClearTextButton="True"
+				GotFocus="XTxtBookSearch_OnGotFocus"
+				TextChanged="XTxtSeriesSearch_OnTextChanged" />
+			<Button
+				Width="20"
+				Height="26"
+				Click="ButtonBase_OnClick">
+				<Path
+					Data="F1 M0,0 L5,5 L10,0"
+					Fill="#FFFFFFFF"
+					HorizontalAlignment="Center"
+					Margin="0"
+					VerticalAlignment="Center" />
+			</Button>
+		</StackPanel>
+		<Popup
+			Name="XPopList"
+			Placement="Bottom"
+			StaysOpen="False"
+			PlacementTarget="{Binding ElementName=XTxtBookSearch}">
+			<Border
+				Background="#FFFFFFFF"
+				Width="400"
+				MaxHeight="200"
+				BorderThickness="1">
+				<ListBox
+					Name="XCmbAllBooks"
+					Margin="4,4"
+					ItemsSource="{Binding FiltedBooksCollection}"
+					SelectedItem="{Binding SelectedBook}"
+					SelectionChanged="XCmbAllBooks_OnSelectionChanged">
+					<ItemsControl.ItemTemplate>
+						<DataTemplate>
+							<TextBlock
+								Margin="1"
+								Text="{Binding Name}" />
+						</DataTemplate>
+					</ItemsControl.ItemTemplate>
+				</ListBox>
+			</Border>
+		</Popup>
+		<StackPanel
+			Grid.Row="3"
+			Orientation="Horizontal"
+			HorizontalAlignment="Right">
+			<Button
+				Name="XBtnOK"
+				Content="确定"
+				Width="80"
+				Height="26"
+				Click="XBtnOK_OnClick" />
+			<Button
+				Name="XBtnCancel"
+				Style="{DynamicResource BtnGrayStyle}"
+				Content="取消"
+				Width="80"
+				Height="26"
+				Margin="20,0,20,0"
+				Click="XBtnCancel_OnClick" />
+		</StackPanel>
+	</Grid>
+</mah:MetroWindow>

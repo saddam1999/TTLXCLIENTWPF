@@ -1,0 +1,61 @@
+<UserControl
+	x:Class="TTLX.WindowsTool.Views.TopicPackages.Controls.PackageQuestionConversationItem" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:local="clr-namespace:TTLX.WindowsTool.Views.TopicPackages.Controls">
+	<Grid>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition
+				Width="Auto"
+				MinWidth="50" />
+			<ColumnDefinition
+				Width="*" />
+			<ColumnDefinition
+				Width="60" />
+		</Grid.ColumnDefinitions>
+		<StackPanel
+			Orientation="Horizontal"
+			VerticalAlignment="Top"
+			HorizontalAlignment="Center"
+			Margin="0,20">
+			<CheckBox
+				VerticalAlignment="Center"
+				Margin="10,0"
+				Visibility="Collapsed"
+				IsChecked="{Binding IsAddSubQuestions, Mode=TwoWay}" />
+			<TextBlock
+				FontSize="17"
+				Margin="10,0,20,0"
+				VerticalAlignment="Center"
+				Text="{Binding RoleType}" />
+		</StackPanel>
+		<Border
+			Grid.Column="1"
+			CornerRadius="8"
+			Background="#FFFFFFFF"
+			Padding="10">
+			<StackPanel>
+				<local:PackageQuestionAudioEdit
+					Name="XAudioEdit"
+					Margin="0,4"
+					AudioItem="{Binding Audio, Mode=TwoWay}" />
+				<local:PackageQuestionRichTextEdit
+					Name="XTxtEdit"
+					Margin="0,4"
+					RichTextItem="{Binding Content, Mode=TwoWay}" />
+			</StackPanel>
+		</Border>
+		<Path
+			Data="M0,10 L14,0 L14,20"
+			Fill="#FFFFFFFF"
+			VerticalAlignment="Top"
+			HorizontalAlignment="Right"
+			Margin="0,20,-2,0" />
+		<Button
+			Name="XBtnDel"
+			Style="{StaticResource BtnDeleteStyle}"
+			Grid.Column="2"
+			VerticalAlignment="Top"
+			Height="60"
+			Margin="0,20"
+			Content="删除"
+			Click="XBtnDel_OnClick" />
+	</Grid>
+</UserControl>

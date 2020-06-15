@@ -1,0 +1,127 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+	<LinearGradientBrush
+		StartPoint="0.5,0"
+		EndPoint="0.5,1"
+		x:Key="GradientBlue1">
+		<GradientStop
+			Offset="0"
+			Color="#27a0e8" />
+		<GradientStop
+			Offset="1"
+			Color="#2ac2fa" />
+	</LinearGradientBrush>
+	<SolidColorBrush
+		Color="#2ac2fa"
+		x:Key="LightAccentColor" />
+	<SolidColorBrush
+		Color="#27a0e8"
+		x:Key="NormalAccentColor" />
+	<SolidColorBrush
+		Color="#0088bf"
+		x:Key="DarkAccentColor" />
+	<SolidColorBrush
+		Color="#F0F0F0"
+		x:Key="LightGrayColor" />
+	<SolidColorBrush
+		Color="#E7E7E7"
+		x:Key="NormalGrayColor" />
+	<SolidColorBrush
+		Color="#ababab"
+		x:Key="DarkGrayColor" />
+	<SolidColorBrush
+		Color="DarkGray"
+		x:Key="LightForegroundColor" />
+	<SolidColorBrush
+		Color="#222222"
+		x:Key="NormalForegroundColor" />
+	<SolidColorBrush
+		Color="Black"
+		x:Key="DarkForegroundColor" />
+	<SolidColorBrush
+		Color="#F9B0B1"
+		x:Key="LightRedColor" />
+	<SolidColorBrush
+		Color="#F18384"
+		x:Key="NormalRedColor" />
+	<SolidColorBrush
+		Color="Red"
+		x:Key="DarkRedColor" />
+	<SolidColorBrush
+		Color="#FFFBFDFE"
+		x:Key="WindowTitleForeground" />
+	<SolidColorBrush
+		Color="#FF4B9FD8"
+		x:Key="WindowTitleBackground" />
+	<SolidColorBrush
+		Color="#FFD3D8DB"
+		x:Key="DefaultBorderBrush" />
+	<SolidColorBrush
+		Color="#FF252525"
+		x:Key="DefaultForeground" />
+	<SolidColorBrush
+		Color="#FFF8F8F8"
+		x:Key="WindowContentBackground" />
+	<SolidColorBrush
+		Color="Transparent"
+		x:Key="DataGridBackground" />
+	<SolidColorBrush
+		Color="#333333"
+		x:Key="DataGridForeground" />
+	<SolidColorBrush
+		Color="Transparent"
+		x:Key="DataGridCellBackground" />
+	<SolidColorBrush
+		Color="#dddddd"
+		x:Key="DataGridCellBackgroundHover" />
+	<SolidColorBrush
+		Color="#009FE0"
+		x:Key="DataGridCellBackgroundSelected" />
+	<SolidColorBrush
+		Color="#333333"
+		x:Key="DataGridCellForeground" />
+	<SolidColorBrush
+		Color="#333333"
+		x:Key="DataGridCellForegroundHover" />
+	<SolidColorBrush
+		Color="#ffffff"
+		x:Key="DataGridCellForegroundSelected" />
+	<SolidColorBrush
+		Color="#E7E7E7"
+		x:Key="DataGridHeaderBackground" />
+	<SolidColorBrush
+		Color="LightGray"
+		x:Key="DataGridHeaderBackgroundHover" />
+	<SolidColorBrush
+		Color="#009FE0"
+		x:Key="DataGridHeaderBackgroundPressed" />
+	<SolidColorBrush
+		Color="#0085BA"
+		x:Key="DataGridHeaderBackgroundSelected" />
+	<SolidColorBrush
+		Color="#333333"
+		x:Key="DataGridHeaderForeground" />
+	<SolidColorBrush
+		Color="#333333"
+		x:Key="DataGridHeaderForegroundHover" />
+	<SolidColorBrush
+		Color="#ffffff"
+		x:Key="DataGridHeaderForegroundPressed" />
+	<SolidColorBrush
+		Color="#ffffff"
+		x:Key="DataGridHeaderForegroundSelected" />
+	<SolidColorBrush
+		Color="#cccccc"
+		x:Key="DataGridGridLines" />
+	<SolidColorBrush
+		Color="#1ba1e2"
+		x:Key="DataGridDropSeparator" />
+	<SolidColorBrush
+		Color="#4cbde9"
+		x:Key="LightBlueColor" />
+	<SolidColorBrush
+		Color="#00a0df"
+		x:Key="NormalBlueColor" />
+	<SolidColorBrush
+		Color="#0088bf"
+		x:Key="DarkBlueColor" />
+</ResourceDictionary>
