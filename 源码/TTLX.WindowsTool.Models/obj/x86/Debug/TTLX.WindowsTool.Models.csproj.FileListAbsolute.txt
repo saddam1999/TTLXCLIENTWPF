@@ -1,0 +1,2 @@
+C:\Users\ZJ\Downloads\TTLXCLIENTWPF.git\源码\TTLX.WindowsTool.Models\obj\x86\Debug\TTLX.WindowsTool.Models.csprojAssemblyReference.cache
+C:\Users\ZJ\Downloads\TTLXCLIENTWPF.git\源码\TTLX.WindowsTool.Models\obj\x86\Debug\TTLX.WindowsTool.Models.csproj.CoreCompileInputs.cache

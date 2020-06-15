@@ -79,14 +79,15 @@
       <HintPath>..\..\..\..\..\..\Program Files (x86)\北京天天乐学教育科技有限公司\天天乐学\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Runtime">
-      <HintPath>..\..\..\..\..\..\Program Files (x86)\北京天天乐学教育科技有限公司\天天乐学\System.Runtime.dll</HintPath>
+      <HintPath>..\lib\System.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="System.Threading.Tasks">
-      <HintPath>..\..\..\..\..\..\Program Files (x86)\北京天天乐学教育科技有限公司\天天乐学\System.Threading.Tasks.dll</HintPath>
+      <HintPath>..\lib\System.Threading.Tasks.dll</HintPath>
     </Reference>
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xaml" />

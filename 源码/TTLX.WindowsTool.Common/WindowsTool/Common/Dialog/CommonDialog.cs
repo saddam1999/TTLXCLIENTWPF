@@ -26,15 +26,15 @@ namespace TTLX.WindowsTool.Common.Dialog
 		// Token: 0x06000108 RID: 264 RVA: 0x00005246 File Offset: 0x00003446
 		public void Alert(string message, string title, Action callback = null)
 		{
-			EventHandler <>9__1;
+			EventHandler eventHandler;
 			DispatcherHelper.CheckBeginInvokeOnUI(delegate
 			{
 				CommonDialogWnd commonDialogWnd = new CommonDialogWnd(title, message);
 				commonDialogWnd.XBtnCancel.Visibility = Visibility.Collapsed;
 				EventHandler value;
-				if ((value = <>9__1) == null)
+				//if ((value) == null)
 				{
-					value = (<>9__1 = delegate(object sender, EventArgs e)
+					value = (eventHandler = delegate(object sender, EventArgs e)
 					{
 						Action callback2 = callback;
 						if (callback2 == null)

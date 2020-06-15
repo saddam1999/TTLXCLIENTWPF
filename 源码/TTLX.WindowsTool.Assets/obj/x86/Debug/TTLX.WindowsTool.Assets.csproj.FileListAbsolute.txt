@@ -1,0 +1,9 @@
+C:\Users\ZJ\Downloads\TTLXCLIENTWPF.git\源码\TTLX.WindowsTool.Assets\obj\x86\Debug\TTLX.WindowsTool.Assets.csprojAssemblyReference.cache
+C:\Users\ZJ\Downloads\TTLXCLIENTWPF.git\源码\TTLX.WindowsTool.Assets\obj\x86\Debug\themes\default\brush.baml
+C:\Users\ZJ\Downloads\TTLXCLIENTWPF.git\源码\TTLX.WindowsTool.Assets\obj\x86\Debug\themes\default\button.baml
+C:\Users\ZJ\Downloads\TTLXCLIENTWPF.git\源码\TTLX.WindowsTool.Assets\obj\x86\Debug\themes\default\datagrid.baml
+C:\Users\ZJ\Downloads\TTLXCLIENTWPF.git\源码\TTLX.WindowsTool.Assets\obj\x86\Debug\themes\default\defaulttheme.baml
+C:\Users\ZJ\Downloads\TTLXCLIENTWPF.git\源码\TTLX.WindowsTool.Assets\obj\x86\Debug\themes\default\slider.baml
+C:\Users\ZJ\Downloads\TTLXCLIENTWPF.git\源码\TTLX.WindowsTool.Assets\obj\x86\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\ZJ\Downloads\TTLXCLIENTWPF.git\源码\TTLX.WindowsTool.Assets\obj\x86\Debug\TTLX.WindowsTool.Assets_MarkupCompile.cache
+C:\Users\ZJ\Downloads\TTLXCLIENTWPF.git\源码\TTLX.WindowsTool.Assets\obj\x86\Debug\TTLX.WindowsTool.Assets_MarkupCompile.lref

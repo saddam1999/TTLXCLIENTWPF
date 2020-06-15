@@ -35,43 +35,51 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="GalaSoft.MvvmLight">
-      <HintPath>..\..\..\..\..\..\Program Files (x86)\北京天天乐学教育科技有限公司\天天乐学\GalaSoft.MvvmLight.dll</HintPath>
+      <HintPath>..\lib\GalaSoft.MvvmLight.dll</HintPath>
+    </Reference>
+    <Reference Include="GalaSoft.MvvmLight.Extras">
+      <HintPath>..\lib\GalaSoft.MvvmLight.Extras.dll</HintPath>
     </Reference>
     <Reference Include="ImageProcessor">
-      <HintPath>..\..\..\..\..\..\Program Files (x86)\北京天天乐学教育科技有限公司\天天乐学\ImageProcessor.dll</HintPath>
+      <HintPath>..\lib\ImageProcessor.dll</HintPath>
     </Reference>
     <Reference Include="KellermanSoftware.Compare-NET-Objects">
-      <HintPath>..\..\..\..\..\..\Program Files (x86)\北京天天乐学教育科技有限公司\天天乐学\KellermanSoftware.Compare-NET-Objects.dll</HintPath>
+      <HintPath>..\lib\KellermanSoftware.Compare-NET-Objects.dll</HintPath>
     </Reference>
     <Reference Include="LoadingIndicators.WPF">
-      <HintPath>..\..\..\..\..\..\Program Files (x86)\北京天天乐学教育科技有限公司\天天乐学\LoadingIndicators.WPF.dll</HintPath>
+      <HintPath>..\lib\LoadingIndicators.WPF.dll</HintPath>
     </Reference>
     <Reference Include="log4net">
-      <HintPath>..\..\..\..\..\..\Program Files (x86)\北京天天乐学教育科技有限公司\天天乐学\log4net.dll</HintPath>
+      <HintPath>..\lib\log4net.dll</HintPath>
     </Reference>
     <Reference Include="MahApps.Metro">
-      <HintPath>..\..\..\..\..\..\Program Files (x86)\北京天天乐学教育科技有限公司\天天乐学\MahApps.Metro.dll</HintPath>
+      <HintPath>..\lib\MahApps.Metro.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Threading.Tasks">
-      <HintPath>..\..\..\..\..\..\Program Files (x86)\北京天天乐学教育科技有限公司\天天乐学\Microsoft.Threading.Tasks.dll</HintPath>
+      <HintPath>..\lib\Microsoft.Threading.Tasks.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Threading.Tasks.Extensions">
-      <HintPath>..\..\..\..\..\..\Program Files (x86)\北京天天乐学教育科技有限公司\天天乐学\Microsoft.Threading.Tasks.Extensions.dll</HintPath>
+      <HintPath>..\lib\Microsoft.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks.Extensions.Desktop">
+      <HintPath>..\lib\Microsoft.Threading.Tasks.Extensions.Desktop.dll</HintPath>
     </Reference>
     <Reference Include="NAudio">
-      <HintPath>..\..\..\..\..\..\Program Files (x86)\北京天天乐学教育科技有限公司\天天乐学\NAudio.dll</HintPath>
+      <HintPath>..\lib\NAudio.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\..\..\..\..\..\Program Files (x86)\北京天天乐学教育科技有限公司\天天乐学\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="Patagames.Ocr">
-      <HintPath>..\..\..\..\..\..\Program Files (x86)\北京天天乐学教育科技有限公司\天天乐学\Patagames.Ocr.dll</HintPath>
+      <HintPath>..\lib\Patagames.Ocr.dll</HintPath>
     </Reference>
     <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
     <Reference Include="RestSharp">
-      <HintPath>..\..\..\..\..\..\Program Files (x86)\北京天天乐学教育科技有限公司\天天乐学\RestSharp.dll</HintPath>
+      <HintPath>..\lib\RestSharp.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="mscorlib" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
@@ -79,13 +87,13 @@
       <HintPath>..\..\..\..\..\..\Program Files (x86)\北京天天乐学教育科技有限公司\天天乐学\System.Net.Http.dll</HintPath>
     </Reference>
     <Reference Include="System.Runtime">
-      <HintPath>..\..\..\..\..\..\Program Files (x86)\北京天天乐学教育科技有限公司\天天乐学\System.Runtime.dll</HintPath>
+      <HintPath>..\lib\System.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="System.Threading.Tasks">
-      <HintPath>..\..\..\..\..\..\Program Files (x86)\北京天天乐学教育科技有限公司\天天乐学\System.Threading.Tasks.dll</HintPath>
+      <HintPath>..\lib\System.Threading.Tasks.dll</HintPath>
     </Reference>
     <Reference Include="System.Windows.Interactivity">
-      <HintPath>..\..\..\..\..\..\Program Files (x86)\北京天天乐学教育科技有限公司\天天乐学\System.Windows.Interactivity.dll</HintPath>
+      <HintPath>..\lib\System.Windows.Interactivity.dll</HintPath>
     </Reference>
     <Reference Include="System.Xaml" />
     <Reference Include="WindowsBase" />

@@ -1,0 +1,2 @@
+C:\Users\ZJ\Downloads\TTLXCLIENTWPF.git\源码\TTLX.WindowsTool.Business\obj\x86\Debug\TTLX.WindowsTool.Business.csprojAssemblyReference.cache
+C:\Users\ZJ\Downloads\TTLXCLIENTWPF.git\源码\TTLX.WindowsTool.Business\obj\x86\Debug\TTLX.WindowsTool.Business.csproj.CoreCompileInputs.cache

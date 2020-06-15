@@ -35,16 +35,28 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="GalaSoft.MvvmLight">
-      <HintPath>..\..\..\..\..\..\Program Files (x86)\北京天天乐学教育科技有限公司\天天乐学\GalaSoft.MvvmLight.dll</HintPath>
+      <HintPath>..\lib\GalaSoft.MvvmLight.dll</HintPath>
+    </Reference>
+    <Reference Include="GalaSoft.MvvmLight.Extras">
+      <HintPath>..\lib\GalaSoft.MvvmLight.Extras.dll</HintPath>
     </Reference>
     <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="WindowsBase" />
     <Reference Include="System.Xaml" />
-    <Reference Include="MahApps.Metro" />
-    <Reference Include="Microsoft.Windows.Shell" />
-    <Reference Include="System.Windows.Interactivity" />
-    <Reference Include="Microsoft.Expression.Interactions" />
+    <Reference Include="MahApps.Metro">
+      <HintPath>..\lib\MahApps.Metro.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Windows.Shell">
+      <HintPath>..\lib\Microsoft.Windows.Shell.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Interactivity">
+      <HintPath>..\lib\System.Windows.Interactivity.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Expression.Interactions">
+      <HintPath>..\lib\Microsoft.Expression.Interactions.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <AppDesigner Include="Properties\" />

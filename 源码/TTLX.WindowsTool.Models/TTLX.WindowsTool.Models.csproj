@@ -32,7 +32,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="GalaSoft.MvvmLight">
-      <HintPath>..\..\..\..\..\..\Program Files (x86)\北京天天乐学教育科技有限公司\天天乐学\GalaSoft.MvvmLight.dll</HintPath>
+      <HintPath>..\lib\GalaSoft.MvvmLight.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Newtonsoft.Json">
@@ -42,7 +42,7 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="TTLX.WindowsTool.Common">
-      <HintPath>..\..\..\..\..\..\Program Files (x86)\北京天天乐学教育科技有限公司\天天乐学\TTLX.WindowsTool.Common.dll</HintPath>
+      <HintPath>..\TTLX.WindowsTool.Common\obj\x86\Debug\TTLX.WindowsTool.Common.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

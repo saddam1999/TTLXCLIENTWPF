@@ -34,33 +34,36 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="GalaSoft.MvvmLight">
-      <HintPath>..\..\..\..\..\..\Program Files (x86)\北京天天乐学教育科技有限公司\天天乐学\GalaSoft.MvvmLight.dll</HintPath>
+      <HintPath>..\lib\GalaSoft.MvvmLight.dll</HintPath>
+    </Reference>
+    <Reference Include="GalaSoft.MvvmLight.Extras">
+      <HintPath>..\lib\GalaSoft.MvvmLight.Extras.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.Practices.ServiceLocation">
-      <HintPath>..\..\..\..\..\..\Program Files (x86)\北京天天乐学教育科技有限公司\天天乐学\Microsoft.Practices.ServiceLocation.dll</HintPath>
+      <HintPath>..\lib\Microsoft.Practices.ServiceLocation.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Threading.Tasks">
-      <HintPath>..\..\..\..\..\..\Program Files (x86)\北京天天乐学教育科技有限公司\天天乐学\Microsoft.Threading.Tasks.dll</HintPath>
+      <HintPath>..\lib\Microsoft.Threading.Tasks.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\..\..\..\..\..\Program Files (x86)\北京天天乐学教育科技有限公司\天天乐学\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="RestSharp">
-      <HintPath>..\..\..\..\..\..\Program Files (x86)\北京天天乐学教育科技有限公司\天天乐学\RestSharp.dll</HintPath>
+      <HintPath>..\lib\RestSharp.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime">
-      <HintPath>..\..\..\..\..\..\Program Files (x86)\北京天天乐学教育科技有限公司\天天乐学\System.Runtime.dll</HintPath>
+      <HintPath>..\lib\System.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="System.Threading.Tasks">
-      <HintPath>..\..\..\..\..\..\Program Files (x86)\北京天天乐学教育科技有限公司\天天乐学\System.Threading.Tasks.dll</HintPath>
+      <HintPath>..\lib\System.Threading.Tasks.dll</HintPath>
     </Reference>
     <Reference Include="System.Xml" />
     <Reference Include="TTLX.WindowsTool.Models">
-      <HintPath>..\..\..\..\..\..\Program Files (x86)\北京天天乐学教育科技有限公司\天天乐学\TTLX.WindowsTool.Models.dll</HintPath>
+      <HintPath>..\TTLX.WindowsTool.Models\obj\x86\Debug\TTLX.WindowsTool.Models.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

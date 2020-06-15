@@ -1,0 +1,8 @@
+C:\Users\ZJ\Downloads\TTLXCLIENTWPF.git\源码\TTLX.WindowsTool.Common\obj\x86\Debug\TTLX.WindowsTool.Common.csprojAssemblyReference.cache
+C:\Users\ZJ\Downloads\TTLXCLIENTWPF.git\源码\TTLX.WindowsTool.Common\obj\x86\Debug\WindowsTool\Common\Controls\ImageEdit.g.cs
+C:\Users\ZJ\Downloads\TTLXCLIENTWPF.git\源码\TTLX.WindowsTool.Common\obj\x86\Debug\WindowsTool\Common\Controls\MediaElementWrapper.g.cs
+C:\Users\ZJ\Downloads\TTLXCLIENTWPF.git\源码\TTLX.WindowsTool.Common\obj\x86\Debug\WindowsTool\Common\Controls\WndProcessingAndMsgTipCover.g.cs
+C:\Users\ZJ\Downloads\TTLXCLIENTWPF.git\源码\TTLX.WindowsTool.Common\obj\x86\Debug\WindowsTool\Common\Dialog\CommonDialogWnd.g.cs
+C:\Users\ZJ\Downloads\TTLXCLIENTWPF.git\源码\TTLX.WindowsTool.Common\obj\x86\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\ZJ\Downloads\TTLXCLIENTWPF.git\源码\TTLX.WindowsTool.Common\obj\x86\Debug\TTLX.WindowsTool.Common_MarkupCompile.cache
+C:\Users\ZJ\Downloads\TTLXCLIENTWPF.git\源码\TTLX.WindowsTool.Common\obj\x86\Debug\TTLX.WindowsTool.Common_MarkupCompile.lref
