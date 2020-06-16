@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{BF8942BA-6FB0-4E8F-8F2F-639EACE45F61}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <OutputType>Library</OutputType>
+    <LangVersion>8.0</LangVersion>
+    <AssemblyName>TTLX.WindowsTool.Business</AssemblyName>
+    <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="GalaSoft.MvvmLight">
+      <HintPath>C:\Users\ZJ\Downloads\TTLXCLIENTWPF.git\TTLX\GalaSoft.MvvmLight.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <HintPath>C:\Windows\Microsoft.Net\assembly\GAC_MSIL\System\v4.0_4.0.0.0__b77a5c561934e089\System.dll</HintPath>
+    </Reference>
+    <Reference Include="TTLX.WindowsTool.Models">
+      <HintPath>C:\Users\ZJ\Downloads\TTLXCLIENTWPF.git\TTLX\TTLX.WindowsTool.Models.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime">
+      <HintPath>C:\Users\ZJ\Downloads\TTLXCLIENTWPF.git\TTLX\System.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks">
+      <HintPath>C:\Users\ZJ\Downloads\TTLXCLIENTWPF.git\TTLX\System.Threading.Tasks.dll</HintPath>
+    </Reference>
+    <Reference Include="TTLX.WindowsTool.Common">
+      <HintPath>C:\Users\ZJ\Downloads\TTLXCLIENTWPF.git\TTLX\TTLX.WindowsTool.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Threading.Tasks">
+      <HintPath>C:\Users\ZJ\Downloads\TTLXCLIENTWPF.git\TTLX\Microsoft.Threading.Tasks.dll</HintPath>
+    </Reference>
+    <Reference Include="RestSharp">
+      <HintPath>C:\Users\ZJ\Downloads\TTLXCLIENTWPF.git\TTLX\RestSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core">
+      <HintPath>C:\Windows\Microsoft.Net\assembly\GAC_MSIL\System.Core\v4.0_4.0.0.0__b77a5c561934e089\System.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>C:\Users\ZJ\Downloads\TTLXCLIENTWPF.git\TTLX\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml">
+      <HintPath>C:\Windows\Microsoft.Net\assembly\GAC_MSIL\System.Xml\v4.0_4.0.0.0__b77a5c561934e089\System.Xml.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation">
+      <HintPath>C:\Users\ZJ\Downloads\TTLXCLIENTWPF.git\TTLX\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Configuration">
+      <HintPath>C:\Windows\Microsoft.NET\assembly\GAC_MSIL\System.Configuration\v4.0_4.0.0.0__b03f5f7f11d50a3a\System.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp">
+      <HintPath>C:\Windows\Microsoft.NET\assembly\GAC_MSIL\Microsoft.CSharp\v4.0_4.0.0.0__b03f5f7f11d50a3a\Microsoft.CSharp.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TTLX.WindowsTool.Business\AdminLoginResponse.cs" />
+    <Compile Include="TTLX.WindowsTool.Business\AppData.cs" />
+    <Compile Include="TTLX.WindowsTool.Business\AppProperties.cs" />
+    <Compile Include="TTLX.WindowsTool.Business\AppUser.cs" />
+    <Compile Include="TTLX.WindowsTool.Business\AudioFile.cs" />
+    <Compile Include="TTLX.WindowsTool.Business\BatchCreateResponse.cs" />
+    <Compile Include="TTLX.WindowsTool.Business\BeforeLessonPackageResponse.cs" />
+    <Compile Include="TTLX.WindowsTool.Business\BookInfoResponse.cs" />
+    <Compile Include="TTLX.WindowsTool.Business\BookListResponse.cs" />
+    <Compile Include="TTLX.WindowsTool.Business\BookQuestionCheckResponse.cs" />
+    <Compile Include="TTLX.WindowsTool.Business\BookService.cs" />
+    <Compile Include="TTLX.WindowsTool.Business\CompanyLoginResponse.cs" />
+    <Compile Include="TTLX.WindowsTool.Business\ConfigService.cs" />
+    <Compile Include="TTLX.WindowsTool.Business\CopyPasetLessonsManager.cs" />
+    <Compile Include="TTLX.WindowsTool.Business\CreateKnowledgeTagResponse.cs" />
+    <Compile Include="TTLX.WindowsTool.Business\GetKnowledgeTagResponse.cs" />
+    <Compile Include="TTLX.WindowsTool.Business\IBookService.cs" />
+    <Compile Include="TTLX.WindowsTool.Business\IConfigService.cs" />
+    <Compile Include="TTLX.WindowsTool.Business\IKnowledgeService.cs" />
+    <Compile Include="TTLX.WindowsTool.Business\IKnowledgeTagService.cs" />
+    <Compile Include="TTLX.WindowsTool.Business\ILessonService.cs" />
+    <Compile Include="TTLX.WindowsTool.Business\IMaterialMediaService.cs" />
+    <Compile Include="TTLX.WindowsTool.Business\IPackageQuestionService.cs" />
+    <Compile Include="TTLX.WindowsTool.Business\IQuestionService.cs" />
+    <Compile Include="TTLX.WindowsTool.Business\ISeriesService.cs" />
+    <Compile Include="TTLX.WindowsTool.Business\ITopicService.cs" />
+    <Compile Include="TTLX.WindowsTool.Business\ITranslateService.cs" />
+    <Compile Include="TTLX.WindowsTool.Business\IUserService.cs" />
+    <Compile Include="TTLX.WindowsTool.Business\IWordPronService.cs" />
+    <Compile Include="TTLX.WindowsTool.Business\KnowledgeService.cs" />
+    <Compile Include="TTLX.WindowsTool.Business\KnowledgeTagManager.cs" />
+    <Compile Include="TTLX.WindowsTool.Business\KnowledgeTagService.cs" />
+    <Compile Include="TTLX.WindowsTool.Business\LessonInfoResponse.cs" />
+    <Compile Include="TTLX.WindowsTool.Business\LessonService.cs" />
+    <Compile Include="TTLX.WindowsTool.Business\MaterialMediaItemManager.cs" />
+    <Compile Include="TTLX.WindowsTool.Business\MaterialMediaService.cs" />
+    <Compile Include="TTLX.WindowsTool.Business\MediaListResponse.cs" />
+    <Compile Include="TTLX.WindowsTool.Business\PackageQuestionResponse.cs" />
+    <Compile Include="TTLX.WindowsTool.Business\PackageQuestionsDatabaseResponse.cs" />
+    <Compile Include="TTLX.WindowsTool.Business\PackageQuestionService.cs" />
+    <Compile Include="TTLX.WindowsTool.Business\PackageQuestionsResponse.cs" />
+    <Compile Include="TTLX.WindowsTool.Business\PackageQuestionTypeManager.cs" />
+    <Compile Include="TTLX.WindowsTool.Business\QCTextTranslateResponse.cs" />
+    <Compile Include="TTLX.WindowsTool.Business\QuestionService.cs" />
+    <Compile Include="TTLX.WindowsTool.Business\RequestUtility.cs" />
+    <Compile Include="TTLX.WindowsTool.Business\Response.cs" />
+    <Compile Include="TTLX.WindowsTool.Business\SeriesListResponse.cs" />
+    <Compile Include="TTLX.WindowsTool.Business\SeriesService.cs" />
+    <Compile Include="TTLX.WindowsTool.Business\TencentTranslateService.cs" />
+    <Compile Include="TTLX.WindowsTool.Business\TopicInfoResponse.cs" />
+    <Compile Include="TTLX.WindowsTool.Business\TopicPackageLessonListResponse.cs" />
+    <Compile Include="TTLX.WindowsTool.Business\TopicService.cs" />
+    <Compile Include="TTLX.WindowsTool.Business\UserService.cs" />
+    <Compile Include="TTLX.WindowsTool.Business\WordPronService.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

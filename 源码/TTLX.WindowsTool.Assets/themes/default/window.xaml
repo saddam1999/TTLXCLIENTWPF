@@ -41,7 +41,7 @@
 			Property="mah:MetroWindow.TitlebarHeight"
 			Value="40" />
 	</Style>
-	<Style
+	<!--<Style
 		x:Key="UIElementVisibleFadeStyle">
 		<Style.Triggers>
 			<Trigger
@@ -60,7 +60,7 @@
 				</TriggerBase.EnterActions>
 			</Trigger>
 		</Style.Triggers>
-	</Style>
+	</Style>-->
 	<Style
 		TargetType="{x:Type Window}"
 		x:Key="NormalWindowStyle">
@@ -164,7 +164,7 @@
 											<ei:ChangePropertyAction
 												PropertyName="WindowState"
 												Value="Minimized"
-												i:TargetObject="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Window}}" />
+												TargetObject="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Window}}" />
 										</i:EventTrigger>
 									</i:Interaction.Triggers>
 								</Button>
@@ -187,7 +187,7 @@
 											<ei:ChangePropertyAction
 												PropertyName="WindowState"
 												Value="Normal"
-												i:TargetObject="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Window}}" />
+												TargetObject="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Window}}" />
 										</i:EventTrigger>
 									</i:Interaction.Triggers>
 								</Button>
@@ -210,7 +210,7 @@
 											<ei:ChangePropertyAction
 												PropertyName="WindowState"
 												Value="Maximized"
-												i:TargetObject="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Window}}" />
+												TargetObject="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Window}}" />
 										</i:EventTrigger>
 									</i:Interaction.Triggers>
 								</Button>

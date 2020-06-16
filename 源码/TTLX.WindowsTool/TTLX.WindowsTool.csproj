@@ -508,10 +508,6 @@
       <Project>{e7272935-63a9-4829-8a2b-3ffc4b0933e2}</Project>
       <Name>TTLX.WindowsTool.Business</Name>
     </ProjectReference>
-    <ProjectReference Include="..\TTLX.WindowsTool.Common\TTLX.WindowsTool.Common.csproj">
-      <Project>{e7272935-63a9-4829-8a2b-3ffc4b0933e3}</Project>
-      <Name>TTLX.WindowsTool.Common</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

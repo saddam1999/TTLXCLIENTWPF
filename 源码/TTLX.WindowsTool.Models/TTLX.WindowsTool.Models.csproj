@@ -41,8 +41,9 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
-    <Reference Include="TTLX.WindowsTool.Common">
-      <HintPath>..\TTLX.WindowsTool.Common\obj\x86\Debug\TTLX.WindowsTool.Common.dll</HintPath>
+    <Reference Include="TTLX.WindowsTool.Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\lib\TTLX.WindowsTool.Common.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -71,6 +72,7 @@
     <Compile Include="Json\JsonHelper.cs" />
     <Compile Include="KnowledgeTag.cs" />
     <Compile Include="Lesson.cs" />
+    <Reference Include="mscorlib" />
     <Compile Include="MaterialLessonNameStringLengthAttribue.cs" />
     <Compile Include="MaterialTopicNameStringLengthAttribue.cs" />
     <Compile Include="MediaItem.cs" />
@@ -150,6 +152,9 @@
     <Compile Include="UserTypeEnum.cs" />
     <Compile Include="WordPronunciation.cs" />
     <Compile Include="WordTypeEnum.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
