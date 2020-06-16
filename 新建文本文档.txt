@@ -1,0 +1,29 @@
+Autofac.Core.DependencyResolutionException: 
+An error occurred during the activation of a particular registration. 
+See the inner exception for details. 
+Registration: Activator = CalcRewardTwoTask (ReflectionActivator), 
+Services = [SmartStore.Services.Calc.CalcRewardTwoTask (SmartStore.Services.Tasks.ITask),
+ SmartStore.Services.Calc.CalcRewardTwoTask (SmartStore.Services.Tasks.ITask)], 
+ Lifetime = Autofac.Core.Lifetime.MatchingScopeLifetime, Sharing = Shared, 
+ Ownership = OwnedByLifetimeScope ---> 
+ None of the constructors found with 'Autofac.Core.Activators.Reflection.DefaultConstructorFinder' on type 'SmartStore.Services.Calc.CalcRewardTwoTask' 
+ can be invoked with the available services and parameters:
+Cannot resolve parameter 'SmartStore.Services.Calc.CalcRewardService calcService' of constructor 'Void .ctor(SmartStore.Services.Customers.ICustomerService, SmartStore.Services.Calc.CalcRewardService)'. (See inner exception for details.) ---> Autofac.Core.DependencyResolutionException: None of the constructors found with 'Autofac.Core.Activators.Reflection.DefaultConstructorFinder' on type 'SmartStore.Services.Calc.CalcRewardTwoTask' can be invoked with the available services and parameters:
+Cannot resolve parameter 'SmartStore.Services.Calc.CalcRewardService calcService' of constructor 'Void .ctor(SmartStore.Services.Customers.ICustomerService, SmartStore.Services.Calc.CalcRewardService)'.
+在 Autofac.Core.Activators.Reflection.ReflectionActivator.GetValidConstructorBindings(IComponentContext context, IEnumerable`1 parameters)
+在 Autofac.Core.Activators.Reflection.ReflectionActivator.ActivateInstance(IComponentContext context, IEnumerable`1 parameters)
+在 Autofac.Core.Resolving.InstanceLookup.Activate(IEnumerable`1 parameters, Object& decoratorTarget)
+--- 内部异常堆栈跟踪的结尾 ---
+在 Autofac.Core.Resolving.InstanceLookup.Activate(IEnumerable`1 parameters, Object& decoratorTarget)
+在 Autofac.Core.Resolving.InstanceLookup.<>c__DisplayClass5_0.b__0()
+在 Autofac.Core.Lifetime.LifetimeScope.GetOrCreateAndShare(Guid id, Func`1 creator)
+在 Autofac.Core.Resolving.InstanceLookup.Execute()
+在 Autofac.Core.Resolving.ResolveOperation.GetOrCreateInstance(ISharingLifetimeScope currentOperationScope, IComponentRegistration registration, IEnumerable`1 parameters)
+在 Autofac.Core.Resolving.ResolveOperation.Execute(IComponentRegistration registration, IEnumerable`1 parameters)
+在 Autofac.Core.Lifetime.LifetimeScope.ResolveComponent(IComponentRegistration registration, IEnumerable`1 parameters)
+在 Autofac.ResolutionExtensions.TryResolveService(IComponentContext context, Service service, IEnumerable`1 parameters, Object& instance)
+在 Autofac.ResolutionExtensions.ResolveService(IComponentContext context, Service service, IEnumerable`1 parameters)
+在 Autofac.ResolutionExtensions.ResolveKeyed[TService](IComponentContext context, Object serviceKey, IEnumerable`1 parameters)
+在 Autofac.ResolutionExtensions.ResolveKeyed[TService](IComponentContext context, Object serviceKey)
+在 SmartStore.Web.Framework.TasksModule.<>c__DisplayClass2_0.b__2(Type keyed) 位置 C:\Users\ZJ\Downloads\报单系统\源码\SmartStoreNET\src\Presentation\SmartStore.Web.Framework\DependencyRegistrar.cs:行号 1163
+在 SmartStore.Services.Tasks.TaskExecutor.d__16.MoveNext() 位置 C:\Users\ZJ\Downloads\报单系统\源码\SmartStoreNET\src\Libraries\SmartStore.Services\Tasks\TaskExecutor.cs:行号 110
